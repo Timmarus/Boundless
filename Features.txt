@@ -1,0 +1,18 @@
+-Create account
+-Delete account
+-Update password
+-Update email (or maybe not this, force people to use their university/college emails)
+-Set profile pictures
+-Update privacy settings like if the user wants to publicly show all the courses they are enrolled in or not
+-Update privacy settings like if the user wants to publicly show the programs they are enrolled in or not
+-Create/ Update bios (can bs and call stuff like ‘adding a phone number’ as a feature)
+-Easily share the app with friends
+-If I drop a course, the option to stay or leave that course’s chatroom (unless we force users to drop classes immediately)
+-Maybe a chatroom with TAs and Professors specifically? Basically Piazza/discussion board
+-Report users
+-Find campuses using a map api (essentially shows every university/ campus on a world map view)
+-Turn on day mode (change the game, start in night mode)
+-Subscribe to mailing lists (receive emails on an hourly/daily/weekly/monthly basis with a counter of how many people 	 
+      joined the chats you are in, we could bs and put hourly/daily/weekly/monthly as 4 separate features)
+-Have nested chatrooms or separate chatrooms specifically for group-creating
+-
