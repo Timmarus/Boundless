@@ -10,6 +10,7 @@
 -If I drop a course, the option to stay or leave that course’s chatroom (unless we force users to drop classes immediately)
 -Maybe a chatroom with TAs and Professors specifically? Basically Piazza/discussion board
 -Report users
+-Block users
 -Find campuses using a map api (essentially shows every university/ campus on a world map view)
 -Turn on day mode (change the game, start in night mode)
 -Subscribe to mailing lists (receive emails on an hourly/daily/weekly/monthly basis with a counter of how many people 	 
