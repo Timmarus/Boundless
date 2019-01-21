@@ -16,3 +16,29 @@
 - Subscribe to mailing lists (receive emails on an hourly/daily/weekly/monthly basis with a counter of how many people 	 
       joined the chats you are in, we could bs and put hourly/daily/weekly/monthly as 4 separate features)
 - Have nested chatrooms or separate chatrooms specifically for group-creating
+
+
+- Sending Message
+- Receiving Message
+- Each Message
+        - Time it was sent
+        - Person who sent the message
+
+- User message color
+        - Current user messages will be of different color
+
+- User Profile
+        - School Email
+        - Program
+        - Levels of the courses that they are taking, 1,2,3,4
+        - Profile Image
+
+- User reporting 
+
+- Being able to edit last sent message    
+
+- anonymity 
+
+- Can enter at most 6 courses, per semester 
+
+- Groups reset after the term is over (that is, no one is in the group)
