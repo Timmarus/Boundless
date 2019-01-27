@@ -1,3 +1,5 @@
+Formation of Boundless
+---------------------------
 From the beginning of the course, leading up to Sprint 0, team Boundless was formed from 
 utilizing many available technologies. The team was not formed by the members are having 
 similar ideas but, by just how different every member's ideas that were brought to the table. 
