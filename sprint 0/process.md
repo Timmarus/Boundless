@@ -9,8 +9,8 @@ we developed a full seven member team. To keep every connected and up-to-date, w
 a group chat on Facebook Messenger, since we found out we all frequently use the 
 service already. Once the team became perpetual, we began our first in-person meeting. The 
 following day after the first CSC301 lecture, we met for an hour to each introduce ourselves and 
-pitch our ideas to one another. This meeting eventually turned into an Oscars for best software
-project idea, which lead to the most agreed upon idea: Boundless. Boundless was initiated
+pitch our ideas to one another. This meeting eventually turned into an Oscars for 'best software
+project idea', which lead to the most agreed upon idea: Boundless. Boundless was initiated
 when we agreed upon meeting up in-person twice a week to discuss development ideas (mimicking 
 scrum meets) for the next three months. Anything minor like forming the Github group or 
 gathering each other's emails to create a Google Doc to share feature and other ideas, remained
@@ -32,8 +32,14 @@ developed a vivid estimate of our roughly 15 user stories, we began to calculate
 would take to complete said stories. Years of knowledge and experience related to user story
 'x' was taken into consideration when calculating how long each story would take. We finalized 
 our stories by creating our Product Backlog with our desired features from user stories, similar
-to the structure of Product Backlogs in CSC207.
+to the structure of Product Backlogs in CSC207, which can be found in the PB.md file.
 
 Moving onto Sprint 1, we are confident we built a strong foundation that enables us to begin
 execution of the Boundless project. However, some of the lessons that need to tag alongside
-Boundless through its journey are: 
+Boundless throughout its journey are: 
+- Effectively communicating with teammates in a collaborative manner
+- Ensure and enforce the basic software design principles throughout all phases of the
+	project (those principles being abstraction, encapsulation, polymorphism and inheritance)
+- Utilizing our tools like Github and Pivitol Tracker to manage our development in more detail
+- Gurantee each sprint we fulfill basic expectations and satisfiers and aim towards fulfilling
+	delighters as well 

@@ -3,7 +3,7 @@ Project Objectives
 1. Create account management system
 	- Develop an account management system for university students, our primary users, to register. After registering, they will have access to:
 		- All group chats of courses their enrolled into for the year. Within each group chat, they may view, comment, and share information related to that course.  
-2. User Interface(UI) for users to browse through their various group chats
+2. User Interface (UI) for users to browse through their various group chats
 	- Design an easy to navigate user interface, allowing users to swiftly switch between group chats, reply with ease on their current group chat, and browse around the platform. 
 3. Notification system to alert users to new messages.
 	- Creating a responsive notification system that informs users as quickly as possible when new information arrives from each group chat. 

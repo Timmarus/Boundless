@@ -10,14 +10,15 @@ Using our in-person meeting process, described in the process.md file, we
 took all factors into consideration (Value, Risk, Knowledge, etc) when 
 estimating how long each task will take and which sprint the stories will be 
 completed in. Since we aim to complete 3-4 user stories during our bi weekly 
-sprints, we ordered the tasks based on our purposed order of completion. 
-Excluding User Story 0 as this User Story is the teams reminder of our end goal.
+sprints, we ordered the tasks based on our purposed order of completion. This 
+is our desired but, not yet finalized, 'Critical Path'. Excluding User Story 
+0 as this User Story is the teams reminder of our end goal.
 
 We do believe User stories 4-7 could potentially take up more than a single bi
 weekly sprint thus, we will need to compensate and put our efforts into the
 latter user stories, even if they are easier to implement and require less
-man hours. However, user stories 4-7 cover the crucial components of Boundless'
-functionality, we cannot push these stories any further back.
+man hours. However, user stories 4-7 cover the crucial component of Boundless'
+functionality thus, we cannot push these stories any further back.
 --------------------------------------------------------------------------
 # COMPLETED  USER STORIES/BUGS BELOW ###########################################
 
