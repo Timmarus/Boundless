@@ -1,7 +1,7 @@
 Formation of Boundless
 ---------------------------
 From the beginning of the course, leading up to Sprint 0, team Boundless was formed from 
-utilizing many available technologies. The team was not formed by the members are having 
+utilizing many available technologies. The team was not formed by the members having 
 similar ideas but, by just how different every member's ideas that were brought to the table. 
 Plus a little bit of fluke, being that we are all enrolled in the same lecture section. The first 
 lecture allowed each of us to research and analyze all the groups forming around us and with fate,
@@ -12,7 +12,7 @@ following day after the first CSC301 lecture, we met for an hour to each introdu
 pitch our ideas to one another. This meeting eventually turned into an Oscars for 'best software
 project idea', which lead to the most agreed upon idea: Boundless. Boundless was initiated
 when we agreed upon meeting up in-person twice a week to discuss development ideas (mimicking 
-scrum meets) for the next three months. Anything minor like forming the Github group or 
+scrum meetings) for the next three months. Anything minor like forming the Github group or 
 gathering each other's emails to create a Google Doc to share feature and other ideas, remained
 online in the Facebook group chat. Otherwise everything else was taken to the twice-weekly 
 in-person meetings where we can get everyones opinions to make decisions before execution in
@@ -24,7 +24,7 @@ meetings. User stories were first developed during our initial project idea, whe
 was pitching their own ideas and how we could incorporate a piece of each idea into the final
 version of Boundless. Through some more voting rounds, we were able to narrow down the
 impeccable vision of Boundless, filtering out user stories, personas and features that would
-through off the trajectory our main intention. For those that remained, we began to add a priority
+throw off the trajectory our main intention. For those that remained, we began to add a priority
 to every user story as well as a time estimation. It took some analysis to create the ordered 
 structure of which user stories we should tackle first (because as we know, some stories are 
 dependant on others such as needing to create an account before deleting one). Once we had
@@ -43,3 +43,13 @@ Boundless throughout its journey are:
 - Utilizing our tools like Github and Pivitol Tracker to manage our development in more detail
 - Gurantee each sprint we fulfill basic expectations and satisfiers and aim towards fulfilling
 	delighters as well 
+
+After our latest meeting, we have the following assigned roles:
+- Kevin Gao: Developer
+- Abdulwasay Mehar: Developer
+- William Gan: Developer
+- Kenneth Chyzewski: Developer
+- Jonathan Leung: Developer	
+- Timm Ilyas: Developer
+- Prashil Gandhi: Developer	
+	
