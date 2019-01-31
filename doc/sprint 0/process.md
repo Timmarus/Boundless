@@ -45,11 +45,11 @@ Boundless throughout its journey are:
 	delighters as well 
 
 After our latest meeting, we have the following assigned roles:
-- Kevin Gao: Developer
-- Abdulwasay Mehar: Developer
-- William Gan: Developer
-- Kenneth Chyzewski: Developer
-- Jonathan Leung: Developer	
-- Timm Ilyas: Developer
-- Prashil Gandhi: Developer	
+- Kevin Gao: Front-end Developer
+- Abdulwasay Mehar: Full Stack Developer
+- William Gan: Back-end Developer
+- Kenneth Chyzewski: Front-end Developer/Scrum Master
+- Jonathan Leung: Back-end Developer	
+- Timm Ilyas: Back-end Developer
+- Prashil Gandhi: Front-end Developer	
 	
