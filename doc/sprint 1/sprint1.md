@@ -31,7 +31,7 @@ SO THAT  : I can use the app to start developing my personal network
 ```
 TYPE     : USER STORY 2
 NAME     : Delete account
-OWNER    : x
+OWNER    : A, J 
 PRIORITY : 2
 ESTIMATE : 1 hours
 AS A     : Student
@@ -44,7 +44,7 @@ SO THAT  : When I graduate, I don’t need to receive notifications of
 ```
 TYPE     : USER STORY 3
 NAME     : Update email and/ or password
-OWNER    : x
+OWNER    : T, P
 PRIORITY : 5
 ESTIMATE : 2 hours
 AS A     : Student
