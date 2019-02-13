@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import CourseCard from './CourseCard';
-import { Container, Row, Col } from "react";
+import { Container, Row, Col } from "reactstrap";
 
-export class HomeScreen extends Component {
+class HomeScreen extends Component {
     constructor() {
         super();
         this.state = {

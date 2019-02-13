@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import HomeScreen from "./HomeScreen";
 
-export class home extends Component {
+class Home extends Component {
   render() {
     return (
       <div className="row">
@@ -14,4 +14,4 @@ export class home extends Component {
   }
 }
 
-export default home;
+export default Home;

@@ -6,7 +6,7 @@ const NavBar = (props) => {
         <nav className="nav-wrapper grey darken-3">
             <div className="container center">
                 <Link to='/' className="brand-logo">Boundless</Link>
-                
+                <NavLink to='/home' className="right">Home</NavLink>
             </div>
         </nav>   
     )

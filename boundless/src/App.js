@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import login from './components/loginPages/login';
 import NavBar from './components/navBar/navBar';
-import home from "./components/homescreenPages/home";
+import Home from "./components/homescreenPages/Home";
 
 class App extends Component {
   render() {
@@ -11,8 +11,8 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" component={login} />
-            <Route path="/homescreen" component={home} />
+            <Route exact path="/" component={login} />
+            <Route path="/home" component={Home} />
           </Switch>
 
         </div>
