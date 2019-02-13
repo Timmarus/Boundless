@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import login from './components/loginPages/login';
-import NavBar from './components/navBar/navBar';
-
+import React, { Component } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import login from "./components/loginPages/login";
+import NavBar from "./components/navBar/navBar";
+import Register from "./components/RegisterPages/Register";
 
 class App extends Component {
   render() {
@@ -11,9 +11,9 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" component={login} />
+            <Route exact path="/" component={login} />
+            <Route path="/register" component={Register} />
           </Switch>
-
         </div>
       </BrowserRouter>
     );
