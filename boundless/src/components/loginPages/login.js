@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 export default class login extends Component {
-  
-
   render() {
-
     return (
       <div className="container center">
         
@@ -23,7 +21,9 @@ export default class login extends Component {
           
           <div className="row center">
             <div className="input-field col">
+                <Link to="/homescreen">
                 <button className='btn blue lighten-1 z-depth-0'>Login</button>
+                </Link>
             </div>
             
             <div className="input-field col">
