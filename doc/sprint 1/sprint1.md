@@ -18,7 +18,7 @@
 ```
 TYPE     : USER STORY 1
 NAME     : Create account
-OWNER    : K, KE, W
+OWNER    : K, A, J
 PRIORITY : 21
 ESTIMATE : 8 hours
 AS A     : Student
@@ -29,16 +29,16 @@ SO THAT  : I can use the app to start developing my personal network
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 2
-NAME     : Delete account
-OWNER    : A, J 
-PRIORITY : 2
-ESTIMATE : 1 hours
+TYPE     : USER STORY 11
+NAME     : Create a biography
+OWNER    : W, KE
+PRIORITY : 5
+ESTIMATE : 4 hours
 AS A     : Student
-I WANT   : I want to be able to delete my account
-SO THAT  : When I graduate, I don’t need to receive notifications of 
-      future classes.
- ```
+I WANT   : Offer a bit of information about myself
+SO THAT  : I can connect with other students who share similar interests 
+      and education aspirations.
+```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```

@@ -25,19 +25,6 @@ SO THAT  : I can use the app to start developing my personal network
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 2
-NAME     : Delete account
-OWNER    : x
-PRIORITY : 2
-ESTIMATE : 1 hours
-AS A     : Student
-I WANT   : I want to be able to delete my account
-SO THAT  : When I graduate, I don’t need to receive notifications of 
-      future classes.
- ```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
 TYPE     : USER STORY 3
 NAME     : Update email and/ or password
 OWNER    : x
@@ -47,6 +34,20 @@ AS A     : Student
 I WANT   : To change my credentials to keep my profile up-to-date
 SO THAT  : I do not miss out on any notifications and network 
       opportunities.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 11
+NAME     : Create a biography
+OWNER    : x
+PRIORITY : 5
+ESTIMATE : 4 hours
+AS A     : Student
+I WANT   : Offer a bit of information about myself
+SO THAT  : I can connect with other students who share similar interests 
+      and education aspirations.
 ```
 --------------------------------------------------------------------------
 
@@ -152,18 +153,17 @@ SO THAT  : In the real world on campus, people are able to recognize and
       connect with me.
 ```
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 11
-NAME     : Create a biography
+TYPE     : USER STORY 2
+NAME     : Delete account
 OWNER    : x
-PRIORITY : 5
-ESTIMATE : 4 hours
+PRIORITY : 2
+ESTIMATE : 1 hours
 AS A     : Student
-I WANT   : Offer a bit of information about myself
-SO THAT  : I can connect with other students who share similar interests 
-      and education aspirations.
-```
+I WANT   : I want to be able to delete my account
+SO THAT  : When I graduate, I don’t need to receive notifications of 
+      future classes.
+ ```
 --------------------------------------------------------------------------
 
 
