@@ -15,17 +15,17 @@
 ***
 
 # Unfinished tasks:
-USER STORY 2: Delete Account
+##### USER STORY 2: Delete Account
 
 User Story 2 diminished in value throughout the sprint as Boundless began to prioritize other User Stories that displayed a more ‘main-functionality’ omen and thus, we pushed this User Story further down the backlog, lowering its priority.
 
 # Finished tasks:
-USER STORY 16: Architecture for System interaction 
-USER STORY 1: Create Account
-USER STORY 17: Architecture for Redux 
-USER STORY 18: Database
-USER STORY 3: Login to Account
-USER STORY 11: Create a biography
+##### USER STORY 16: Architecture for System interaction 
+##### USER STORY 1: Create Account
+##### USER STORY 17: Architecture for Redux 
+##### USER STORY 18: Database
+##### USER STORY 3: Login to Account
+##### USER STORY 11: Create a biography
 
 Boundless was able to exceed the estimated ‘task-completion’ goal by completing User Stories 11, 16, 17 and 18.
 
