@@ -8,13 +8,15 @@ class CourseCard extends Component {
   }
   render () {
     let { id, name, } = this.props.course;
+
+    let key = this.props.key;
     return (
-      <div>
+      <div >
         <Card>
           <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" 
           alt="Card image cap" />
           <CardBlock>
-            <CardTitle>{name}</CardTitle>
+            <CardTitle>{"id: " + id} </CardTitle>
             <Button color="danger" onClick={() => this.props.removeCourse(id)}>Leave Chat</Button>
           </CardBlock>
         </Card>
