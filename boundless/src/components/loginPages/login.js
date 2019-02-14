@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 
 export default class login extends Component {
@@ -21,9 +20,9 @@ export default class login extends Component {
 
           <div className="row center">
             <div className="input-field col">
-                <Link to="/home">
-                <button className='btn blue lighten-1 z-depth-0'>Login</button>
-                </Link>
+              <Link to="/home">
+                <button className="btn blue lighten-1 z-depth-0">Login</button>
+              </Link>
             </div>
 
             <div className="input-field col">
