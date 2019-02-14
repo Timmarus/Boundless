@@ -57,14 +57,13 @@ SO THAT  : I can use the flow of data to update the components state.
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 3
-NAME     : Update email and/ or password
-OWNER    : T, P, KE
+NAME     : Login to Account
+OWNER    : A, P, KE
 PRIORITY : 5
 ESTIMATE : 2 hours
 AS A     : Student
-I WANT   : To change my credentials to keep my profile up-to-date
-SO THAT  : I do not miss out on any notifications and network 
-      opportunities.
+I WANT   : Log into my account
+SO THAT  : I can access my courses and group chats.
 ```
 --------------------------------------------------------------------------
 

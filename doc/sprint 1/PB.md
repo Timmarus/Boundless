@@ -79,14 +79,13 @@ SO THAT  : I can connect with other students who share similar interests
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 3
-NAME     : Update email and/ or password
+NAME     : Login to Account 
 OWNER    : x
 PRIORITY : 5
 ESTIMATE : 2 hours
 AS A     : Student
-I WANT   : To change my credentials to keep my profile up-to-date
-SO THAT  : I do not miss out on any notifications and network 
-      opportunities.
+I WANT   : To login to my account.
+SO THAT  : I can access my courses and group chats.
 ```
 --------------------------------------------------------------------------
 
