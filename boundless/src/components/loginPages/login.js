@@ -21,7 +21,7 @@ export default class login extends Component {
           
           <div className="row center">
             <div className="input-field col">
-                <Link to="/homescreen">
+                <Link to="/home">
                 <button className='btn blue lighten-1 z-depth-0'>Login</button>
                 </Link>
             </div>
