@@ -1,21 +1,47 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { authenticateLogin } from '../../actions/loginActions';
+import { connect } from 'react-redux';
 
-export default class login extends Component {
+class login extends Component {
+
+  //initial State
+  state = {
+    email: '',
+    password: ''
+  }
+
+  handleChange = (e) => {
+    //e is the target id
+    //update local state
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+    console.log(this.state);
+    
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.authenticateLogin(this.state);
+  }
+
+
   render() {
+    
     return (
       <div className="container center">
-        <form className="white ">
+        <form className="white" onSubmit={this.handleSubmit} >
           <h5 className="grey-text text-darken-3">SignIn</h5>
 
           <div className="input-field">
-            <label htmlFor="userName">Username</label>
-            <input type="text" id="userName" />
+            <label htmlFor="email">Email</label>
+            <input onChange={this.handleChange} type="text" id="email" />
           </div>
 
           <div className="input-field">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input onChange={this.handleChange} type="password" id="password" />
           </div>
 
           <div className="row center">
@@ -36,3 +62,6 @@ export default class login extends Component {
     );
   }
 }
+
+export default connect(null, { authenticateLogin })(login);
+
