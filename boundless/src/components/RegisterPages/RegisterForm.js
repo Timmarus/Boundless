@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
+import * as actions from '../../actions/loginActions'
 
-export class RegisterForm extends Component {
+class RegisterForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       passwordConfirmation: ""
@@ -18,12 +21,17 @@ export class RegisterForm extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state);
+    
   }
 
   onSubmit(e) {
     e.preventDefault();
     console.log(this.state);
 
+    if (this.state.password == this.state.passwordConfirmation) {
+      this.props.signUpUser(this.state);
+    }
     /*
     if (this.state.done) {
       return <Redirect to="/" />;
@@ -32,18 +40,32 @@ export class RegisterForm extends Component {
   }
 
   render() {
+
+    console.log(this.props.auth);
+    if (this.props.auth.uid) return <Redirect to='/' />
     return (
       <div className="container center">
         <form onSubmit={this.onSubmit}>
           <h5 className="grey-text text-darken-3">Register</h5>
 
           <div className="form-group">
-            <label className="control-label">Username</label>
+            <label className="control-label">First Name</label>
             <input
               onChange={this.onChange}
               value={this.state.username}
               type="text"
-              name="username"
+              name="firstName"
+              className="form-control"
+            />
+          </div>
+
+          <div className="form-group">
+            <label className="control-label">Last Name</label>
+            <input
+              onChange={this.onChange}
+              value={this.state.lastName}
+              type="text"
+              name="lastName"
               className="form-control"
             />
           </div>
@@ -90,4 +112,11 @@ export class RegisterForm extends Component {
   }
 }
 
-export default RegisterForm;
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth
+  }
+}
+
+export default connect(mapStateToProps, actions)(RegisterForm);
