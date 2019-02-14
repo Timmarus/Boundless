@@ -6,12 +6,26 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import { reduxFirestore, getFirestore } from 'redux-firestore';
+import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
+import dbConfig from './config/dbConfig';
 
 //This is where we will register the store i.e model
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(thunk),
+    //thunk is a middleware
+    //We use "compose" which combines multiple store enhancers
+    compose( 
+    applyMiddleware(thunk.withExtraArgument({
+        getFirebase,
+        getFirestore})),
+    reduxFirestore(dbConfig), //store enhancers
+    reactReduxFirebase(dbConfig), //stor enhancers,
+    //This basically allows the actions to connect to the database
+    //directly. So now in the actions we can make use of those enhancers
+    //and get/add info to the database
+    )
 )
 
 
