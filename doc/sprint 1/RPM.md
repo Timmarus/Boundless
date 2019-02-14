@@ -6,7 +6,7 @@
 2. Release Name: Boundless 0.1
    	For this release, we hope that we are able to set up the administration components of our project. For example, creating the account management platform so that users can register and login to their respective accounts in a timely manner. 
 3.  We've decided to make no changes to our definition of done. In the future, it's a possibility that we modify our definition of done as the project progresses. 
-4. Additionally, we've decided no features from our product backlog as we're currently integrating the front-end and back-end together in this sprint.
+4. Additionally, we've added addtional user stories with respect to developing the system architecture, for example, integrating the front-end and back-end together in this sprint.
 5. All user stories in this release we're discussed in detail that was led by the product owner. 
 6. Overall, the team was organized and communicated smoothly. This lead to a productive meeting with no issues throughout the session. We were able to set up time slots for weekly meetings and decided 
 
