@@ -13,83 +13,30 @@
 ***
 
 ### Sprint Backlog
-
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 1
-NAME     : Create account
-OWNER    : K, A, J
+TYPE     : USER STORY 4
+NAME     : Chatroom Functionality
+OWNER    : x
 PRIORITY : 21
-ESTIMATE : 8 hours
-AS A     : Student
-I WANT   : To create an account for the application 
-SO THAT  : I can use the app to start developing my personal network 
-      within my campus.
- ```
+ESTIMATE : 48 hours
+AS A     : CSC301 Student
+I WANT   : To see who is enrolled in CSC301
+SO THAT  : I can form a group of talent individuals who want to 
+      collaborate on a large scale project.
+```
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 17
-NAME     : Architecture for Redux 
-OWNER    : A, W
+TYPE     : USER STORY 6
+NAME     : Chatroom Functionality
+OWNER    : x
 PRIORITY : 21
-ESTIMATE : 8 hours
-AS A     : Developer
-I WANT   : To have access to all the information, to any specific view.
-SO THAT  : I can access all the information where ever I am.
- ```
---------------------------------------------------------------------------
-
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 16
-NAME     : Architecture for System interaction 
-OWNER    : J, W
-PRIORITY : 13
-ESTIMATE : 5 hours
-AS A     : Developer
-I WANT   : To know the flow of data in my application.
-SO THAT  : I can use the flow of data to update the components state.
- ```
---------------------------------------------------------------------------
-
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 3
-NAME     : Login to Account
-OWNER    : A, P, KE
-PRIORITY : 5
-ESTIMATE : 2 hours
+ESTIMATE : 48 hours
 AS A     : Student
-I WANT   : Log into my account
-SO THAT  : I can access my courses and group chats.
-```
---------------------------------------------------------------------------
-
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 18
-NAME     : Database
-OWNER    : A, J, T
-PRIORITY : 13
-ESTIMATE : 4 hours
-AS A     : Developer
-I WANT   : To create a database that will hold all my information.
-SO THAT  :  I can use this to hold my information that I have on users.
- ```
---------------------------------------------------------------------------
-
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 11
-NAME     : Create a biography
-OWNER    : K, W, KE
-PRIORITY : 5
-ESTIMATE : 4 hours
-AS A     : Student
-I WANT   : Offer a bit of information about myself
-SO THAT  : I can connect with other students who share similar interests 
-      and education aspirations.
+I WANT   : To find out who commutes the same method as I do
+SO THAT  : I have someone who similar interests to communicate with while 
+      commuting.
 ```
 --------------------------------------------------------------------------

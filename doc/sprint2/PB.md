@@ -107,19 +107,7 @@ SO THAT  : I can form a group of talent individuals who want to
       collaborate on a large scale project.
 ```
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 5
-NAME     : Chatroom Functionality
-OWNER    : x
-PRIORITY : 21
-ESTIMATE : 48 hours
-AS A     : Student
-I WANT   : A way to find out missed information
-SO THAT  : When I am unable to attend a lecture/ tutorial/ practical, I do
-      not fall behind.
- ```
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 6
@@ -133,6 +121,26 @@ SO THAT  : I have someone who similar interests to communicate with while
       commuting.
 ```
 --------------------------------------------------------------------------
+
+
+
+# Sprint 3 March 13, 2019
+# Sprint 3 Backlog UserStories go below
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 5
+NAME     : Chatroom Functionality
+OWNER    : x
+PRIORITY : 21
+ESTIMATE : 48 hours
+AS A     : Student
+I WANT   : A way to find out missed information
+SO THAT  : When I am unable to attend a lecture/ tutorial/ practical, I do
+      not fall behind.
+ ```
+--------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 7
@@ -146,11 +154,6 @@ SO THAT  : I have someone to study or eat lunch with whom shares similar
       interests with me.
 ```
 --------------------------------------------------------------------------
-
-
-# Sprint 3 March 13, 2019
-# Sprint 3 Backlog UserStories go below
-
 
 --------------------------------------------------------------------------
 ```
@@ -209,19 +212,7 @@ SO THAT  : When I graduate, I don’t need to receive notifications of
 # Sprint 4 Backlog UserStories go below
 
 
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 12
-NAME     : Update privacy settings
-OWNER    : x
-PRIORITY : 15
-ESTIMATE : 12 hours
-AS A     : Student
-I WANT   : To modify my privacy settings
-SO THAT  : I can choose whether I want to display my information to other
-      students.
-```
---------------------------------------------------------------------------
+
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 13
