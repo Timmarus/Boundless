@@ -44,8 +44,8 @@ SO THAT  : I have someone who similar interests to communicate with while
       commuting.
 TASKS:
 	- (J) Basic chatroom UI
-	- () Configure chatroom with the selected room
-	- (P) Redirect users to clicked-on chatroom
+	- (J) Configure chatroom with the selected room
+	- (J) Redirect users to clicked-on chatroom
 	- (P) Proper chatroom representation
 ```
 --------------------------------------------------------------------------
