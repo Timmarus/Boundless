@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
+import { connect } from 'react-redux';
 import { Container, Row, Col } from "reactstrap";
 
 class HomeScreen extends Component {
@@ -52,12 +53,29 @@ class HomeScreen extends Component {
   }
 
   render() {
+
+
+    console.log(this.props.auth);
+    
+    if (!this.props.auth.uid) {
+      return (
+        <Redirect to="/" />
+      )
+    }
     return (
       <Container fluid>
         {this.renderCourseCards(this.state.courseList, 3)}
       </Container>
     );
+    
   }
 }
 
-export default HomeScreen;
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
+  };
+};
+
+export default connect(mapStateToProps, null)(HomeScreen);
