@@ -6,6 +6,9 @@ import UpdateBio from "./components/UpdateBio/Bio";
 import Register from "./components/RegisterPages/Register";
 import Home from "./components/homescreenPages/HomeScreen";
 import Settings from "./components/SettingsPage/Settings";
+import Chatroom from "./components/chatroomPages/Chatroom";
+
+
 
 class App extends Component {
   render() {
@@ -19,6 +22,7 @@ class App extends Component {
             <Route path="/register" component={Register} />
             <Route path="/home" component={Home} />
             <Route path="/settings" component={Settings} />
+            <Route path="/chatroom" component={Chatroom} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -10,6 +10,8 @@ import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import dbConfig from './config/dbConfig';
 
+import 'semantic-ui-css/semantic.min.css'
+
 //This is where we will register the store i.e model
 
 const store = createStore(
