@@ -10,10 +10,12 @@ class CourseCard extends Component {
     let { id, name, } = this.props.course;
 
     let key = this.props.key;
+
+    let imgSrc = "https://placeholdit.imgix.net/~text?txtsize=33&txt="+ id + "&w=318&h=180" 
     return (
       <div >
         <Card>
-          <CardImg top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" 
+          <CardImg top width="100%" src= {imgSrc}
           alt="Card image cap" />
           <CardBlock>
             <CardTitle>{"id: " + id} </CardTitle>
