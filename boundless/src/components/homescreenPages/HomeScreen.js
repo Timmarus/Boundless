@@ -12,7 +12,7 @@ class HomeScreen extends Component {
         // fill with real data later
         const sampleCourseList = []
 
-        for(var i = 1; i < 101; i++) {
+        for(var i = 1; i < 7; i++) {
           sampleCourseList.push({id: i, name: "Course " + i});
         }
 
@@ -34,7 +34,7 @@ class HomeScreen extends Component {
         const courseRows = rows.map( (row, i) => courseList.slice(i * numPerRow, i * numPerRow + numPerRow) ); 
         // map the rows as div.row
         const content = courseRows.map((row, i) => (
-            <div style={{display: "flex", flexDirection: "row"}} key={i}>    
+            <div style={{display: "flex", flexDirection: "row", justifyContent: "center"}} key={i}>    
               {/* // map courses in the row as columns */}
               {row.map( course => 
                   <Col sm="4">
@@ -59,9 +59,13 @@ class HomeScreen extends Component {
       render () {
 
         return (
-          <Container fluid>
-              {this.renderCourseCards(this.state.courseList, 4)}
-          </Container>
+          // <Container fluid>
+
+          <div className="container center" >
+            {this.renderCourseCards(this.state.courseList, 3)}
+
+          </div>
+          // {/* </Container> */}
         )
       }
     }

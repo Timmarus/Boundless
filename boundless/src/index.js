@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
 
+import 'semantic-ui-css/semantic.min.css'
+
 //This is where we will register the store i.e model
 
 const store = createStore(
