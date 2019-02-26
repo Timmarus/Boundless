@@ -11,9 +11,9 @@ class HomeScreen extends Component {
     // fill with real data later
     const sampleCourseList = [];
 
-    for (var i = 1; i < 7; i++) {
-      sampleCourseList.push({ id: i, name: "Course " + i });
-    }
+        for(var i = 1; i < 7; i++) {
+          sampleCourseList.push({id: i, name: "Course " + i});
+        }
 
     this.state = {
       courseList: sampleCourseList
@@ -63,10 +63,14 @@ class HomeScreen extends Component {
       )
     }
     return (
-      <Container fluid>
+      // <Container fluid>
+
+      <div className="container center" >
         {this.renderCourseCards(this.state.courseList, 3)}
-      </Container>
-    );
+
+      </div>
+      // {/* </Container> */}
+    )
     
   }
 }
