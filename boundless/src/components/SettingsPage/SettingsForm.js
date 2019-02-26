@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
+import ReactDOM from "react-dom";
 import * as actions from "../../actions/settingsActions";
+import Dropdown from "react-dropdown";
 
 export class SettingsForm extends Component {
+  courses = ["CSC108", "CSC148", "CSC207", "CSC236", "CSC263", "CSC258"];
+
   constructor(props) {
     super(props);
     this.state = {
@@ -46,10 +50,11 @@ export class SettingsForm extends Component {
   render() {
     return (
       <div className="row">
-        <div className="container col s8 offset-s0 center">
+        <div className="container center">
+          <h5 className="grey-text text-darken-3">Settings</h5>
+        </div>
+        <div className="container col s8 offset-s0 left">
           <form onSubmit={this.onSubmit}>
-            <h5 className="grey-text text-darken-3">Settings</h5>
-
             <div className="form-group">
               <label className="control-label">First Name</label>
               <input
@@ -125,6 +130,13 @@ export class SettingsForm extends Component {
             </div>
           </form>
         </div>
+        <div className="container col s8 offset-s0 right" />
+        <div>Courses:</div>
+        <Dropdown
+          options={this.courses}
+          onChange={this._onSelect}
+          placeholder="Select an option"
+        />
       </div>
     );
   }

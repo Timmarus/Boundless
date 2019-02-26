@@ -13,18 +13,18 @@
 ***
 
 ### Sprint Backlog
+
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 4
-NAME     : Chatroom Functionality
+TYPE     : USER STORY 12
+NAME     : Settings
 OWNER    : x
-PRIORITY : 21
-ESTIMATE : 48 hours
-AS A     : CSC301 Student
-I WANT   : To see who is enrolled in CSC301
-SO THAT  : I can form a group of talent individuals who want to 
-      collaborate on a large scale project.
-```
+PRIORITY : 13
+ESTIMATE : 8 hours
+AS A     : Developer
+I WANT   : The user to have a settings dashboard
+SO THAT  : They can change their courses, privacy settings, date, username, password, school, etc
+ ```
 --------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
