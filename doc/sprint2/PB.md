@@ -89,6 +89,22 @@ SO THAT  : I can access my courses and group chats.
 # Sprint 2 February 27, 2019
 # Sprint 2 Backlog UserStories go below
 
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 21
+NAME     : Add in Integrity Checks for Registration
+OWNER    : x
+PRIORITY : 1
+ESTIMATE : 3 hours
+AS A     : Developer
+I WANT   : To let users know the requirements when signing up
+SO THAT  : I don't get sued when they can't register properly.
+TASKS:
+      - (W) Add in Check for Passwords
+      - (W) Add in Check for Names
+      - (W) Add in Check for Email
+ ```
+--------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 ```

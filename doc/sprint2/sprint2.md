@@ -16,6 +16,23 @@
 
 --------------------------------------------------------------------------
 ```
+TYPE     : USER STORY 21
+NAME     : Add in Integrity Checks for Registration
+OWNER    : W
+PRIORITY : 1
+ESTIMATE : 3 hours
+AS A     : Developer
+I WANT   : To let users know the requirements when signing up
+SO THAT  : I don't get sued when they can't register properly.
+TASKS:
+	- (W) Add in Check for Passwords
+	- (W) Add in Check for Names
+	- (W) Add in Check for Email
+ ```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
 TYPE     : USER STORY 12
 NAME     : Settings
 OWNER    : KE, W, K
