@@ -11,14 +11,14 @@ class RegisterForm extends Component {
       lastName: "",
       email: "",
       password: "",
-      passwordConfirmation: ""
-
+      passwordConfirmation: "",
       //done: false
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+   
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
     console.log(this.state);
@@ -29,14 +29,19 @@ class RegisterForm extends Component {
     e.preventDefault();
     console.log(this.state);
 
-    if (this.state.password == this.state.passwordConfirmation) {
-      this.props.signUpUser(this.state);
+    if(this.state.password.length < 6){
+      alert("Password length must be greater than 6 characters.");
+    }else if (this.state.password != this.state.passwordConfirmation){
+      alert("Confirmed password does not match.");
+    }else{  
+      if(!this.state.email.includes("@")){
+        alert("Incorrect Email.");
+      }else{
+        alert("Sucess");
+        this.props.signUpUser(this.state);
+      }
+    
     }
-    /*
-    if (this.state.done) {
-      return <Redirect to="/" />;
-    }
-    */
   }
 
   render() {
@@ -57,6 +62,7 @@ class RegisterForm extends Component {
               name="firstName"
               className="form-control"
             />
+          {this.state.firstName == ""? (<label> Require First Name </label>) : null}
           </div>
 
           <div className="form-group">
@@ -68,6 +74,7 @@ class RegisterForm extends Component {
               name="lastName"
               className="form-control"
             />
+            {this.state.lastName == ""? (<label> Require Last Name </label>) : null}
           </div>
 
           <div className="form-group">
@@ -79,10 +86,11 @@ class RegisterForm extends Component {
               name="email"
               className="form-control"
             />
+            {this.state.email == ""? (<label> Require Email </label>) : null}
           </div>
 
-          <div className="form-group">
-            <label className="control-label">Password</label>
+          <div className="Password-Form">
+            <label className="Password-lbl">Password</label>
             <input
               onChange={this.onChange}
               value={this.state.password}
@@ -90,10 +98,11 @@ class RegisterForm extends Component {
               name="password"
               className="form-control"
             />
+            { this.state.password.length < 6?  (<label>We require more than 6 characters</label>) : null}
           </div>
 
-          <div className="form-group">
-            <label className="control-label">Confirm Password</label>
+          <div className="Confirm-Form">
+            <label className="Confirm-lbl">Confirm Password</label>
             <input
               onChange={this.onChange}
               value={this.state.passwordConfirmation}
@@ -101,6 +110,7 @@ class RegisterForm extends Component {
               name="passwordConfirmation"
               className="form-control"
             />
+            { this.state.passwordConfirmation == this.state.password && this.state.passwordConfirmation.length > 5? null : (<label>This needs to match the given password</label>)}
           </div>
 
           <div className="form-group">
