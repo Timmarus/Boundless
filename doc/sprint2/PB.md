@@ -23,7 +23,6 @@ SO THAT  : I can use the app to start developing my personal network
       within my campus.
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 17
@@ -36,7 +35,6 @@ I WANT   : To have access to all the information, to any specific view.
 SO THAT  : I can access all the information where ever I am.
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 16
@@ -49,7 +47,6 @@ I WANT   : To know the flow of data in my application.
 SO THAT  : I can use the flow of data to update the components state.
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 18
@@ -62,7 +59,6 @@ I WANT   : To create a database that will hold all my information.
 SO THAT  :  I can use this to hold my information that I have on users.
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 11
@@ -106,7 +102,6 @@ I WANT   : The user to have a settings dashboard
 SO THAT  : They can change their courses, privacy settings, date, username, password, school, etc
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 6
@@ -120,11 +115,23 @@ SO THAT  : I have someone who similar interests to communicate with while
       commuting.
 ```
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 20
+NAME     : Route Guarding
+OWNER    : x
+PRIORITY : 13
+ESTIMATE : 24 hours
+AS A     : Developer
+I WANT   : I want the signed in users to view the chatroom UI
+SO THAT  : People who are not a member of the app are not able to use the app.
+```
+--------------------------------------------------------------------------
 
 
 # Sprint 3 March 13, 2019
 # Sprint 3 Backlog UserStories go below
+
 
 --------------------------------------------------------------------------
 ```
@@ -139,7 +146,6 @@ SO THAT  : I can form a group of talent individuals who want to
       collaborate on a large scale project.
 ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 5
@@ -153,7 +159,6 @@ SO THAT  : When I am unable to attend a lecture/ tutorial/ practical, I do
       not fall behind.
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 7
@@ -167,7 +172,6 @@ SO THAT  : I have someone to study or eat lunch with whom shares similar
       interests with me.
 ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 8
@@ -225,7 +229,6 @@ SO THAT  : When I graduate, I don’t need to receive notifications of
 # Sprint 4 Backlog UserStories go below
 
 
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 13
@@ -266,7 +269,6 @@ SO THAT  : When I am in a well-light location, I dont need to increase my
 --------------------------------------------------------------------------
 
 
-
 # Sprint 5 April 5, 2019
 # Sprint 5 Backlog UserStories go below
 
@@ -285,3 +287,4 @@ SO THAT  : all students receive a better overall experience within the
       university.
 ```
 --------------------------------------------------------------------------
+
