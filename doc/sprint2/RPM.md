@@ -1,6 +1,6 @@
 ### Release 2 Planning Meeting
 ---
-##### February 25 2019 | 3:30 PM - 4:15 PM
+##### February 25 2019 | 10:00 PM - 1:30 PM
 
 1. For our product owner, we chose Abdulwasay Mehar. They discussed the goals for this release along with unfinished tasks in this sprints user stories.
 2. Release Name: Boundless 0.2
