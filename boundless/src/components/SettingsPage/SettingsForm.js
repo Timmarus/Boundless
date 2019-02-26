@@ -4,9 +4,19 @@ import { connect } from "react-redux";
 import ReactDOM from "react-dom";
 import * as actions from "../../actions/settingsActions";
 import Dropdown from "react-dropdown";
+import Select from 'react-select';
+
+const courses = [
+  {value: "CSC108", label: "CSC108"},
+  {value: "CSC148", label: "CSC148"},
+  {value: "CSC207", label: "CSC207"},
+  {value: "CSC236", label: "CSC236"},
+  {value: "CSC209", label: "CSC209"},
+  {value: "CSC258", label: "CSC258"},
+  {value: "CSC263", label: "CSC263"}
+];
 
 export class SettingsForm extends Component {
-  courses = ["CSC108", "CSC148", "CSC207", "CSC236", "CSC263", "CSC258"];
 
   constructor(props) {
     super(props);
@@ -16,7 +26,8 @@ export class SettingsForm extends Component {
       year: "",
       email: "",
       University: "",
-      Program: ""
+      Program: "",
+      mycourses: []
 
       //done: false
     };
@@ -47,13 +58,28 @@ export class SettingsForm extends Component {
         */
   }
 
+  handleAdd = (e) => {
+    console.log(e);
+    var newArray = this.state.mycourses;    
+    newArray.push(e.value);   
+    this.setState({mycourses: newArray});
+    console.log(this.state);
+   }; 
+
+  handleDelete = (e) => {
+    var newArray = this.state.mycourses;
+    newArray.pop(newArray.indexOf(e.value));
+    this.setState({mycourses: newArray});
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div className="row">
         <div className="container center">
           <h5 className="grey-text text-darken-3">Settings</h5>
         </div>
-        <div className="container col s8 offset-s0 left">
+        <div className="container col s8 left">
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="control-label">First Name</label>
@@ -130,13 +156,18 @@ export class SettingsForm extends Component {
             </div>
           </form>
         </div>
-        <div className="container col s8 offset-s0 right" />
-        <div>Courses:</div>
-        <Dropdown
-          options={this.courses}
-          onChange={this._onSelect}
-          placeholder="Select an option"
-        />
+        <div className="container col s4 right">
+        <Select
+          placeholder="Add a new course:"
+          value={this.state.type}
+          onChange={this.handleAdd}
+          options={courses}
+          /> 
+          <h3>Your courses: 
+          { this.state.mycourses.map((item) => (
+            <button>{item}</button>
+          ))}</h3>
+        </div>
       </div>
     );
   }
