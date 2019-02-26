@@ -8,6 +8,7 @@ export function authenticateLogin(login) {
       firebase.auth().signInWithEmailAndPassword(
           login.email, login.password
         ).then (() => {
+            
             dispatch({ type: types.VALID_LOGIN })
         }).catch((err) => {
             dispatch({type: types.INVALID_LOGIN , payload: err})

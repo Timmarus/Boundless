@@ -21,7 +21,11 @@ const store = createStore(
         getFirebase,
         getFirestore})),
     reduxFirestore(dbConfig), //store enhancers
-    reactReduxFirebase(dbConfig), //stor enhancers,
+    reactReduxFirebase(dbConfig,{
+        useFirestoreForProfile: true,
+        userProfile: 'users',
+        attactAuthIsReady: true,
+    }), //stor enhancers,
     //This basically allows the actions to connect to the database
     //directly. So now in the actions we can make use of those enhancers
     //and get/add info to the database

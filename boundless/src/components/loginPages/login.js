@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { authenticateLogin } from '../../actions/loginActions';
 import { connect } from 'react-redux';
 
@@ -17,17 +17,25 @@ class login extends Component {
     this.setState({
       [e.target.id]: e.target.value
     })
-    console.log(this.state);
+    // console.log(this.state);
     
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+    // console.log("in handle submit");
+    
     this.props.authenticateLogin(this.state);
   }
 
 
   render() {
+    
+    if (this.props.auth.uid) {
+      return (
+        <Redirect to="/home" />
+      )
+    }
     
     return (
       <div className="container center">
@@ -46,9 +54,7 @@ class login extends Component {
 
           <div className="row center">
             <div className="input-field col">
-              <Link to="/home">
-                <button className="btn blue lighten-1 z-depth-0">Login</button>
-              </Link>
+              <input className="btn blue lighten-1 z-depth-0" type="submit" value="Login" />
             </div>
 
             <div className="input-field col">
@@ -65,5 +71,12 @@ class login extends Component {
   }
 }
 
-export default connect(null, { authenticateLogin })(login);
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
+  };
+};
+
+export default connect(mapStateToProps, { authenticateLogin })(login);
 
