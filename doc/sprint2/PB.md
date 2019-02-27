@@ -89,6 +89,7 @@ SO THAT  : I can access my courses and group chats.
 # Sprint 2 February 27, 2019
 # Sprint 2 Backlog UserStories go below
 
+
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 21
@@ -99,24 +100,31 @@ ESTIMATE : 3 hours
 AS A     : Developer
 I WANT   : To let users know the requirements when signing up
 SO THAT  : I don't get sued when they can't register properly.
-TASKS:
-      - (W) Add in Check for Passwords
-      - (W) Add in Check for Names
-      - (W) Add in Check for Email
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 12
 NAME     : Settings
 OWNER    : x
-PRIORITY : 13
+PRIORITY : 8
 ESTIMATE : 8 hours
 AS A     : Developer
 I WANT   : The user to have a settings dashboard
 SO THAT  : They can change their courses, privacy settings, date, username, password, school, etc
  ```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 20
+NAME     : Route Guarding
+OWNER    : x
+PRIORITY : 13
+ESTIMATE : 24 hours
+AS A     : Developer
+I WANT   : I want the signed in users to view the chatroom UI
+SO THAT  : People who are not a member of the app are not able to use the app.
+```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
@@ -129,18 +137,6 @@ AS A     : Student
 I WANT   : To find out who commutes the same method as I do
 SO THAT  : I have someone who similar interests to communicate with while 
       commuting.
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 20
-NAME     : Route Guarding
-OWNER    : x
-PRIORITY : 13
-ESTIMATE : 24 hours
-AS A     : Developer
-I WANT   : I want the signed in users to view the chatroom UI
-SO THAT  : People who are not a member of the app are not able to use the app.
 ```
 --------------------------------------------------------------------------
 

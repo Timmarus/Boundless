@@ -30,13 +30,12 @@ TASKS:
 	- (W) Add in Check for Email
  ```
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 12
 NAME     : Settings
 OWNER    : KE, W, K
-PRIORITY : 13
+PRIORITY : 8
 ESTIMATE : 8 hours
 AS A     : Developer
 I WANT   : The user to have a settings dashboard
@@ -47,6 +46,22 @@ TASKS:
 	- (K) Add profile modification options (username password, email, ...)
 	- (K) Configure dashboard with settings
  ```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 20
+NAME     : Route Guarding
+OWNER    : A, T, P
+PRIORITY : 13
+ESTIMATE : 24 hours
+AS A     : Developer
+I WANT   : I want the signed in users to view the chatroom UI
+SO THAT  : People who are not a member of the app are not able to use the app.
+TASKS:
+	- (A) Basic chatroom UI
+	- (A) Display currently logged in username
+	- (A) Authenticate to make user data available on the Global State
+```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
@@ -64,21 +79,5 @@ TASKS:
 	- (J) Configure chatroom with the selected room
 	- (J) Redirect users to clicked-on chatroom
 	- (P) Proper chatroom representation
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 20
-NAME     : Route Guarding
-OWNER    : A, T, P
-PRIORITY : 13
-ESTIMATE : 24 hours
-AS A     : Developer
-I WANT   : I want the signed in users to view the chatroom UI
-SO THAT  : People who are not a member of the app are not able to use the app.
-TASKS:
-	- (A) Basic chatroom UI
-	- (A) Display currently logged in username
-	- (A) Authenticate to make user data available on the Global State
 ```
 --------------------------------------------------------------------------
