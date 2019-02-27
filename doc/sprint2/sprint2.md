@@ -79,6 +79,6 @@ SO THAT  : People who are not a member of the app are not able to use the app.
 TASKS:
 	- (A) Basic chatroom UI
 	- (A) Display currently logged in username
-	- () Authenticate to make user data available on the Global State
+	- (A) Authenticate to make user data available on the Global State
 ```
 --------------------------------------------------------------------------
