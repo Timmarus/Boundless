@@ -129,7 +129,7 @@ SO THAT  : People who are not a member of the app are not able to use the app.
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 6
-NAME     : Chatroom Functionality
+NAME     : Chatroom - Room Connection
 OWNER    : x
 PRIORITY : 21
 ESTIMATE : 48 hours

@@ -66,7 +66,7 @@ TASKS:
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 6
-NAME     : Chatroom Functionality
+NAME     : Chatroom - Room Connection
 OWNER    : J, A, W
 PRIORITY : 21
 ESTIMATE : 48 hours
