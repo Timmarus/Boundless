@@ -1,7 +1,10 @@
+###NOTE###
+Abdulqader Saafan allowed us to move our demo presentation from Thursday, February 28th to Friday, March 1st and that is why we are submitting this Sprint Retrospective a day later.
+
 # SCRUM Retrospective Meeting 2 - Boundless
 
 #### March 1st, 2019 
-#### 12:00 PM - 1:30 PM
+#### 11:30 AM - 1:30 PM
 ---
 ### Participants:
 ***
@@ -18,30 +21,23 @@
 
 
 # Finished tasks:
-##### USER STORY 12: Architecture for System interaction 
-##### USER STORY 6: Create Account
+##### USER STORY 21: Add in Integrity Checks for Registration
+##### USER STORY 12: Settings
 ##### USER STORY 20: Route Guarding
+##### USER STORY 6: Chatroom Functionality
 
-Boundless was able to exceed the estimated ‘task-completion’ goal by completing User Stories 11, 16, 17 and 18.
+Boundless managed to complete our 3 desired User Stories (12, 20, 6) and managed to fit in the additional task of Integrity Checks for Registration (21).
 
 # Meeting Overview:
-In this retroactive meeting, Boundless looked back and discussed parts of the sprint that went well and other parts that could use improvement. Everyone from Boundless was in attendance for this meeting. 
+Every Boundless member attended the sprint meeting. We absorbed the constructive feedback we received from the previous sprint and began altering our methodologies.
 
-Our product backlog received some changes, primarily, creating a few new User Stories to reflect the ongoing changes we had decided on while developing components in sprint 1. This included the rework of prioritization for some User Stories. We had made changes to the general architecture of our platform that caused other User Stories to be of a higher significance and others to have lower significance. These changes were decided after consulting with all group members during this meeting.   
+The feedback left us with 3 fields of improvement. User story architecture, product functionality and productivity of members. To begin with the first criticism, we came to the conclusion that breaking up a user story into ‘sub user stories’ does not suffice. We need to ensure that we keep a single feature as is and divide that story into many smaller and simpler tasks. Boundless knew the chatroom would be the largest hurdle and thus, we broke the user story into several user stories across multiple sprints. We resulted in showing a useless product that was all talk but nothing to show.
+This leads into Boundless’ second fault, our approach towards the project. We knew this week was course heavy for all the members, so we orchestrated the user stories in this sprint specifically to work on the front-end design without any back-end functionality. In this instance, we failed the product owners because we did not have a functional product to bring to the table, as we are supposed to every sprint. When demonstrating the project, our deliverable was meaningless because aside from looking pretty, it offered zero purpose. This is due to the previous statement of breaking up our main user story “Chatroom functionality” into sub stories and picking the easiest and least important ones first.
 
-We reflected on our use of Pivotal Tracker as most of us were not aware due to unclear and missing instructions of adding in tasks when completing a User Story. We’ve decided that as soon as the product owners for a User Story starts development, they need to immediately add the specific task they’re working on for that User Story. They also need to continuously update the activity tab regarding their progress, as well as update the team through other communication means, for example, Messenger. 
+Lastly, Boundless was not able to accomplish enough for the sprint. We knew ahead of time that Sprint 2 would be lack luster due to ‘post reading week’ midterms and assignments piling up but, this isn't a valid excuse for a group of seven members. We all need to contribute several hours daily on the project instead of meeting up last minute, struggling to complete tasks which then resulted in a rushed product. Boundless aims to work a lot more consistently and efficiently for the upcoming sprints to deliver a meaningful deliverable for the product owner.
 
-Some areas of improvement we can make going forward into sprint 2 includes:
-Meeting up more frequently in person to better coordinate user stories and discussing pull requests.
-Establish an additional communication channel for emergency bugs and features where all team members can view and respond quickly.
-Creating and maintaining smaller groups for various user stories. 
-Ensuring that we keep our vision of delivering a high quality product. 
-Utilizing our resources (Pivotal Tracker specifically) to keep the entire group up-to-speed when collaborating.
-
-Our accomplishments of this sprint consisted of completing the integration of the database to our front-end UI where users are able to register and login seamlessly. However, for the deletion-of-account functionality, we revised our future sprints to incorporate this User Story. Furthermore, finishing our system design document that included the system architecture diagram, helps us better plan tasks and understand our vision of Boundless. 
-
-On the flip side, some of our failures as a team was the lack of communication. This resulted in many easy-to-avoid situations such as git conflicts, causing additional hurdles that slowed the momentum of the team’s progression. Another hurdle that Boundless is still detecting and managing are the wide variety of new technologies. The team is comprised of members who have never heard of, let alone used, some of the tools utilized within the project such as Firebase and React. The team collectively, had to spend countless hours researching these technologies and how we can integrate them into Boundless.
+Leaning away from our faults, Boundless was able to successfully keep the team updated through Pivotal Tracker and online discussion forums to prevent any stoppage in the event an issue occured. The application now has its foundation to begin implementing real operations for users to interact with one another. We have the account creation, deletion and modification, the chatroom selection menu and the chatroom screen itself, along with the database needed for user communication. Boundless takes feedback very seriously thus, we plan to revise our Product Backlog with more appropriate User Stories to ensure our next sprint more accurately depicts our goals. Boundless guarantees Sprint 3 will consist of mainly functional features that appeal so we have a proper deliverable. The team is now experienced with the technologies and APIs necessary for the project and can make progress with maximum momentum for the following sprint.
 
 # Meeting Conclusion:
-Boundless analyzed our situations with regards to updating Pivotal Tracker upon completing and adding new tasks.  Boundless came to the conclusion that we need to have more in-person meetings than our current ‘once-a-week’ paradigm. We finalized how to we plan to improve and maintain faultlessness throughout future sprints.
+Boundless continues to improves as the mistakes from the previous sprints were not repeated but, our approach to other development paradigms were flawed, resulting in a lack of collaboration and progress. This meeting has helped shape the members of Boundless to ensure a more focused and productive working environment needed for future sprints.
 
