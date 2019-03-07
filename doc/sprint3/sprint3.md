@@ -14,70 +14,110 @@
 
 ### Sprint Backlog
 
+
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 21
-NAME     : Add in Integrity Checks for Registration
-OWNER    : W
-PRIORITY : 1
-ESTIMATE : 3 hours
-AS A     : Developer
-I WANT   : To let users know the requirements when signing up
-SO THAT  : I don't get sued when they can't register properly.
-TASKS:
-	- (W) Add in Check for Passwords
-	- (W) Add in Check for Names
-	- (W) Add in Check for Email
- ```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 12
-NAME     : Settings
-OWNER    : KE, W, K
-PRIORITY : 8
-ESTIMATE : 8 hours
-AS A     : Developer
-I WANT   : The user to have a settings dashboard
-SO THAT  : They can change their courses, privacy settings, date, username, password, school, etc
-TASKS:
-	- (K) Create settings dashboard 
-	- (KE) Add course selection option (add 5-6 different courses for now)
-	- (K) Add profile modification options (username password, email, ...)
-	- (K) Configure dashboard with settings
- ```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 20
-NAME     : Route Guarding
-OWNER    : A, T, P
-PRIORITY : 13
-ESTIMATE : 24 hours
-AS A     : Developer
-I WANT   : I want the signed in users to view the chatroom UI
-SO THAT  : People who are not a member of the app are not able to use the app.
-TASKS:
-	- (A) Basic chatroom UI
-	- (A) Display currently logged in username
-	- (A) Authenticate to make user data available on the Global State
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 6
+TYPE     : USER STORY 4
 NAME     : Chatroom Functionality
-OWNER    : J, A, W
+OWNER    : 
+PRIORITY : 21
+ESTIMATE : 48 hours
+AS A     : CSC301 Student
+I WANT   : To see who is enrolled in CSC301
+SO THAT  : I can form a group of talent individuals who want to 
+      collaborate on a large scale project.
+TASKS:
+	- 
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 5
+NAME     : Chatroom Functionality
+OWNER    : 
 PRIORITY : 21
 ESTIMATE : 48 hours
 AS A     : Student
-I WANT   : To find out who commutes the same method as I do
-SO THAT  : I have someone who similar interests to communicate with while 
-      commuting.
+I WANT   : A way to find out missed information
+SO THAT  : When I am unable to attend a lecture/ tutorial/ practical, I do
+      not fall behind.
 TASKS:
-	- (J) Basic chatroom UI
-	- (J) Configure chatroom with the selected room
-	- (J) Redirect users to clicked-on chatroom
-	- (P) Proper chatroom representation
+	- 
+ ```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 ```
+TYPE     : USER STORY 7
+NAME     : Chatroom Functionality
+OWNER    : 
+PRIORITY : 21
+ESTIMATE : 48 hours
+AS A     : Student
+I WANT   : To find out who has gaps in their schedules
+SO THAT  : I have someone to study or eat lunch with whom shares similar 
+      interests with me.
+TASKS:
+	- 
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 8
+NAME     : Opt out of a chatroom
+OWNER    : K, W, P
+PRIORITY : 13
+ESTIMATE : 24 hours
+AS A     : Student
+I WANT   : Leave a course's chatroom
+SO THAT  : If I drop a course, I am not stuck inside the related chatroom.
+TASKS:
+	- (KE) Drop a course the user's settings page
+	- (KE) Update the user's chatroom when settings are modified
+	- 
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 9
+NAME     : Report users
+OWNER    : 
+PRIORITY : 8
+ESTIMATE : 8 hours
+AS A     : Student
+I WANT   : To report certain users if they aren’t positively contributing 
+      to a specific chatroom
+SO THAT  : I ensure everyone has positive experience without any 
+      discomfort.
+TASKS:
+	- 
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 10
+NAME     : Set profile pictures
+OWNER    : 
+PRIORITY : 5
+ESTIMATE : 4 hours
+AS A     : Student
+I WANT   : To be able to introduce myself digitally to other students
+SO THAT  : In the real world on campus, people are able to recognize and 
+      connect with me.
+TASKS:
+	- 
+```
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 2
+NAME     : Delete account
+OWNER    : 
+PRIORITY : 2
+ESTIMATE : 1 hours
+AS A     : Student
+I WANT   : I want to be able to delete my account
+SO THAT  : When I graduate, I don’t need to receive notifications of 
+      future classes.
+TASKS:
+	- 
+ ```
 --------------------------------------------------------------------------
