@@ -148,27 +148,25 @@ SO THAT  : I have someone who similar interests to communicate with while
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 4
-NAME     : Chatroom Functionality
+NAME     : Course Selection Viewer
 OWNER    : x
 PRIORITY : 21
 ESTIMATE : 48 hours
-AS A     : CSC301 Student
-I WANT   : To see who is enrolled in CSC301
-SO THAT  : I can form a group of talent individuals who want to 
-      collaborate on a large scale project.
+AS A     : Developer
+I WANT   : finish updating the UI
+SO THAT  : they can enter(by clicking) each course chatroom to chat.
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 5
-NAME     : Chatroom Functionality
+NAME     : Course Selection Database
 OWNER    : x
 PRIORITY : 21
 ESTIMATE : 48 hours
-AS A     : Student
-I WANT   : A way to find out missed information
-SO THAT  : When I am unable to attend a lecture/ tutorial/ practical, I do
-      not fall behind.
+AS A     : Developer
+I WANT   : the chatrooms to be connected to a database
+SO THAT  : users can see messages from other users 
  ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -178,10 +176,9 @@ NAME     : Chatroom Functionality
 OWNER    : x
 PRIORITY : 21
 ESTIMATE : 48 hours
-AS A     : Student
-I WANT   : To find out who has gaps in their schedules
-SO THAT  : I have someone to study or eat lunch with whom shares similar 
-      interests with me.
+AS A     : Develpper
+I WANT   : Two different users to be able to communicate with each other through the app 
+SO THAT  : they are able to talk to one another 
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -198,43 +195,17 @@ SO THAT  : If I drop a course, I am not stuck inside the related chatroom.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 9
-NAME     : Report users
+TYPE     : USER STORY 23
+NAME     : Setings Database 
 OWNER    : x
-PRIORITY : 8
-ESTIMATE : 8 hours
-AS A     : Student
-I WANT   : To report certain users if they aren’t positively contributing 
-      to a specific chatroom
-SO THAT  : I ensure everyone has positive experience without any 
-      discomfort.
+PRIORITY : 21
+ESTIMATE : 48 hours
+AS A     : Develpper
+I WANT   : configure new settings to database
+SO THAT  : once the user re-enters the app, the settings are saved  
 ```
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 10
-NAME     : Set profile pictures
-OWNER    : x
-PRIORITY : 5
-ESTIMATE : 4 hours
-AS A     : Student
-I WANT   : To be able to introduce myself digitally to other students
-SO THAT  : In the real world on campus, people are able to recognize and 
-      connect with me.
-```
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 2
-NAME     : Delete account
-OWNER    : x
-PRIORITY : 2
-ESTIMATE : 1 hours
-AS A     : Student
-I WANT   : I want to be able to delete my account
-SO THAT  : When I graduate, I don’t need to receive notifications of 
-      future classes.
- ```
---------------------------------------------------------------------------
+
 
 
 # Sprint 4 March 27, 2019

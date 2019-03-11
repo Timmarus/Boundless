@@ -18,31 +18,33 @@
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 4
-NAME     : Chatroom Functionality
+NAME     : Course Selection Viewer
 OWNER    : 
 PRIORITY : 21
 ESTIMATE : 48 hours
-AS A     : CSC301 Student
-I WANT   : To see who is enrolled in CSC301
-SO THAT  : I can form a group of talent individuals who want to 
-      collaborate on a large scale project.
+AS A     : Developer
+I WANT   : finish updating the UI
+SO THAT  : they can enter(by clicking) each course chatroom to chat.
 TASKS:
-	- 
+	- (K) Settings UI
+	- (KE) Finished the course selection UI
+	- Configure Dashboard with Settings and Course Selection UI 
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 5
-NAME     : Chatroom Functionality
+NAME     : Course Selection Database
 OWNER    : 
 PRIORITY : 21
 ESTIMATE : 48 hours
-AS A     : Student
-I WANT   : A way to find out missed information
-SO THAT  : When I am unable to attend a lecture/ tutorial/ practical, I do
-      not fall behind.
+AS A     : Developer
+I WANT   : the chatrooms to be connected to a database
+SO THAT  : users can see messages from other users 
 TASKS:
-	- 
+	- Connect Course Selection with database
+	- Configure dashboard with database
+	- Configure each course card to enter a chatroom with its name 
  ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -52,12 +54,14 @@ NAME     : Chatroom Functionality
 OWNER    : 
 PRIORITY : 21
 ESTIMATE : 48 hours
-AS A     : Student
-I WANT   : To find out who has gaps in their schedules
-SO THAT  : I have someone to study or eat lunch with whom shares similar 
-      interests with me.
+AS A     : Develpper
+I WANT   : Two different users to be able to communicate with each other through the app 
+SO THAT  : they are able to talk to one another
 TASKS:
-	- 
+	- Configure UI to display inputs from different users
+	- Send and recieve data from both users 
+	- Configure with database 
+	
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -78,46 +82,18 @@ TASKS:
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 9
-NAME     : Report users
+TYPE     : USER STORY 23
+NAME     : Setings Database 
 OWNER    : 
-PRIORITY : 8
-ESTIMATE : 8 hours
-AS A     : Student
-I WANT   : To report certain users if they aren’t positively contributing 
-      to a specific chatroom
-SO THAT  : I ensure everyone has positive experience without any 
-      discomfort.
+PRIORITY : 21
+ESTIMATE : 48 hours
+AS A     : Develpper
+I WANT   : configure new settings to database
+SO THAT  : once the user re-enters the app, the settings are saved  
 TASKS:
-	- 
+	- Configure the settings
+	- Set up the database to connect to the settings 
+	
 ```
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 10
-NAME     : Set profile pictures
-OWNER    : 
-PRIORITY : 5
-ESTIMATE : 4 hours
-AS A     : Student
-I WANT   : To be able to introduce myself digitally to other students
-SO THAT  : In the real world on campus, people are able to recognize and 
-      connect with me.
-TASKS:
-	- 
-```
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 2
-NAME     : Delete account
-OWNER    : 
-PRIORITY : 2
-ESTIMATE : 1 hours
-AS A     : Student
-I WANT   : I want to be able to delete my account
-SO THAT  : When I graduate, I don’t need to receive notifications of 
-      future classes.
-TASKS:
-	- 
- ```
---------------------------------------------------------------------------
+
