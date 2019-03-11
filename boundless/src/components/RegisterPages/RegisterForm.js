@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { connect } from 'react-redux';
-import * as actions from '../../actions/loginActions'
+import { connect } from "react-redux";
+import * as actions from "../../actions/loginActions";
 
+//comment
 class RegisterForm extends Component {
   constructor(props) {
     super(props);
@@ -11,43 +12,39 @@ class RegisterForm extends Component {
       lastName: "",
       email: "",
       password: "",
-      passwordConfirmation: "",
+      passwordConfirmation: ""
       //done: false
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-   
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
     console.log(this.state);
-    
   }
 
   onSubmit(e) {
     e.preventDefault();
     console.log(this.state);
 
-    if(this.state.password.length < 6){
+    if (this.state.password.length < 6) {
       alert("Password length must be greater than 6 characters.");
-    }else if (this.state.password != this.state.passwordConfirmation){
+    } else if (this.state.password != this.state.passwordConfirmation) {
       alert("Confirmed password does not match.");
-    }else{  
-      if(!this.state.email.includes("@")){
+    } else {
+      if (!this.state.email.includes("@")) {
         alert("Incorrect Email.");
-      }else{
+      } else {
         alert("Sucess");
         this.props.signUpUser(this.state);
       }
-    
     }
   }
 
   render() {
-
     console.log(this.props.auth);
-    if (this.props.auth.uid) return <Redirect to='/' />
+    if (this.props.auth.uid) return <Redirect to="/" />;
     return (
       <div className="container center">
         <form onSubmit={this.onSubmit}>
@@ -62,7 +59,9 @@ class RegisterForm extends Component {
               name="firstName"
               className="form-control"
             />
-          {this.state.firstName == ""? (<label> Require First Name </label>) : null}
+            {this.state.firstName == "" ? (
+              <label> Require First Name </label>
+            ) : null}
           </div>
 
           <div className="form-group">
@@ -74,7 +73,9 @@ class RegisterForm extends Component {
               name="lastName"
               className="form-control"
             />
-            {this.state.lastName == ""? (<label> Require Last Name </label>) : null}
+            {this.state.lastName == "" ? (
+              <label> Require Last Name </label>
+            ) : null}
           </div>
 
           <div className="form-group">
@@ -86,7 +87,7 @@ class RegisterForm extends Component {
               name="email"
               className="form-control"
             />
-            {this.state.email == ""? (<label> Require Email </label>) : null}
+            {this.state.email == "" ? <label> Require Email </label> : null}
           </div>
 
           <div className="Password-Form">
@@ -98,7 +99,9 @@ class RegisterForm extends Component {
               name="password"
               className="form-control"
             />
-            { this.state.password.length < 6?  (<label>We require more than 6 characters</label>) : null}
+            {this.state.password.length < 6 ? (
+              <label>We require more than 6 characters</label>
+            ) : null}
           </div>
 
           <div className="Confirm-Form">
@@ -110,7 +113,10 @@ class RegisterForm extends Component {
               name="passwordConfirmation"
               className="form-control"
             />
-            { this.state.passwordConfirmation == this.state.password && this.state.passwordConfirmation.length > 5? null : (<label>This needs to match the given password</label>)}
+            {this.state.passwordConfirmation == this.state.password &&
+            this.state.passwordConfirmation.length > 5 ? null : (
+              <label>This needs to match the given password</label>
+            )}
           </div>
 
           <div className="form-group">
@@ -122,11 +128,13 @@ class RegisterForm extends Component {
   }
 }
 
-
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     auth: state.firebase.auth
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, actions)(RegisterForm);
+export default connect(
+  mapStateToProps,
+  actions
+)(RegisterForm);
