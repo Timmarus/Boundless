@@ -16,20 +16,54 @@ const courses = [
   {value: "CSC263", label: "CSC263"}
 ];
 
+const years = [
+  {value: "1", label: "1"},
+  {value: "2", label: "2"},
+  {value: "3", label: "3"},
+  {value: "4", label: "4"},
+  {value: "5+", label: "5+"},
+
+];
+
+
+const programs = [
+  {value: "Computer Science", label: "Computer Science"},
+  {value: "Statisticss", label: "Statistics"},
+  {value: "Mathematics", label: "Mathematics"},
+  {value: "Chemistry", label: "Chemistry"},
+  {value: "Physics", label: "Physics"},
+  {value: "Commerce", label: "Commerce"},
+  {value: "Business", label: "Business"},
+  {value: "Anthropology", label: "Anthropology"}
+];
+
 export class SettingsForm extends Component {
 
   constructor(props) {
-    super(props);
-    this.state = {
-      firstName: "",
-      lastName: "",
-      year: "",
-      email: "",
-      University: "",
-      Program: "",
-      mycourses: []
 
-      //done: false
+    super(props);
+
+    // get current values and prepopulate fields
+    const {
+      firstName,
+      lastName,
+      email,
+      year,
+      university,
+      program,
+      courses
+    } = this.props.profile;
+
+
+    this.state = {
+      firstName: firstName,
+      lastName: lastName,
+      year: year,
+      email: email,
+      university: university,
+      year: year,
+      program: program,
+      courses: courses,
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -40,40 +74,60 @@ export class SettingsForm extends Component {
     console.log(this.state);
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.updateSettings(this.state);
-    console.log("----------------");
+  handleSelection(type, option) {
+
+    const selected = option.value;
+    this.setState({ [type]: selected });
 
     console.log(this.state);
 
-    /*
-    if (this.state.password == this.state.passwordConfirmation) {
-      this.props.signUpUser(this.state);
-    }
-    
-        if (this.state.done) {
-          return <Redirect to="/" />;
-        }
-        */
   }
 
-  handleAdd = (e) => {
-    console.log(e);
-    var newArray = this.state.mycourses;    
-    newArray.push(e.value);   
-    this.setState({mycourses: newArray});
+  onSubmit(e) {
+    e.preventDefault();
+    console.log('onSubmit' + JSON.stringify(this.state));
+
+    
+    // extract only what we want from state into a 
+    // new immutable object, don't pass all of state in
+
+    const updatedInfo = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      year: this.state.year,
+      email: this.state.email,
+      university: this.state.university,
+      year: this.state.year,
+      program: this.state.program,
+      courses: this.state.courses,
+    };
+
+    this.props.updateProfile(updatedInfo);
+
+  }
+
+  handleAddCourse = (option) => {
+    var updatedCourses = this.state.courses;    
+    updatedCourses.push(option.value);   
+    this.setState({courses: updatedCourses});
     console.log(this.state);
    }; 
 
-  handleDelete = (e) => {
-    var newArray = this.state.mycourses;
-    newArray.pop(newArray.indexOf(e.value));
-    this.setState({mycourses: newArray});
+   
+  handleDelete = (option) => {
+    var updatedCourses = this.state.courses;
+    var indexToRemove = updatedCourses.indexOf(option)
+
+    updatedCourses.splice(indexToRemove,1);
+    this.setState({courses: updatedCourses});
     console.log(this.state);
   }
 
   render() {
+
+    // console.log('Current Profile: ' + JSON.stringify(this.props.profile))
+    // console.log('Current Profile Auth: ' + JSON.stringify(this.props.auth))
+    
     return (
       <div className="row">
         <div className="container center">
@@ -85,7 +139,7 @@ export class SettingsForm extends Component {
               <label className="control-label">First Name</label>
               <input
                 onChange={this.onChange}
-                value={this.state.username}
+                value={this.state.firstName}
                 type="text"
                 name="firstName"
                 className="form-control"
@@ -104,16 +158,45 @@ export class SettingsForm extends Component {
             </div>
 
             <div className="form-group">
-              <label className="control-label">Year</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.year}
-                type="text"
-                name="year"
-                className="form-control"
-              />
-            </div>
+            <label className="control-label">University</label>
+            <input
+              onChange={this.onChange}
+              value={this.state.university}
+              type="text"
+              name="university"
+              className="form-control"
+            />
+          </div>
 
+          
+          <div className="form-group">
+            <label className="control-label">Year</label>
+            <Select
+              placeholder={this.state.year || "Select your Year"}
+              value={this.state.year}
+
+              // this.setState({ [e.target.name]: e.target.value });
+              name="year"
+              onChange={this.handleSelection.bind(this, "year")}
+              options={years}
+            /> 
+          </div>
+
+          <div className="form-group">
+            <label className="control-label">Program</label>
+
+
+            <Select
+              placeholder={this.state.program || "Select your Program"}
+              value={this.state.program}
+              // this.setState({ [e.target.name]: e.target.value });
+              name="program"
+              onChange={this.handleSelection.bind(this, "program")}
+              options={programs}
+            /> 
+          </div>
+
+            
             <div className="form-group">
               <label className="control-label">Email</label>
               <input
@@ -125,27 +208,7 @@ export class SettingsForm extends Component {
               />
             </div>
 
-            <div className="form-group">
-              <label className="control-label">University</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.University}
-                type="text"
-                name="University"
-                className="form-control"
-              />
-            </div>
 
-            <div className="form-group">
-              <label className="control-label">Program</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.Program}
-                type="text"
-                name="Program"
-                className="form-control"
-              />
-            </div>
             <div className="form-group">
               <button
                 onClick={this.onChange}
@@ -157,23 +220,34 @@ export class SettingsForm extends Component {
           </form>
         </div>
         <div className="container col s4 right">
-        <Select
-          placeholder="Add a new course:"
-          value={this.state.type}
-          onChange={this.handleAdd}
-          options={courses}
+          <Select
+            placeholder="Add a course:"
+            value={this.state.type}
+            onChange={this.handleAddCourse}
+            options={courses}
           /> 
-          <h3>Your courses: 
-          { this.state.mycourses.map((item) => (
-            <button>{item}</button>
-          ))}</h3>
+          <h3>Your courses:</h3>
+
+          { this.state.courses.map((option) => (
+                <button onClick={this.handleDelete.bind(this, option)}>
+                  {option}
+                </button>
+            )) }
+
         </div>
       </div>
     );
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   actions
 )(SettingsForm);
