@@ -39,7 +39,13 @@ export function signUpUser(userInfo) {
             return firestore.collection('users').doc(response.user.uid).set({
                 firstName: userInfo.firstName,
                 lastName: userInfo.lastName,
-                email: userInfo.email
+                email: userInfo.email,
+                university: userInfo.university,
+                year: userInfo.year,
+                program: userInfo.program,
+                courses: userInfo.courses,
+
+
             })
         }).then(() => {
            dispatch({ type: types.VALID_SIGNUP }) 
