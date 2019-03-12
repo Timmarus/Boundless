@@ -1,5 +1,10 @@
 import React from 'react';
+
 import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
+// import firebase from 'firebase/app'
+import  'firebase/database'
 import {Segment, Comment} from 'semantic-ui-react';
 
 import ChatHeader from './ChatHeader'
@@ -22,7 +27,27 @@ import Message from './Message'
 
 
 class Messages extends React.Component {
+
+    makeAMessage (msg, index){
+        return(
+            <Message msg={msg} key={index} />
+        )
+    }
+
     render () {
+
+        const {msg} = this.props
+        
+
+        if (!msg) {
+            return <div />
+        }
+        // console.log(msg[0]);
+        console.log(msg[0].message);
+        const msgList = msg[0].message
+        
+    //    const messages = map[0].message
+       
         return (
             <div style={{width: "80%", background: "#eeee",}}> 
             
@@ -32,8 +57,10 @@ class Messages extends React.Component {
   
                      <Segment style={{display: "flex", height: "75%", margin: 5}} >
                          <Comment.Group className="messages">
-
-                            <Message msg={this.props.message} />
+                            
+                            {msgList.map((item, i) => (
+                                <Message msg={item} key={i} />
+                                ))}
                             
                          </Comment.Group>
 
@@ -53,10 +80,18 @@ class Messages extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        message: state.messageReducer.msg
+        msg: state.firestore.ordered.messages
 
     }
     
 }
 
-export default connect(mapStateToProps, null)(Messages)
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        `messages/room1`
+        
+    ])
+)(Messages)
+
+// export default connect(mapStateToProps, null)(Messages)

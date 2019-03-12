@@ -7,7 +7,7 @@ import { Container, Row, Col } from "reactstrap";
 class HomeScreen extends Component {
   constructor() {
     super();
-
+    
     // fill with real data later
     const sampleCourseList = [];
 
@@ -53,7 +53,8 @@ class HomeScreen extends Component {
   }
 
   render() {
-
+    const {courses } = this.props.profile
+    console.log(this.props.profile.courses);
 
     console.log(this.props.auth);
     

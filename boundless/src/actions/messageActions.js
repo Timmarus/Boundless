@@ -6,7 +6,20 @@ export function newMessage (msg) {
         const db = getFirestore()
 
         const msgs = db.collection('messages').doc('room1')
-        msgs.get().
+        msgs.get().then(function(doc){
+            var existing = doc.data()['message']
+            console.log({existing});
+            existing.push("newMSg")
+            const newData = {
+              message: existing
+            }
+            
+            
+            msgs.set(newData).then(function(){
+              console.log("newMessage added");
+              
+            })
+        })
 
         // db.collection("messages").doc('room1')
         //     .onSnapshot(function(snapshot) {
