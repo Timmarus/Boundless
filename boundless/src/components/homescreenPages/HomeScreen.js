@@ -1,22 +1,25 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 
 class HomeScreen extends Component {
   constructor() {
     super();
-
-    // fill with real data later
-    const sampleCourseList = [];
-
-        for(var i = 1; i < 7; i++) {
-          sampleCourseList.push({id: i, name: "Course " + i});
-        }
+    //not hardcoded courses
+    const courses = [
+      { id: 0, name: "CSC108" },
+      { id: 1, name: "CSC148" },
+      { id: 2, name: "CSC207" },
+      { id: 3, name: "CSC236" },
+      { id: 4, name: "CSC209" },
+      { id: 5, name: "CSC258" },
+      { id: 6, name: "CSC263" }
+    ];
 
     this.state = {
-      courseList: sampleCourseList
+      courseList: courses
     };
   }
 
@@ -53,25 +56,19 @@ class HomeScreen extends Component {
   }
 
   render() {
-
-
     console.log(this.props.auth);
-    
+
     if (!this.props.auth.uid) {
-      return (
-        <Redirect to="/" />
-      )
+      return <Redirect to="/" />;
     }
     return (
       // <Container fluid>
 
-      <div className="container center" >
+      <div className="container center">
         {this.renderCourseCards(this.state.courseList, 3)}
-
       </div>
       // {/* </Container> */}
-    )
-    
+    );
   }
 }
 
@@ -82,4 +79,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(HomeScreen);
+export default connect(
+  mapStateToProps,
+  null
+)(HomeScreen);
