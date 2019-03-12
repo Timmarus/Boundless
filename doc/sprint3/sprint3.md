@@ -19,7 +19,7 @@
 ```
 TYPE     : USER STORY 4
 NAME     : Course Selection Viewer
-OWNER    : 
+OWNER    : K, KE
 PRIORITY : 21
 ESTIMATE : 48 hours
 AS A     : Developer
@@ -35,7 +35,7 @@ TASKS:
 ```
 TYPE     : USER STORY 5
 NAME     : Course Selection Database
-OWNER    : 
+OWNER    : J, K, W
 PRIORITY : 21
 ESTIMATE : 48 hours
 AS A     : Developer
@@ -51,7 +51,7 @@ TASKS:
 ```
 TYPE     : USER STORY 7
 NAME     : Chatroom Functionality
-OWNER    : 
+OWNER    : A
 PRIORITY : 21
 ESTIMATE : 48 hours
 AS A     : Develpper
@@ -84,7 +84,7 @@ TASKS:
 ```
 TYPE     : USER STORY 23
 NAME     : Setings Database 
-OWNER    : 
+OWNER    : J, K, W
 PRIORITY : 21
 ESTIMATE : 48 hours
 AS A     : Develpper
