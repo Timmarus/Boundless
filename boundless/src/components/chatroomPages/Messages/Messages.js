@@ -1,9 +1,25 @@
 import React from 'react';
-
+import { connect } from 'react-redux'
 import {Segment, Comment} from 'semantic-ui-react';
 
 import ChatHeader from './ChatHeader'
 import ChatForm from './ChatForm'
+import Message from './Message'
+
+
+
+//  * Scrum
+//  *  Given some senario what will happen
+//  * Software design
+//  * Why a userstory is good or bad
+//  * crc design
+//  * design pattern
+//  *  no drawing
+//  * enterprise patterns
+//  * solid principles
+//  * design principles
+//  * 
+
 
 class Messages extends React.Component {
     render () {
@@ -16,8 +32,9 @@ class Messages extends React.Component {
   
                      <Segment style={{display: "flex", height: "75%", margin: 5}} >
                          <Comment.Group className="messages">
-                        
-                             Messages Here
+
+                            <Message msg={this.props.message} />
+                            
                          </Comment.Group>
 
                      </Segment>
@@ -34,4 +51,12 @@ class Messages extends React.Component {
     }
 }
 
-export default Messages;
+const mapStateToProps = (state) => {
+    return {
+        message: state.messageReducer.msg
+
+    }
+    
+}
+
+export default connect(mapStateToProps, null)(Messages)

@@ -33,6 +33,8 @@ export class SettingsForm extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
+
   }
 
   onChange(e) {
@@ -65,6 +67,7 @@ export class SettingsForm extends Component {
     this.setState({mycourses: newArray});
     console.log(this.state);
    }; 
+
 
   handleDelete = (e) => {
     var newArray = this.state.mycourses;
