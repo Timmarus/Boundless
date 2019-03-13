@@ -7,41 +7,50 @@ import { Container, Row, Col } from "reactstrap";
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
-    //not hardcoded courses
-    const courses = [
-      { id: 0, name: "CSC108" },
-      { id: 1, name: "CSC148" },
-      { id: 2, name: "CSC207" },
-      { id: 3, name: "CSC236" },
-      { id: 4, name: "CSC209" },
-      { id: 5, name: "CSC258" },
-      { id: 6, name: "CSC263" }
-    ];
 
-    // const {
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   year,
-    //   university,
-    //   program,
-    //   courses
-    // } = this.props.profile;
+    const {
+      firstName,
+      lastName,
+      email,
+      year,
+      university,
+      program,
+      courses
+    } = this.props.profile;
 
 
-    // console.log('courses: ' + courses)
+    console.log('profile: ' + JSON.stringify(this.props.profile));
+
     this.state = {
       courseList: courses
     };
+
+    this.removeCourse = this.removeCourse.bind(this);
+
   }
 
-  removeCourse(id) {
+  removeCourse(courseToRemove) {
+    console.log('courseToRemove: ' + courseToRemove)
+    console.log(this.state.courseList)
+    console.log(this.state.courseList)
+    console.log(this.state.courseList)
+
+    // if(this.state.courseList) {
     this.setState({
-      courseList: this.state.courseList.filter(course => course.id !== id)
+      courseList: this.state.courseList.filter(
+        course => 
+          // console.log(course);
+          course !== courseToRemove
+         )
     });
+
+    // }
+
   }
 
   renderCourseCards(courseList, numPerRow) {
+
+    console.log('courseList: ' + JSON.stringify(courseList))
     // array of N elements, where N is the number of rows needed
     const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
     // chunk the products into the array of rows
@@ -52,12 +61,15 @@ class HomeScreen extends Component {
     const content = courseRows.map((row, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
-        {row.map(course => (
+        {row.map(courseName => (
+
           <Col sm="4">
+                    {/* {console.log(courseName)} */}
+
             <CourseCard
-              key={course.id}
+              key={courseName}
               removeCourse={this.removeCourse.bind(this)}
-              course={course}
+              courseName={courseName}
             />
           </Col>
         ))}
@@ -70,6 +82,10 @@ class HomeScreen extends Component {
   render() {
     console.log(this.props.auth);
 
+    console.log(this.props.profile);
+
+    const courses = this.props.profile.courses;
+
     if (!this.props.auth.uid) {
       return <Redirect to="/" />;
     }
@@ -77,7 +93,7 @@ class HomeScreen extends Component {
       // <Container fluid>
 
       <div className="container center">
-        {this.renderCourseCards(this.state.courseList, 3)}
+        {this.renderCourseCards(this.state.courseList || [], 3)}
       </div>
       // {/* </Container> */}
     );
