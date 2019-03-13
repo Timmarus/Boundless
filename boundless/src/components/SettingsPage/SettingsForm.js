@@ -54,6 +54,7 @@ export class SettingsForm extends Component {
       courses
     } = this.props.profile;
 
+    console.log('profile: ' + JSON.stringify(this.props.profile));
 
     this.state = {
       firstName: firstName,
@@ -91,6 +92,7 @@ export class SettingsForm extends Component {
     // extract only what we want from state into a 
     // new immutable object, don't pass all of state in
 
+
     const updatedInfo = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -103,6 +105,9 @@ export class SettingsForm extends Component {
     };
 
     this.props.updateProfile(updatedInfo);
+
+    // console.log("---------------- updateSettings()");
+    // console.log(this.state);
 
   }
 
@@ -132,6 +137,9 @@ export class SettingsForm extends Component {
       <div className="row">
         <div className="container center">
           <h5 className="grey-text text-darken-3">Settings</h5>
+        </div>
+        <div className="container col s8 left">
+          <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="control-label">First Name</label>
               <input

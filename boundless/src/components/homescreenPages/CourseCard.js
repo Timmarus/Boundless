@@ -16,19 +16,19 @@ class CourseCard extends Component {
     super(props);
   }
   render() {
-    let { id, name } = this.props.course;
+    let courseName = this.props.courseName;
 
     let key = this.props.key;
 
     let imgSrc =
       "https://placeholdit.imgix.net/~text?txtsize=33&txt=" +
-      id +
+      courseName +
       "&w=318&h=180";
     return (
       <div style={{ margin: 25 }}>
         <Card>
           {/* // pass the room ID that we clicked on to the chatroom route */}
-          <Link to={{ pathname: "/chatroom", state: { roomID: id } }}>
+          <Link to={{ pathname: "/chatroom", state: { roomID: courseName } }}>
             <CardImg
               top
               width="100%"
@@ -37,8 +37,8 @@ class CourseCard extends Component {
             />
           </Link>
           <CardBlock>
-            <CardTitle>{"id: " + id} </CardTitle>
-            <Button color="danger" onClick={() => this.props.removeCourse(id)}>
+            <CardTitle>{courseName} </CardTitle>
+            <Button color="danger" onClick={() => this.props.removeCourse(courseName)}>
               Leave Chat
             </Button>
           </CardBlock>
