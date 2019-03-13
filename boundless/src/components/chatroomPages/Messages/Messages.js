@@ -43,8 +43,13 @@ class Messages extends React.Component {
             return <div />
         }
         // console.log(msg[0]);
-        console.log(msg[0].message);
-        const msgList = msg[0].message
+        console.log(msg[0].messages);
+        const msgList = msg[0].messages
+        console.log("---------",msgList, "-------");
+        
+        const {user} = this.props
+    
+        
         
     //    const messages = map[0].message
        
@@ -59,14 +64,18 @@ class Messages extends React.Component {
                          <Comment.Group className="messages">
                             
                             {msgList.map((item, i) => (
-                                <Message msg={item} key={i} />
+                                <Message 
+                                    user={user}
+                                    msg={item.msg}
+                                    timeStamp={item.postedAt}
+                                    key={i} />
                                 ))}
                             
                          </Comment.Group>
 
                      </Segment>
 
-                    <ChatForm/>
+                    <ChatForm user={user}/>
 
 
                 </React.Fragment>
@@ -80,7 +89,10 @@ class Messages extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        msg: state.firestore.ordered.messages
+
+        msg: state.firestore.ordered.messages,
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
 
     }
     

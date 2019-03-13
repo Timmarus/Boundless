@@ -9,7 +9,14 @@ export function newMessage (msg) {
         msgs.get().then(function(doc){
             var existing = doc.data()['message']
             console.log({existing});
-            existing.push("newMSg")
+            
+            //msg,user, postedAt
+            var newMessage = {
+              msg: msg.message,
+              user: msg.user,
+              postedAt: new Date().getTime()
+            }
+            existing.push(newMessage)
             const newData = {
               message: existing
             }
@@ -20,12 +27,6 @@ export function newMessage (msg) {
               
             })
         })
-
-        // db.collection("messages").doc('room1')
-        //     .onSnapshot(function(snapshot) {
-        //         console.log(snapshot);
-                
-        //     });
 
 
       dispatch({ type: types.NEW_MESSAGE, payload: msg})

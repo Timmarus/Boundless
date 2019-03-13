@@ -54,9 +54,9 @@ class HomeScreen extends Component {
 
   render() {
     const {courses } = this.props.profile
-    console.log(this.props.profile.courses);
+    // console.log(this.props.profile);
 
-    console.log(this.props.auth);
+    // console.log(this.props.auth);
     
     if (!this.props.auth.uid) {
       return (

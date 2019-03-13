@@ -24,6 +24,9 @@ class ChatForm extends React.Component {
     }
 
     render() {
+        // console.log(this.props.profile);
+        console.log(this.props.user);
+        
         return (
             
             <Segment className="chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
@@ -61,5 +64,8 @@ class ChatForm extends React.Component {
         )
     }
 }
+
+
+
 
 export default connect(null, actions)(ChatForm)
