@@ -6,7 +6,7 @@ import SignedInLinks from './signedInLinks';
 import SignedOutLinks from './signedOutLinks';
 
 const NavBar = (props) => {
-  // console.log(props.profile);
+  console.log(props.profile);
   
   
   return (

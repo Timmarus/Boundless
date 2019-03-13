@@ -10,20 +10,20 @@ class HomeScreen extends Component {
     super(props);
 
 
-    const {
-      firstName,
-      lastName,
-      email,
-      year,
-      university,
-      program,
-      courses
-    } = this.props.profile;
+    // const {
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   year,
+    //   university,
+    //   program,
+    //   courses
+    // } = this.props.profile;
 
-    console.log("profile: " + JSON.stringify(this.props.profile));
+    // console.log("profile: " + JSON.stringify(this.props.profile));
 
     this.state = {
-      courseList: courses
+      courseList: null
     };
 
     this.removeCourse = this.removeCourse.bind(this);
@@ -60,15 +60,17 @@ class HomeScreen extends Component {
     const content = courseRows.map((row, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
-
-        {row.map(courseName => (
+        
+        {row.map((course, index) => (
           <Col sm="4">
-            {/* {console.log(courseName)} */}
+            
 
             <CourseCard
-              key={course.id}
+              key={index*i}
               removeCourse={this.removeCourse.bind(this)}
-              course={course}
+              course={
+                {name: course, id: index*i}
+              }
             />
           </Col>
         ))}
@@ -79,20 +81,30 @@ class HomeScreen extends Component {
   }
 
   render() {
-    console.log(this.props.auth);
-
-    if (!this.props.auth.uid) {
+    
+    if (!this.props.auth) {
       return <Redirect to="/" />;
     }
+    
+    const {courses} = this.props.profile
+    
+    if (courses == undefined)
+      return <div />
+
+    console.log(courses, "--------");
+
     return (
       // <Container fluid>
 
       <div className="container center">
-        {this.renderCourseCards(this.state.courseList, 3)}
+        {this.renderCourseCards(courses, 3)}
+        
+         {/* <text>Some Text</text> */}
       </div>
       // {/* </Container> */}
     );
   }
+
 }
 
 const mapStateToProps = state => {
@@ -102,7 +114,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(HomeScreen);
+export default connect( mapStateToProps,null)(HomeScreen);
