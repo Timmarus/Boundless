@@ -7,7 +7,6 @@ import Dropdown from "react-dropdown";
 import Select from "react-select";
 
 //Comment
-
 const courses = [
   { value: "CSC108", label: "CSC108" },
   { value: "CSC148", label: "CSC148" },
@@ -204,8 +203,9 @@ export class SettingsForm extends Component {
                 Update
               </button>
             </div>
-          </form>
         </div>
+
+
         <div className="container col s4 right">
           <Select
             placeholder="Add a course:"
