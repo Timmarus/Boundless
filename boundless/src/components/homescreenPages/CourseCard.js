@@ -17,7 +17,8 @@ class CourseCard extends Component {
   }
   render() {
     let { id, name } = this.props.course;
-
+    // console.log(this.props.course, '99999999');
+    
     let key = this.props.key;
 
     let imgSrc =
@@ -37,8 +38,8 @@ class CourseCard extends Component {
             />
           </Link>
           <CardBlock>
-            <CardTitle>{"id: " + id} </CardTitle>
-            <Button color="danger" onClick={() => this.props.removeCourse(id)}>
+            <CardTitle>{"id: " + name} </CardTitle>
+            <Button color="danger" onClick={() => this.props.removeCourse(name)}>
               Leave Chat
             </Button>
           </CardBlock>

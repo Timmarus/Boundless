@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/loginActions";
 import SignedInLinks from './signedInLinks';
 import SignedOutLinks from './signedOutLinks';
 
 const NavBar = (props) => {
-  // console.log(props.profile);
+  console.log(props.profile);
   
   
   return (

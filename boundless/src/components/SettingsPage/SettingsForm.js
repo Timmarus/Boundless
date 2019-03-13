@@ -207,6 +207,7 @@ export class SettingsForm extends Component {
                 Update
               </button>
             </div>
+            </form>
         </div>
 
 
