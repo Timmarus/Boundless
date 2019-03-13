@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
+import * as actions from '../../actions/settingsActions'
 
 //comment
 class HomeScreen extends Component {
@@ -10,39 +11,51 @@ class HomeScreen extends Component {
     super(props);
 
 
-    const {
-      firstName,
-      lastName,
-      email,
-      year,
-      university,
-      program,
-      courses
-    } = this.props.profile;
+    // const {
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   year,
+    //   university,
+    //   program,
+    //   courses
+    // } = this.props.profile;
 
-    console.log("profile: " + JSON.stringify(this.props.profile));
+    // console.log("profile: " + JSON.stringify(this.props.profile));
 
     this.state = {
-      courseList: courses
+      courseList: null
     };
 
     this.removeCourse = this.removeCourse.bind(this);
   }
 
   removeCourse(courseToRemove) {
-    console.log("courseToRemove: " + courseToRemove);
-    console.log(this.state.courseList);
-    console.log(this.state.courseList);
-    console.log(this.state.courseList);
+    
+    // updateProfile
+    const { courses } = this.props.profile
+    var newCourses = courses
+    var cc = newCourses.filter(function (val, index,arr){
+      return val !== courseToRemove
+    })
 
-    // if(this.state.courseList) {
-    this.setState({
-      courseList: this.state.courseList.filter(
-        course =>
-          // console.log(course);
-          course !== courseToRemove
-      )
-    });
+    console.log(cc);
+    var newDetails = this.props.profile
+    newDetails.courses = cc 
+    console.log(newDetails);
+
+    this.props.updateProfile(newDetails)
+       
+    // console.log("courseToRemove: " + courseToRemove);
+    
+    // // if(this.state.courseList) {
+    // this.setState({
+    //   courseList: this.state.courseList.filter(
+    //     course =>
+    //       // console.log(course);
+    //       course !== courseToRemove
+    //   )
+    // });
 
     // }
   }
@@ -59,14 +72,17 @@ class HomeScreen extends Component {
     const content = courseRows.map((row, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
-        {row.map(courseName => (
+        
+        {row.map((course, index) => (
           <Col sm="4">
-            {/* {console.log(courseName)} */}
+            
 
             <CourseCard
-              key={course.id}
+              key={index*i}
               removeCourse={this.removeCourse.bind(this)}
-              course={course}
+              course={
+                {name: course, id: index*i}
+              }
             />
           </Col>
         ))}
@@ -77,20 +93,28 @@ class HomeScreen extends Component {
   }
 
   render() {
-    console.log(this.props.auth);
-
-    if (!this.props.auth.uid) {
+    
+    if (!this.props.auth) {
       return <Redirect to="/" />;
     }
+    
+    const {courses} = this.props.profile
+    
+    if (courses == undefined)
+      return <div />
+
+    console.log(courses, "--------");
+
     return (
       // <Container fluid>
 
       <div className="container center">
-        {this.renderCourseCards(this.state.courseList, 3)}
+        {this.renderCourseCards(courses, 3)}
+        
       </div>
-      // {/* </Container> */}
     );
   }
+
 }
 
 const mapStateToProps = state => {
@@ -100,7 +124,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(HomeScreen);
+export default connect( mapStateToProps,actions)(HomeScreen);

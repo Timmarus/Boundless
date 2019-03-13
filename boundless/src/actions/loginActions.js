@@ -45,7 +45,6 @@ export function signUpUser(userInfo) {
                 program: userInfo.program,
                 courses: userInfo.courses,
 
-
             })
         }).then(() => {
            dispatch({ type: types.VALID_SIGNUP }) 
