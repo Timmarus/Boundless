@@ -5,6 +5,7 @@ import SettingsForm from "./SettingsForm";
 
 export class Settings extends Component {
 
+  
   render() {
 
     if (!this.props.auth.uid) {

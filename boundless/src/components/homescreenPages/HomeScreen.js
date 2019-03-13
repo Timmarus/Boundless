@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
-import { Input } from "semantic-ui-react";
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -80,8 +79,6 @@ class HomeScreen extends Component {
     return <div>{content}</div>;
   }
 
-  
-
   render() {
     console.log(this.props.auth);
 
@@ -89,9 +86,6 @@ class HomeScreen extends Component {
 
     const courses = this.props.profile.courses;
 
-    console.log(this.props.auth);
-    console.log(this.props.courses);
-    
     if (!this.props.auth.uid) {
       return <Redirect to="/" />;
     }
@@ -109,8 +103,7 @@ class HomeScreen extends Component {
 const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
-    profile: state.firebase.profile,
-    courses: state.settingsReducer.courses
+    profile: state.firebase.profile
   };
 };
 

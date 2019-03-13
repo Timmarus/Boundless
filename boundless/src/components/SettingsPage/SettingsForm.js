@@ -37,15 +37,12 @@ const programs = [
   {value: "Anthropology", label: "Anthropology"}
 ];
 
-var drop = [
-  {value: "Drop this course", label: "Drop this course"}
-]
-
-
 export class SettingsForm extends Component {
 
   constructor(props) {
+
     super(props);
+
     // get current values and prepopulate fields
     const {
       firstName,
@@ -82,13 +79,9 @@ export class SettingsForm extends Component {
 
     const selected = option.value;
     this.setState({ [type]: selected });
-  };
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.updateSettings(this.state);
-    this.props.coursesUpdate(this.state.mycourses);
-    console.log("----------------");
+
     console.log(this.state);
+
   }
 
   onSubmit(e) {
@@ -133,44 +126,6 @@ export class SettingsForm extends Component {
     updatedCourses.splice(indexToRemove,1);
     this.setState({courses: updatedCourses});
     console.log(this.state);
-  };
-  createValue = (course) => {
-    return 
-  }
-
-  createCompoennet = (courseID) => {
-    console.log(courseID);
-    
-    return (
-      <div>
-        <text>{courseID}</text>
-        <button>drop</button>
-        {/* <button
-        onClick=
-        >drop</button> */}
-      </div>
-    )
-  }
-
-  handleAdd = (e) => {
-    //console.log(e);
-    var newArray = this.state.mycourses; 
-    if (newArray.indexOf(e.value) == -1) {
-      newArray.push(e.value);   
-      this.setState({mycourses: newArray});
-      console.log(this.state);
-    }   
-   }; 
-
-  handleDelete = (e) => {
-    console.log(e);
-    var newArray = this.state.mycourses;
-    if (newArray.indexOf(e.value) != -1) {
-      newArray.pop(newArray.indexOf(e.value));
-      this.setState({mycourses: newArray});
-      console.log(this.state);
-    }
-
   }
 
   render() {
@@ -184,10 +139,8 @@ export class SettingsForm extends Component {
           <h5 className="grey-text text-darken-3">Settings</h5>
         </div>
         <div className="container col s8 left">
-        
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
-            
               <label className="control-label">First Name</label>
               <input
                 onChange={this.onChange}
@@ -210,17 +163,17 @@ export class SettingsForm extends Component {
             </div>
 
             <div className="form-group">
-              <label className="control-label">University</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.university}
-                type="text"
-                name="university"
-                className="form-control"
-              />
-            </div>
+            <label className="control-label">University</label>
+            <input
+              onChange={this.onChange}
+              value={this.state.university}
+              type="text"
+              name="university"
+              className="form-control"
+            />
+          </div>
 
-            
+          
           <div className="form-group">
             <label className="control-label">Year</label>
             <Select
@@ -272,27 +225,20 @@ export class SettingsForm extends Component {
           </form>
         </div>
         <div className="container col s4 right">
-        <Select
-          placeholder="Add a new course:"
-          value="Add a new course:"
-          onChange={this.handleAdd}
-          options={courses}
+          <Select
+            placeholder="Add a course:"
+            value={this.state.type}
+            onChange={this.handleAddCourse}
+            options={courses}
           /> 
-          <h1>Your courses: 
-            { this.state.mycourses.map((item) => (
-              this.createCompoennet(item)
-            ))}
-          {/* { this.state.mycourses.map((item) => (
-            <div>
-              <Select
-                placeholder={item}
-                value={item}
-                onChange={this.handleDelete}
-                options={drop}
-                /> 
-            </div>
-          ))} */}
-          </h1>
+          <h3>Your courses:</h3>
+
+          { this.state.courses.map((option) => (
+                <button onClick={this.handleDelete.bind(this, option)}>
+                  {option}
+                </button>
+            )) }
+
         </div>
       </div>
     );
