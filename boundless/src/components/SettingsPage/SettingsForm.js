@@ -51,9 +51,9 @@ export class SettingsForm extends Component {
       program,
       courses
     } = this.props.profile;
-
+    
     console.log("profile: " + JSON.stringify(this.props.profile));
-
+    
     this.state = {
       firstName: firstName,
       lastName: lastName,
@@ -100,8 +100,7 @@ export class SettingsForm extends Component {
 
     this.props.updateProfile(updatedInfo);
 
-    // console.log("---------------- updateSettings()");
-    // console.log(this.state);
+
   }
 
   handleAddCourse = option => {
@@ -128,9 +127,6 @@ export class SettingsForm extends Component {
       <div className="row">
         <div className="container center">
           <h5 className="grey-text text-darken-3">Settings</h5>
-        </div>
-        <div className="container col s8 left">
-          <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="control-label">First Name</label>
               <input
