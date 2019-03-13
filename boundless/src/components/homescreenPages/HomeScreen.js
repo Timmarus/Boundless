@@ -9,6 +9,7 @@ class HomeScreen extends Component {
   constructor(props) {
     super(props);
 
+
     const {
       firstName,
       lastName,
@@ -48,6 +49,7 @@ class HomeScreen extends Component {
 
   renderCourseCards(courseList, numPerRow) {
     console.log("courseList: " + JSON.stringify(courseList));
+
     // array of N elements, where N is the number of rows needed
     const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
     // chunk the products into the array of rows
@@ -58,14 +60,15 @@ class HomeScreen extends Component {
     const content = courseRows.map((row, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
+
         {row.map(courseName => (
           <Col sm="4">
             {/* {console.log(courseName)} */}
 
             <CourseCard
-              key={courseName}
+              key={course.id}
               removeCourse={this.removeCourse.bind(this)}
-              courseName={courseName}
+              course={course}
             />
           </Col>
         ))}
@@ -78,10 +81,6 @@ class HomeScreen extends Component {
   render() {
     console.log(this.props.auth);
 
-    console.log(this.props.profile);
-
-    const courses = this.props.profile.courses;
-
     if (!this.props.auth.uid) {
       return <Redirect to="/" />;
     }
@@ -89,7 +88,7 @@ class HomeScreen extends Component {
       // <Container fluid>
 
       <div className="container center">
-        {this.renderCourseCards(this.state.courseList || [], 3)}
+        {this.renderCourseCards(this.state.courseList, 3)}
       </div>
       // {/* </Container> */}
     );
