@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
+import * as actions from '../../actions/settingsActions'
 
 //comment
 class HomeScreen extends Component {
@@ -30,19 +31,31 @@ class HomeScreen extends Component {
   }
 
   removeCourse(courseToRemove) {
-    console.log("courseToRemove: " + courseToRemove);
-    console.log(this.state.courseList);
-    console.log(this.state.courseList);
-    console.log(this.state.courseList);
+    
+    // updateProfile
+    const { courses } = this.props.profile
+    var newCourses = courses
+    var cc = newCourses.filter(function (val, index,arr){
+      return val !== courseToRemove
+    })
 
-    // if(this.state.courseList) {
-    this.setState({
-      courseList: this.state.courseList.filter(
-        course =>
-          // console.log(course);
-          course !== courseToRemove
-      )
-    });
+    console.log(cc);
+    var newDetails = this.props.profile
+    newDetails.courses = cc 
+    console.log(newDetails);
+
+    this.props.updateProfile(newDetails)
+       
+    // console.log("courseToRemove: " + courseToRemove);
+    
+    // // if(this.state.courseList) {
+    // this.setState({
+    //   courseList: this.state.courseList.filter(
+    //     course =>
+    //       // console.log(course);
+    //       course !== courseToRemove
+    //   )
+    // });
 
     // }
   }
@@ -99,9 +112,7 @@ class HomeScreen extends Component {
       <div className="container center">
         {this.renderCourseCards(courses, 3)}
         
-         {/* <text>Some Text</text> */}
       </div>
-      // {/* </Container> */}
     );
   }
 
@@ -114,4 +125,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect( mapStateToProps,null)(HomeScreen);
+export default connect( mapStateToProps,actions)(HomeScreen);
