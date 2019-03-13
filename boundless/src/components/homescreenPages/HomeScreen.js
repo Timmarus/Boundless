@@ -3,20 +3,21 @@ import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
 import { connect } from 'react-redux';
 import { Container, Row, Col } from "reactstrap";
+import { Input } from "semantic-ui-react";
 
 class HomeScreen extends Component {
   constructor() {
     super();
 
     // fill with real data later
-    const sampleCourseList = [];
+    const sampleCourseList = ['CSC148', 'CSC108', 'CSC236', 'CSC209'];
 
-        for(var i = 1; i < 7; i++) {
-          sampleCourseList.push({id: i, name: "Course " + i});
+        for(var i in sampleCourseList) {
+          sampleCourseList.push({id: sampleCourseList[i], name: "Course " + i});
         }
 
     this.state = {
-      courseList: sampleCourseList
+      courseList: sampleCourseList,
     };
   }
 
@@ -52,10 +53,13 @@ class HomeScreen extends Component {
     return <div>{content}</div>;
   }
 
+  
+
   render() {
 
 
     console.log(this.props.auth);
+    console.log(this.props.courses);
     
     if (!this.props.auth.uid) {
       return (
@@ -66,6 +70,8 @@ class HomeScreen extends Component {
       // <Container fluid>
 
       <div className="container center" >
+        
+        
         {this.renderCourseCards(this.state.courseList, 3)}
 
       </div>
@@ -78,7 +84,8 @@ class HomeScreen extends Component {
 const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
-    profile: state.firebase.profile
+    profile: state.firebase.profile,
+    courses: state.settingsReducer.courses
   };
 };
 

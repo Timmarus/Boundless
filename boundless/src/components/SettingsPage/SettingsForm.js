@@ -16,6 +16,10 @@ const courses = [
   {value: "CSC263", label: "CSC263"}
 ];
 
+var drop = [
+  {value: "Drop this course", label: "Drop this course"}
+]
+
 export class SettingsForm extends Component {
 
   constructor(props) {
@@ -28,8 +32,6 @@ export class SettingsForm extends Component {
       University: "",
       Program: "",
       mycourses: []
-
-      //done: false
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -43,34 +45,44 @@ export class SettingsForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.updateSettings(this.state);
+    this.props.coursesUpdate(this.state.mycourses)
     console.log("----------------");
-
     console.log(this.state);
+  }
 
-    /*
-    if (this.state.password == this.state.passwordConfirmation) {
-      this.props.signUpUser(this.state);
-    }
+  createValue = (course) => {
+    return 
+  }
+
+  createCompoennet = (courseID) => {
+    console.log(courseID);
     
-        if (this.state.done) {
-          return <Redirect to="/" />;
-        }
-        */
+    return (
+      <div>
+        <text>{courseID}</text>
+        <button>drop</button>
+      </div>
+    )
   }
 
   handleAdd = (e) => {
-    console.log(e);
-    var newArray = this.state.mycourses;    
-    newArray.push(e.value);   
-    this.setState({mycourses: newArray});
-    console.log(this.state);
+    //console.log(e);
+    var newArray = this.state.mycourses; 
+    if (newArray.indexOf(e.value) == -1) {
+      newArray.push(e.value);   
+      this.setState({mycourses: newArray});
+      console.log(this.state);
+    }   
    }; 
 
   handleDelete = (e) => {
+    console.log(e);
     var newArray = this.state.mycourses;
-    newArray.pop(newArray.indexOf(e.value));
-    this.setState({mycourses: newArray});
-    console.log(this.state);
+    if (newArray.indexOf(e.value) != -1) {
+      newArray.pop(newArray.indexOf(e.value));
+      this.setState({mycourses: newArray});
+      console.log(this.state);
+    }
   }
 
   render() {
@@ -80,8 +92,10 @@ export class SettingsForm extends Component {
           <h5 className="grey-text text-darken-3">Settings</h5>
         </div>
         <div className="container col s8 left">
+        
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
+            
               <label className="control-label">First Name</label>
               <input
                 onChange={this.onChange}
@@ -159,14 +173,25 @@ export class SettingsForm extends Component {
         <div className="container col s4 right">
         <Select
           placeholder="Add a new course:"
-          value={this.state.type}
+          value="Add a new course:"
           onChange={this.handleAdd}
           options={courses}
           /> 
-          <h3>Your courses: 
-          { this.state.mycourses.map((item) => (
-            <button>{item}</button>
-          ))}</h3>
+          <h1>Your courses: 
+            { this.state.mycourses.map((item) => (
+              this.createCompoennet(item)
+            ))}
+          {/* { this.state.mycourses.map((item) => (
+            <div>
+              <Select
+                placeholder={item}
+                value={item}
+                onChange={this.handleDelete}
+                options={drop}
+                /> 
+            </div>
+          ))} */}
+          </h1>
         </div>
       </div>
     );
