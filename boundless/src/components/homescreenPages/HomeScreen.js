@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 
 class HomeScreen extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     //not hardcoded courses
     const courses = [
       { id: 0, name: "CSC108" },
@@ -18,6 +18,18 @@ class HomeScreen extends Component {
       { id: 6, name: "CSC263" }
     ];
 
+    // const {
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   year,
+    //   university,
+    //   program,
+    //   courses
+    // } = this.props.profile;
+
+
+    // console.log('courses: ' + courses)
     this.state = {
       courseList: courses
     };
