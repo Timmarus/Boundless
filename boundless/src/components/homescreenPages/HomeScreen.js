@@ -9,6 +9,7 @@ class HomeScreen extends Component {
   constructor(props) {
     super(props);
 
+
     const {
       firstName,
       lastName,
@@ -63,9 +64,9 @@ class HomeScreen extends Component {
             {/* {console.log(courseName)} */}
 
             <CourseCard
-              key={courseName}
+              key={course.id}
               removeCourse={this.removeCourse.bind(this)}
-              courseName={courseName}
+              course={course}
             />
           </Col>
         ))}
@@ -78,10 +79,6 @@ class HomeScreen extends Component {
   render() {
     console.log(this.props.auth);
 
-    console.log(this.props.profile);
-
-    const courses = this.props.profile.courses;
-
     if (!this.props.auth.uid) {
       return <Redirect to="/" />;
     }
@@ -89,7 +86,7 @@ class HomeScreen extends Component {
       // <Container fluid>
 
       <div className="container center">
-        {this.renderCourseCards(this.state.courseList || [], 3)}
+        {this.renderCourseCards(this.state.courseList, 3)}
       </div>
       // {/* </Container> */}
     );
