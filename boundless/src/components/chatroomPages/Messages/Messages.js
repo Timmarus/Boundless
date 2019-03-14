@@ -1,12 +1,58 @@
 import React from 'react';
 
+import { connect } from 'react-redux'
+import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux'
+// import firebase from 'firebase/app'
+import  'firebase/database'
 import {Segment, Comment} from 'semantic-ui-react';
 
 import ChatHeader from './ChatHeader'
 import ChatForm from './ChatForm'
+import Message from './Message'
+
+
+
+//  * Scrum
+//  *  Given some senario what will happen
+//  * Software design
+//  * Why a userstory is good or bad
+//  * crc design
+//  * design pattern
+//  *  no drawing
+//  * enterprise patterns
+//  * solid principles
+//  * design principles
+//  * 
+
 
 class Messages extends React.Component {
+
+    makeAMessage (msg, index){
+        return(
+            <Message msg={msg} key={index} />
+        )
+    }
+
     render () {
+
+        const {msg} = this.props
+        
+
+        if (!msg) {
+            return <div />
+        }
+        // console.log(msg[0]);
+        console.log(msg[0].messages);
+        const msgList = msg[0].messages
+        console.log("---------",msgList, "-------");
+        
+        const {user} = this.props
+    
+        
+        
+    //    const messages = map[0].message
+       
         return (
             <div style={{width: "80%", background: "#eeee",}}> 
             
@@ -16,13 +62,20 @@ class Messages extends React.Component {
   
                      <Segment style={{display: "flex", height: "75%", margin: 5}} >
                          <Comment.Group className="messages">
-                        
-                             Messages Here
+                            
+                            {msgList.map((item, i) => (
+                                <Message 
+                                    user={item.user}
+                                    msg={item.msg}
+                                    timeStamp={item.postedAt}
+                                    key={i} />
+                                ))}
+                            
                          </Comment.Group>
 
                      </Segment>
 
-                    <ChatForm/>
+                    <ChatForm user={user}/>
 
 
                 </React.Fragment>
@@ -34,4 +87,23 @@ class Messages extends React.Component {
     }
 }
 
-export default Messages;
+const mapStateToProps = (state) => {
+    return {
+
+        msg: state.firestore.ordered.messages,
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
+
+    }
+    
+}
+
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        `messages/room1`
+        
+    ])
+)(Messages)
+
+// export default connect(mapStateToProps, null)(Messages)
