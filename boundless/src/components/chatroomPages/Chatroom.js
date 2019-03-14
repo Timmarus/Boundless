@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import { Grid } from 'semantic-ui-react';
+import {connect } from 'react-redux'
 
 import Messages from './Messages/Messages';
-
 import MetaPanel from './MetaPanel/MetaPanel';
-
 import ColorPanel from './ColorPanel/ColorPanel';
 
-import { Grid } from 'semantic-ui-react';
 
 
 export class Chatroom extends Component {
@@ -41,10 +40,16 @@ export class Chatroom extends Component {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
     render() {
+        if (!this.props.profile){
+            return <div />
+        }
+        console.log(this.props.profile);
+        const { firstName }  = this.props.profile
+
         return (
         <div className="center" style={{height: this.state.height, display: "flex", flexDirection: "row", background:"grey"}}>
 
-            <Messages roomID={this.state.roomID}/>
+            <Messages user={firstName} roomID={this.state.roomID}/>
 
             <MetaPanel/>
         </div>
@@ -52,4 +57,12 @@ export class Chatroom extends Component {
     }
 }
 
-export default Chatroom;
+const mapStateToProps = state => {
+    return {
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
+    }
+}
+
+export default connect(mapStateToProps, null)(Chatroom)
+// export default Chatroom;

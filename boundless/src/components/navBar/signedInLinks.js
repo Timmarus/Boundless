@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/loginActions";
 
 const SignedInLinks = (props) => {
-    console.log("IN the signed in links");
-    
 
   return (
     

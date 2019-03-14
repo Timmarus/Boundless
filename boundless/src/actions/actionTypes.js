@@ -8,3 +8,4 @@ export const UPDATE_SETTINGS = "update_settings";
 
 export const VALID_PROFILE_UPDATE = "valid_profile_update";
 export const INVALID_PROFILE_UPDATE = "invalid_profile_update";
+export const NEW_MESSAGE = 'new_message';
