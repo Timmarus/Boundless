@@ -1,7 +1,7 @@
 # SCRUM Retrospective Meeting 3 - Boundless
 
 #### March 14th, 2019 
-#### 11:00 PM - 1:00 PM
+#### 11:00 AM - 1:00 PM
 ---
 ### Participants:
 ***
@@ -30,7 +30,7 @@ Boundless was able to fulfill the estimated ‘task-completion’ goal for sprin
 Throughout this retroactive meeting, Boundless was able to analyze why it had lost its momentum during the previous sprint and 
 how it was able to recover and continue the grind with full force. All members attended this meeting.
 
-Sprint 2 caused major revisions to the work dynamic of Boundless however, the beating only made the team stronger, resulting in a
+Sprint 2 caused major revisions to the work dynamic of Boundless however, the struggles faced by boundless only made us stronger, resulting in a
 successful sprint 3. All the tasks labelled in both the sprint3 and product backlog markdown files were completed without any
 drastic hurdles or complications. The team was able to orchestrate a focused atmosphere that resulted in a successful sprint.
 
