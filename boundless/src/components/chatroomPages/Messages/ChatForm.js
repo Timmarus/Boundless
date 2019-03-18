@@ -17,6 +17,9 @@ class ChatForm extends React.Component {
     }
 
     handleOnSubmit = (e) => {
+        if (this.state.message == "") {
+            return;
+        }
         const msg = {
             message: this.state.message,
             user: this.props.user
@@ -26,6 +29,11 @@ class ChatForm extends React.Component {
             message: ""
         })
     }
+onKeyPress = (e) => {
+    if(e.which === 13) {
+      this.handleOnSubmit();
+    }
+  }
 
     render() {
         // console.log(this.props.profile);
@@ -44,6 +52,7 @@ class ChatForm extends React.Component {
                     labelPosition="left"
                     onChange={this.handleOnChange}
                     placeholder="Enter your message"
+                    onKeyPress={this.onKeyPress}
                 />
 
 

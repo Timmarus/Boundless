@@ -34,6 +34,21 @@ class Messages extends React.Component {
         )
     }
 
+componentDidMount() {
+    this.scrollToBottom();
+}
+
+componentDidUpdate() {
+    this.scrollToBottom();
+}
+
+scrollToBottom() {
+    if (this.messagesEnd) {
+    this.messagesEnd.current.scrollIntoView({ behavior: 'smooth' });
+}
+  }
+
+
     render () {
 
         const {msg} = this.props
@@ -60,7 +75,7 @@ class Messages extends React.Component {
 
                     <ChatHeader roomID={this.props.roomName}/>
   
-                     <Segment style={{display: "flex", height: "75%", margin: 5}} >
+                     <Segment style={{display: "flex", height: "75%", overflow: "scroll", margin: 5}} >
                          <Comment.Group className="messages">
                             
                             {msgList.map((item, i) => (
@@ -70,9 +85,8 @@ class Messages extends React.Component {
                                     timeStamp={item.postedAt}
                                     key={i} />
                                 ))}
-                            
                          </Comment.Group>
-
+                        <div ref={this.messagesEnd} />
                      </Segment>
 
                     <ChatForm user={user}/>

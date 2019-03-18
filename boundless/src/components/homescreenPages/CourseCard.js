@@ -9,6 +9,7 @@ import {
   CardBody,
   Button
 } from "reactstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Link } from "react-router-dom";
 
@@ -40,24 +41,8 @@ class CourseCard extends Component {
               alt="Card image cap"
             />
           </Link>
-          <CardBody>
-			<CardText>
-			<div className="row">
-			<div className="col-md-5">
-			<Link to={{pathname: "/chatroom", state: { roomID: id, roomName: name } }}>
-			<Button color="success">
-				Enter
-			</Button>
-			</Link>
-			</div>
-			<div className="col-md-5 offset-md-2">
-            <Button color="danger" onClick={() => this.props.removeCourse(name)}>
-              Leave
-            </Button>
-			</div>
-			</div>
-			</CardText>
-          </CardBody>
+          <Link style={{ position:'absolute', top:8, right:16}} to={{pathname: ""}} onClick={() => this.props.removeCourse(name)}>
+          <FontAwesomeIcon color="red" icon="trash" /></Link>
         </Card>
       </div>
     );
