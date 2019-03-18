@@ -10,11 +10,11 @@ class MetaPanel extends React.Component {
 
 
                 
-            <div style={{display: "flex", flexDirection: "column", width: "20%"}}>
+            <div style={{display: "flex", flexDirection: "column", width: "100%"}}>
 
                 
 
-<               Header fluid as="h2" floated="left" style={{display: "flex", flexDirection: "column", padding: "0.5em"}}>
+<               Header fluid as="h2" floated="left" style={{display: "flex", flexDirection: "column"}}>
                 {/* <span> */}
 
                     {/* Course Name here */}

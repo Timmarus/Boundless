@@ -4,6 +4,9 @@ import CourseCard from "./CourseCard";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import * as actions from '../../actions/settingsActions'
+import Messages from '../chatroomPages/Messages/Messages';
+import MetaPanel from '../chatroomPages/MetaPanel/MetaPanel';
+import ColorPanel from '../chatroomPages/ColorPanel/ColorPanel';
 
 //comment
 class HomeScreen extends Component {
@@ -26,8 +29,12 @@ class HomeScreen extends Component {
     this.state = {
       courseList: null
     };
-
+	this.state.curChat = "CSC108"
     this.removeCourse = this.removeCourse.bind(this);
+  }
+  
+  setChat(roomID) {
+	  this.state.curChat = roomID;
   }
 
   removeCourse(courseToRemove) {
@@ -72,20 +79,21 @@ class HomeScreen extends Component {
     const content = courseRows.map((row, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
-        
+        <ul className="list-group">
         {row.map((course, index) => (
-          <Col sm="4">
             
-
+			<li className="list-group-item" style={{ display: "inline-block", float: "left" }}>
             <CourseCard
               key={index*i}
               removeCourse={this.removeCourse.bind(this)}
+		setChat={this.setChat.bind(this)}
               course={
                 {name: course, id: index*i}
               }
             />
-          </Col>
+			</li>
         ))}
+		</ul>
       </div>
     ));
 
@@ -97,7 +105,7 @@ class HomeScreen extends Component {
     if (!this.props.auth) {
       return <Redirect to="/" />;
     }
-    
+	console.log(this.props);
     const {courses} = this.props.profile
     
     if (courses == undefined)
@@ -107,10 +115,19 @@ class HomeScreen extends Component {
 
     return (
       // <Container fluid>
-
-      <div className="container center">
-        {this.renderCourseCards(courses, 3)}
-        
+	
+      <div className="container-fluid">
+		<div className="row">
+		<div className="col-md-2">
+		{this.renderCourseCards(courses, 3)}
+		</div>
+		<div className="col-md-6">
+        <Messages key={this.state.curChat} user={this.props.firstName} roomID={this.state.roomID} roomName={this.state.roomName}/>
+		</div>
+		<div className="col-md-2" style={{width: "100%"}}>
+        <MetaPanel/>
+		</div>
+		</div>
       </div>
     );
   }

@@ -69,13 +69,13 @@ scrollToBottom() {
     //    const messages = map[0].message
        
         return (
-            <div style={{width: "80%", background: "#eeee",}}> 
+            <div style={{height: "60%", background: "#eeee",}}> 
             
                 <React.Fragment>
 
                     <ChatHeader roomID={this.props.roomName}/>
   
-                     <Segment style={{display: "flex", height: "75%", overflow: "scroll", margin: 5}} >
+                     <Segment style={{display: "flex", height: "75%", overflow: "scroll"}} >
                          <Comment.Group className="messages">
                             
                             {msgList.map((item, i) => (

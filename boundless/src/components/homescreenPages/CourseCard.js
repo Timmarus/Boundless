@@ -35,7 +35,7 @@ class CourseCard extends Component {
       id +
       "&w=318&h=180";
     return (
-      <div style={{ margin: 25 }}>
+      <div style={{ }}>
         <Card>
           {/* // pass the room ID that we clicked on to the chatroom route */}
           <Link to={{ pathname: "/chatroom", state: { roomID: id, roomName: name } }}>
