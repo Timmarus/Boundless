@@ -44,7 +44,7 @@ export class SettingsForm extends Component {
     super(props);
 
     // get current values and prepopulate fields
-    const {
+    var {
       firstName,
       lastName,
       email,
@@ -66,6 +66,7 @@ export class SettingsForm extends Component {
       program: program,
       courses: courses
     };
+    console.log(this.state);
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 

@@ -13,6 +13,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Link } from "react-router-dom";
 
+var colors = [
+  "ff0000",
+  "00ff00",
+  "0000ff",
+  "ffffff"
+]
+
 class CourseCard extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +44,7 @@ class CourseCard extends Component {
               width="100%"
               src={ "https://placeholdit.imgix.net/~text?txtsize=33&txt=" +
               name +
-              "&w=318&h=180"}
+              "&w=318&h=180&bg=ffffff"}
               alt="Card image cap"
             />
           </Link>

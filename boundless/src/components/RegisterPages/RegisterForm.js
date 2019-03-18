@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/loginActions";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from "react-router-dom";
+import { Button } from "reactstrap";
 
 import Select from 'react-select';
 
@@ -87,7 +90,7 @@ class RegisterForm extends Component {
       if (!this.state.email.includes("@")) {
         alert("Incorrect Email.");
       } else {
-        alert("Sucess");
+        alert("Success");
         this.props.signUpUser(this.state);
       }
     }
@@ -117,11 +120,10 @@ class RegisterForm extends Component {
     // console.log(this.props.auth);
     if (this.props.auth.uid) return <Redirect to="/" />;
     return (
-      <div className="row">
         <div className="container center">
           <h5 className="grey-text text-darken-3">Register</h5>
-        </div>
-        <div className="container col s8 left">
+        <div className="row">
+        <div className="col-md-6">
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label className="control-label">First Name</label>
@@ -244,23 +246,31 @@ class RegisterForm extends Component {
           </form>
         </div>
 
-        <div className="container col s4 right">
+        <div className="col-md-6">
           <Select
             placeholder="Add a course:"
             value={this.state.type}
             onChange={this.handleAddCourse}
             options={courses}
           /> 
-          <h3>Your courses:</h3>
-
-          { this.state.courses.map((option) => (
-                <button onClick={this.handleDelete.bind(this, option)}>
-                  {option}
-                </button>
-            )) }
-
-        </div>
-
+          <table>
+          {this.state.courses.map(option => (
+            <tr>
+            <td>
+            <div className="btn-group">
+            <button className="btn btn-success">
+            {option}
+            </button>
+              <button className="btn btn-danger"onClick={this.handleDelete.bind(this, option)}>
+              <FontAwesomeIcon icon="trash" />
+              </button>
+            </div>
+            </td>
+            </tr>
+          ))}
+          </table>
+            </div>
+      </div>
       </div>
     );
   }
