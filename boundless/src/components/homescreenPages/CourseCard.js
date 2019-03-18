@@ -6,6 +6,7 @@ import {
   CardBlock,
   CardTitle,
   CardSubtitle,
+  CardBody,
   Button
 } from "reactstrap";
 
@@ -39,12 +40,24 @@ class CourseCard extends Component {
               alt="Card image cap"
             />
           </Link>
-          <CardBlock>
-            <CardTitle>{"id: " + name} </CardTitle>
+          <CardBody>
+			<CardText>
+			<div className="row">
+			<div className="col-md-5">
+			<Link to={{pathname: "/chatroom", state: { roomID: id, roomName: name } }}>
+			<Button color="success">
+				Enter
+			</Button>
+			</Link>
+			</div>
+			<div className="col-md-5 offset-md-2">
             <Button color="danger" onClick={() => this.props.removeCourse(name)}>
-              Leave Chat
+              Leave
             </Button>
-          </CardBlock>
+			</div>
+			</div>
+			</CardText>
+          </CardBody>
         </Card>
       </div>
     );

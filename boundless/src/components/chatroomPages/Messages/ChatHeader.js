@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Header, Segment, Icon, Input } from 'semantic-ui-react'
 
-
 class ChatHeader extends React.Component {
     render() {
         return (

@@ -12,6 +12,8 @@ import dbConfig from './config/dbConfig';
 
 import 'semantic-ui-css/semantic.min.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 //This is where we will register the store i.e model
 
 const store = createStore(
