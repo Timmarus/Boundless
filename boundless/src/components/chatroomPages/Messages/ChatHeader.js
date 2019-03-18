@@ -5,7 +5,6 @@ import { Header, Segment, Icon, Input } from 'semantic-ui-react'
 
 class ChatHeader extends React.Component {
     render() {
-
         return (
             
             <Segment clearing style={{background: "#eeee", display: "flex", flexDirection: "row", justifyContent: 'space-between', alignItems: "center"}}>
@@ -15,7 +14,7 @@ class ChatHeader extends React.Component {
                     {/* <span> */}
 
                         Course ID: {this.props.roomID}
-
+					
                     {/* </span> */}
 
                     

@@ -18,7 +18,7 @@ export class Chatroom extends Component {
 
         this.state = {
             roomID: passedState.roomID,
-
+			roomName: passedState.roomName,
             width: 0,
             height: 0,
         }
@@ -45,11 +45,10 @@ export class Chatroom extends Component {
         }
         console.log(this.props.profile);
         const { firstName }  = this.props.profile
-
         return (
         <div className="center" style={{height: this.state.height, display: "flex", flexDirection: "row", background:"grey"}}>
 
-            <Messages user={firstName} roomID={this.state.roomID}/>
+            <Messages user={firstName} roomID={this.state.roomID} roomName={this.state.roomName}/>
 
             <MetaPanel/>
         </div>

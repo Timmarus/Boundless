@@ -37,7 +37,7 @@ class Messages extends React.Component {
     render () {
 
         const {msg} = this.props
-        
+        console.log(this.props);
 
         if (!msg) {
             return <div />
@@ -58,7 +58,7 @@ class Messages extends React.Component {
             
                 <React.Fragment>
 
-                    <ChatHeader roomID={this.props.roomID}/>
+                    <ChatHeader roomID={this.props.roomName}/>
   
                      <Segment style={{display: "flex", height: "75%", margin: 5}} >
                          <Comment.Group className="messages">
