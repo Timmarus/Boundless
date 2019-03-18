@@ -10,6 +10,11 @@ import ColorPanel from '../chatroomPages/ColorPanel/ColorPanel';
 
 //comment
 class HomeScreen extends Component {
+    state = {
+      courseList: null,
+      curChat: "room1"
+    };
+
   constructor(props) {
     super(props);
 
@@ -26,15 +31,14 @@ class HomeScreen extends Component {
 
     // console.log("profile: " + JSON.stringify(this.props.profile));
 
-    this.state = {
-      courseList: null
-    };
-	this.state.curChat = "CSC108"
     this.removeCourse = this.removeCourse.bind(this);
   }
   
   setChat(roomID) {
-	  this.state.curChat = roomID;
+	  this.setState({curChat: roomID}, function() {
+      console.log("Switching to", this.state.curChat);
+    });
+    
   }
 
   removeCourse(courseToRemove) {
@@ -86,7 +90,7 @@ class HomeScreen extends Component {
             <CourseCard
               key={index*i}
               removeCourse={this.removeCourse.bind(this)}
-		setChat={this.setChat.bind(this)}
+			  setChat={this.setChat.bind(this)}
               course={
                 {name: course, id: index*i}
               }
@@ -97,7 +101,15 @@ class HomeScreen extends Component {
       </div>
     ));
 
-    return <div>{content}</div>;
+    return <div><ul className="list-group"><li className="list-group-item" style={{ display: "inline-block", float: "left" }}>
+            <CourseCard
+              key="room1"
+              setChat={this.setChat.bind(this)}
+              course={
+                {name: "room1", id: "room1"}
+              }
+            /></li></ul>
+{content}</div>;
   }
 
   render() {
@@ -106,12 +118,13 @@ class HomeScreen extends Component {
       return <Redirect to="/" />;
     }
 	console.log(this.props);
+  console.log("State", this.state);
     const {courses} = this.props.profile
     
     if (courses == undefined)
       return <div />
 
-    console.log(courses, "--------");
+    console.log(this.props, "--------");
 
     return (
       // <Container fluid>
@@ -122,7 +135,7 @@ class HomeScreen extends Component {
 		{this.renderCourseCards(courses, 3)}
 		</div>
 		<div className="col-md-6">
-        <Messages key={this.state.curChat} user={this.props.firstName} roomID={this.state.roomID} roomName={this.state.roomName}/>
+        <Messages key={this.state.curChat} user={this.props.profile} roomID={this.state.curChat} roomName={this.state.curChat}/>
 		</div>
 		<div className="col-md-2" style={{width: "100%"}}>
         <MetaPanel/>

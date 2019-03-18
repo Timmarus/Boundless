@@ -1,11 +1,11 @@
 import * as types from './actionTypes';
 
-export function newMessage (msg) {
+export function newMessage (roomName, msg) {
     return (dispatch, getState, { getFirebase, getFirestore }) => {
       //Base login process
         const db = getFirestore()
 
-        const msgs = db.collection('messages').doc('room1')
+        const msgs = db.collection('messages').doc(roomName)
         msgs.get().then(function(doc){
             var existing = doc.data()['messages']
             console.log({existing});

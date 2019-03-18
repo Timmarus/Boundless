@@ -38,7 +38,7 @@ class CourseCard extends Component {
       <div style={{ }}>
         <Card>
           {/* // pass the room ID that we clicked on to the chatroom route */}
-          <Link to={{ pathname: "/chatroom", state: { roomID: id, roomName: name } }}>
+		  <Link to="#">
             <CardImg
               top
               width="100%"
@@ -46,8 +46,9 @@ class CourseCard extends Component {
               name +
               "&w=318&h=180&bg=ffffff"}
               alt="Card image cap"
+			  onClick={() => this.props.setChat(name)}
             />
-          </Link>
+			</Link>
           <Link style={{ position:'absolute', top:8, right:16}} to={{pathname: ""}} onClick={() => this.props.removeCourse(name)}>
           <FontAwesomeIcon color="red" icon="trash" /></Link>
         </Card>

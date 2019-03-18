@@ -27,6 +27,10 @@ import Message from './Message'
 
 
 class Messages extends React.Component {
+	constructor(props) {
+		super(props);
+        console.log("Making messages");
+	}
 
     makeAMessage (msg, index){
         return(
@@ -50,16 +54,14 @@ scrollToBottom() {
 
 
     render () {
-
         const {msg} = this.props
         console.log(this.props);
 
         if (!msg) {
             return <div />
         }
-        // console.log(msg[0]);
-        console.log(msg[0].messages);
-        const msgList = msg[0].messages
+         console.log(msg);
+        const msgList = msg.find(x => x.id === this.props.roomName).messages;
         console.log("---------",msgList, "-------");
         
         const {user} = this.props
@@ -89,7 +91,7 @@ scrollToBottom() {
                         <div ref={this.messagesEnd} />
                      </Segment>
 
-                    <ChatForm user={user}/>
+                    <ChatForm roomName={this.props.roomName} user={this.props.user}/>
 
 
                 </React.Fragment>
@@ -115,8 +117,7 @@ const mapStateToProps = (state) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-        `messages/room1`
-        
+        `messages`
     ])
 )(Messages)
 

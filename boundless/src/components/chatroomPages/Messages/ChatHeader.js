@@ -4,6 +4,7 @@ import { Header, Segment, Icon, Input } from 'semantic-ui-react'
 
 class ChatHeader extends React.Component {
     render() {
+	console.log("RoomID", this.props.roomID)
         return (
             
             <Segment clearing style={{background: "#eeee", display: "flex", flexDirection: "row", justifyContent: 'space-between', alignItems: "center"}}>

@@ -22,9 +22,9 @@ class ChatForm extends React.Component {
         }
         const msg = {
             message: this.state.message,
-            user: this.props.user
+            user: this.props.user.firstName
         }
-        this.props.newMessage(msg)
+        this.props.newMessage(this.props.roomName, msg)
         this.setState({
             message: ""
         })
@@ -37,7 +37,7 @@ onKeyPress = (e) => {
 
     render() {
         // console.log(this.props.profile);
-        console.log(this.props.user,'-------');
+        console.log(this.props,'-------');
         
         return (
             
