@@ -131,7 +131,8 @@ export class SettingsForm extends Component {
 
     return (
         <div className="container-fluid">
-          <h5 className="grey-text text-darken-3">Settings</h5>
+          <div className="grey-text text-darken-3 card-title">Settings</div>
+          <hr />
           <div class="row">
         <div className="col-md-8">
           <form onSubmit={this.onSubmit}>
