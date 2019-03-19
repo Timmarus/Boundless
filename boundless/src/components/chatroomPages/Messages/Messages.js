@@ -78,7 +78,7 @@ scrollToBottom() {
 
                     <ChatHeader roomID={this.props.roomName}/>
   
-                     <Segment style={{display: "flex", height: "75%", overflowY: "scroll", overflowX: "hidden"}} >
+                     <Segment style={{display: "flex", height: "68%", overflowY: "scroll", overflowX: "hidden"}} >
                          <Comment.Group className="messages">
                             
                             {msgList.map((item, i) => (
@@ -117,7 +117,8 @@ const mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps),
-    firestoreConnect((props) => [ { collection: 'messages', doc: props.roomName }]),
+    firestoreConnect([
+        `messages`]),
 )(Messages)
 
 // export default connect(mapStateToProps, null)(Messages)

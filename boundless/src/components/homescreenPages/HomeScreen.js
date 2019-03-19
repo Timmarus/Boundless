@@ -132,12 +132,12 @@ class HomeScreen extends Component {
 
     return (
       // <Container fluid>
-      <div className="container-fluid" style={{height: "90%"}}>
+    <div className="container-fluid" style={{height: "90%"}}>
 		<div className="row" style={{height: "100%"}}>
-		<div className="col-md-2" style={{height: "100%", overflowY: "scroll", overflowX: "hidden"}} >
+		<div className="col-md-2" style={{height: "100%", overflowY: "scroll", overflowX: "hidden", paddingRight: "0px"}} >
 		{this.renderCourseCards(courses, 3)}
 		</div>
-		<div className="col-md-6" style={{height: "100%"}}>
+		<div className="col-md-6" style={{height: "100%", paddingLeft: "0px", scrollbarWidth: "none"}}>
         <Messages key={this.state.curChat} user={this.props.profile} roomID={this.state.curChat} roomName={this.state.curChat}/>
 		</div>
 		<div className="col-md-2" style={{width: "100%"}}>
