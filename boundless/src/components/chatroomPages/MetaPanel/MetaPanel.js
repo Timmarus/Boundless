@@ -28,13 +28,6 @@ class MetaPanel extends React.Component {
                 {/* </span> */}
                 </Header>
 
-                <Segment clearing style={{background: "	#696969", margin: 0, height: "100%"}}>
-
-                {/* Course Room Title Here */}
-
-
-                </Segment>
-
             </div>
 
         )

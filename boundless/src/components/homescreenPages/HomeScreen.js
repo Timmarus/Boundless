@@ -140,7 +140,7 @@ class HomeScreen extends Component {
 		<div className="col-md-8" style={{height: "100%", paddingLeft: "0px", scrollbarWidth: "none"}}>
         <Messages key={this.state.curChat} user={this.props.profile} roomID={this.state.curChat} roomName={this.state.curChat}/>
 		</div>
-		<div className="col-md-2" style={{width: "100%"}}>
+		<div className="card col-md-2" style={{width: "100%"}}>
         <MetaPanel/>
 		</div>
 		</div>
