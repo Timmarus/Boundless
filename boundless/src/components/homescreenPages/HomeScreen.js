@@ -85,7 +85,7 @@ class HomeScreen extends Component {
     );
     // map the rows as div.row
     const content = courseRows.map((row, i) => (
-      <div style={{ display: "flex", flexDirection: "row" }} key={i}>
+      <div style={{ display: "flex", flexDirection: "row"}} key={i}>
         {/* // map courses in the row as columns */}
         <ul className="list-group">
         {row.map((course, index) => (
@@ -105,7 +105,7 @@ class HomeScreen extends Component {
       </div>
     ));
 
-    return <div><ul className="list-group"><li className="list-group-item" style={{ display: "inline-block", float: "left" }}>
+    return <div style={{ transform: "scaleX(-1)" }}><ul className="list-group"><li className="list-group-item" style={{ display: "inline-block", float: "left" }}>
             <CourseCard
               key="room1"
               setChat={this.setChat.bind(this)}
@@ -134,10 +134,10 @@ class HomeScreen extends Component {
       // <Container fluid>
     <div className="container-fluid" style={{height: "90%"}}>
 		<div className="row" style={{height: "100%"}}>
-		<div className="col-md-2" style={{height: "100%", overflowY: "scroll", overflowX: "hidden", paddingRight: "0px"}} >
+		<div className="col-md-2" style={{height: "100%", overflowY: "scroll", overflowX: "hidden", paddingRight: "0px", paddingLeft: "0px", transform: "scaleX(-1)"}} >
 		{this.renderCourseCards(courses, 3)}
 		</div>
-		<div className="col-md-6" style={{height: "100%", paddingLeft: "0px", scrollbarWidth: "none"}}>
+		<div className="col-md-8" style={{height: "100%", paddingLeft: "0px", scrollbarWidth: "none"}}>
         <Messages key={this.state.curChat} user={this.props.profile} roomID={this.state.curChat} roomName={this.state.curChat}/>
 		</div>
 		<div className="col-md-2" style={{width: "100%"}}>
