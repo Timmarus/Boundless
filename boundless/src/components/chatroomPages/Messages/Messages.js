@@ -48,8 +48,8 @@ componentDidUpdate() {
 
 scrollToBottom() {
     if (this.messagesEnd) {
-    this.messagesEnd.current.scrollIntoView({ behavior: 'smooth' });
-}
+        this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
 
@@ -61,7 +61,6 @@ scrollToBottom() {
             return <div />
         }
          console.log(msg);
-        console.log(this.props.firestore);
         var msgList = null;
         msgList = msg.find(x => x.id === this.props.roomName).messages;
         console.log("---------",msgList, "-------");
@@ -89,8 +88,8 @@ scrollToBottom() {
                                     timeStamp={item.postedAt}
                                     key={i} />
                                 ))}
+                            <div ref={(el) => { this.messagesEnd = el; }} />
                          </Comment.Group>
-                        <div ref={this.messagesEnd} />
                      </Segment>
 
                     <ChatForm roomName={this.props.roomName} user={this.props.user}/>
@@ -120,7 +119,7 @@ export default compose(
     connect(mapStateToProps),
     firestoreConnect([
         `messages`
-    ])
+    ]),
 )(Messages)
 
 // export default connect(mapStateToProps, null)(Messages)
