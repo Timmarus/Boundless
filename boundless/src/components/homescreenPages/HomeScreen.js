@@ -7,7 +7,7 @@ import * as actions from '../../actions/settingsActions'
 import Messages from '../chatroomPages/Messages/Messages';
 import MetaPanel from '../chatroomPages/MetaPanel/MetaPanel';
 import ColorPanel from '../chatroomPages/ColorPanel/ColorPanel';
-
+import '../../index.css'
 //comment
 class HomeScreen extends Component {
     state = {
@@ -40,7 +40,11 @@ class HomeScreen extends Component {
     });
     
   }
-
+  componentDidMount() {
+    document.body.style.height = "100%"
+    document.getElementById("root").style.height = "100%"
+    document.getElementsByClassName("App")[0].style.height = "100%"
+  }
   removeCourse(courseToRemove) {
     
     // updateProfile
@@ -128,13 +132,12 @@ class HomeScreen extends Component {
 
     return (
       // <Container fluid>
-	
-      <div className="container-fluid">
-		<div className="row">
-		<div className="col-md-2">
+      <div className="container-fluid" style={{height: "100%"}}>
+		<div className="row" style={{height: "100%"}}>
+		<div className="col-md-2" style={{height: "100%", overflow: "scroll"}} >
 		{this.renderCourseCards(courses, 3)}
 		</div>
-		<div className="col-md-6">
+		<div className="col-md-6" style={{height: "60%"}}>
         <Messages key={this.state.curChat} user={this.props.profile} roomID={this.state.curChat} roomName={this.state.curChat}/>
 		</div>
 		<div className="col-md-2" style={{width: "100%"}}>

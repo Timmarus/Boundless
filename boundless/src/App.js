@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="App" style={{maxHeight: "inherit"}}>
           <NavBar />
           <Switch>
             <Route path="/biography" component={UpdateBio} />

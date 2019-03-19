@@ -48,7 +48,7 @@ componentDidUpdate() {
 
 scrollToBottom() {
     if (this.messagesEnd) {
-        this.messagesEnd.scrollIntoView({ behavior: 'smooth' });
+        this.messagesEnd.scrollIntoView({ behavior: 'auto' });
     }
   }
 
@@ -72,7 +72,7 @@ scrollToBottom() {
     //    const messages = map[0].message
        
         return (
-            <div style={{height: "60%", background: "#eeee",}}> 
+            <div style={{height: "100%", background: "#eeee",}}> 
             
                 <React.Fragment>
 
