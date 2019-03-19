@@ -117,9 +117,7 @@ const mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps),
-    firestoreConnect([
-        `messages`
-    ]),
+    firestoreConnect((props) => [ { collection: 'messages', doc: props.roomName }]),
 )(Messages)
 
 // export default connect(mapStateToProps, null)(Messages)
