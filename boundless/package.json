@@ -10,6 +10,7 @@
     "firebase": "^5.8.2",
     "moment": "^2.24.0",
     "react": "^16.8.1",
+    "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.1",
     "react-dropdown": "^1.6.4",
     "react-materialize": "^2.6.0",
