@@ -78,7 +78,7 @@ scrollToBottom() {
 
                     <ChatHeader roomID={this.props.roomName}/>
   
-                     <Segment style={{display: "flex", height: "75%", overflow: "scroll"}} >
+                     <Segment style={{display: "flex", height: "75%", overflowY: "scroll", overflowX: "hidden"}} >
                          <Comment.Group className="messages">
                             
                             {msgList.map((item, i) => (
