@@ -61,7 +61,9 @@ scrollToBottom() {
             return <div />
         }
          console.log(msg);
-        const msgList = msg.find(x => x.id === this.props.roomName).messages;
+        console.log(this.props.firestore);
+        var msgList = null;
+        msgList = msg.find(x => x.id === this.props.roomName).messages;
         console.log("---------",msgList, "-------");
         
         const {user} = this.props
@@ -108,8 +110,8 @@ const mapStateToProps = (state) => {
 
         msg: state.firestore.ordered.messages,
         auth: state.firebase.auth,
-        profile: state.firebase.profile
-
+        profile: state.firebase.profile,
+        firestore: state.firestore
     }
     
 }
