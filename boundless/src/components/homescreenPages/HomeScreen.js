@@ -49,13 +49,7 @@ class HomeScreen extends Component {
   }
 
   renderCourseCards(courseList, numPerRow) {
-    // array of N elements, where N is the number of rows needed
-    // const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
-
-    // // chunk the products into the array of rows
-    // const courseRows = rows.map((row, i) =>
-    //   courseList.slice(i * numPerRow, i * numPerRow + numPerRow)
-    // );
+    
 
     const content2 = courseList.map((channel, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
