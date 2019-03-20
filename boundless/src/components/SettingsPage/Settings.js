@@ -1,20 +1,17 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import SettingsForm from "./SettingsForm";
 
 export class Settings extends Component {
-
-  
   render() {
-
     if (!this.props.auth.uid) {
-      return ( <Redirect to="/" /> )
+      return <Redirect to="/" />;
     }
 
     return (
       <div className="card col-md-8 offset-md-2">
-          <SettingsForm />
+        <SettingsForm />
       </div>
     );
   }
@@ -27,4 +24,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(Settings);
+export default connect(
+  mapStateToProps,
+  null
+)(Settings);

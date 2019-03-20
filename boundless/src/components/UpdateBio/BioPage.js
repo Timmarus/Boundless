@@ -24,52 +24,52 @@ class BioPage extends Component {
   render() {
     //We need to load in the current values of the username or leave them blank and then change them.
     return (
-        <form onSubmit={this.onSubmit}>
-          <div className="grey-text text-darken-3 card-title">Update Bio</div>
-          <hr />
-          <div className="form-group">
-            <label className="control-label">Username</label>
-            <input
-              value={this.state.username}
-              type="text"
-              name="username"
-              className="form-control"
-            />
-          </div>
+      <form onSubmit={this.onSubmit}>
+        <div className="grey-text text-darken-3 card-title">Update Bio</div>
+        <hr />
+        <div className="form-group">
+          <label className="control-label">Username</label>
+          <input
+            value={this.state.username}
+            type="text"
+            name="username"
+            className="form-control"
+          />
+        </div>
 
-          <div className="form-group">
-            <label className="control-label">Email</label>
-            <input
-              value={this.state.email}
-              type="text"
-              name="email"
-              className="form-control"
-            />
-          </div>
+        <div className="form-group">
+          <label className="control-label">Email</label>
+          <input
+            value={this.state.email}
+            type="text"
+            name="email"
+            className="form-control"
+          />
+        </div>
 
-          <div className="form-group">
-            <label className="control-label">Password</label>
-            <input
-              value={this.state.password}
-              type="password"
-              name="password"
-              className="form-control"
-            />
-          </div>
+        <div className="form-group">
+          <label className="control-label">Password</label>
+          <input
+            value={this.state.password}
+            type="password"
+            name="password"
+            className="form-control"
+          />
+        </div>
 
-          <div className="form-group">
-            <label className="control-label">Confirm Password</label>
-            <input
-              value={this.state.passwordConfirmation}
-              type="password"
-              name="passwordConfirmation"
-              className="form-control"
-            />
-          </div>
-          <div className="form-group">
-            <button className="btn blue lighten-1 z-depth-0">Update</button>
-          </div>
-        </form>
+        <div className="form-group">
+          <label className="control-label">Confirm Password</label>
+          <input
+            value={this.state.passwordConfirmation}
+            type="password"
+            name="passwordConfirmation"
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <button className="btn blue lighten-1 z-depth-0">Update</button>
+        </div>
+      </form>
     );
   }
 }

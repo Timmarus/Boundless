@@ -2,41 +2,39 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/loginActions";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 
-import Select from 'react-select';
+import Select from "react-select";
 
 const courses = [
-  {value: "CSC108", label: "CSC108"},
-  {value: "CSC148", label: "CSC148"},
-  {value: "CSC207", label: "CSC207"},
-  {value: "CSC236", label: "CSC236"},
-  {value: "CSC209", label: "CSC209"},
-  {value: "CSC258", label: "CSC258"},
-  {value: "CSC263", label: "CSC263"}
+  { value: "CSC108", label: "CSC108" },
+  { value: "CSC148", label: "CSC148" },
+  { value: "CSC207", label: "CSC207" },
+  { value: "CSC236", label: "CSC236" },
+  { value: "CSC209", label: "CSC209" },
+  { value: "CSC258", label: "CSC258" },
+  { value: "CSC263", label: "CSC263" }
 ];
 
 const years = [
-  {value: "1", label: "1"},
-  {value: "2", label: "2"},
-  {value: "3", label: "3"},
-  {value: "4", label: "4"},
-  {value: "5+", label: "5+"},
-
+  { value: "1", label: "1" },
+  { value: "2", label: "2" },
+  { value: "3", label: "3" },
+  { value: "4", label: "4" },
+  { value: "5+", label: "5+" }
 ];
 
-
 const programs = [
-  {value: "Computer Science", label: "Computer Science"},
-  {value: "Statisticss", label: "Statistics"},
-  {value: "Mathematics", label: "Mathematics"},
-  {value: "Chemistry", label: "Chemistry"},
-  {value: "Physics", label: "Physics"},
-  {value: "Commerce", label: "Commerce"},
-  {value: "Business", label: "Business"},
-  {value: "Anthropology", label: "Anthropology"}
+  { value: "Computer Science", label: "Computer Science" },
+  { value: "Statisticss", label: "Statistics" },
+  { value: "Mathematics", label: "Mathematics" },
+  { value: "Chemistry", label: "Chemistry" },
+  { value: "Physics", label: "Physics" },
+  { value: "Commerce", label: "Commerce" },
+  { value: "Business", label: "Business" },
+  { value: "Anthropology", label: "Anthropology" }
 ];
 
 //comment
@@ -70,12 +68,9 @@ class RegisterForm extends Component {
     // console.log('updated state: ' + JSON.stringify(this.state));
   }
 
-    
   handleSelection(type, option) {
-
     const selected = option.value;
     this.setState({ [type]: selected });
-
   }
 
   onSubmit(e) {
@@ -96,181 +91,175 @@ class RegisterForm extends Component {
     }
   }
 
-  
-  handleAddCourse = (option) => {
-    var updatedCourses = this.state.courses;    
-    updatedCourses.push(option.value);   
-    this.setState({courses: updatedCourses});
-    console.log(this.state);
-   }; 
-
-   
-  handleDelete = (option) => {
-
+  handleAddCourse = option => {
     var updatedCourses = this.state.courses;
-    var indexToRemove = updatedCourses.indexOf(option)
-
-    updatedCourses.splice(indexToRemove,1);
-    this.setState({courses: updatedCourses});
+    updatedCourses.push(option.value);
+    this.setState({ courses: updatedCourses });
     console.log(this.state);
-  }
+  };
 
+  handleDelete = option => {
+    var updatedCourses = this.state.courses;
+    var indexToRemove = updatedCourses.indexOf(option);
+
+    updatedCourses.splice(indexToRemove, 1);
+    this.setState({ courses: updatedCourses });
+    console.log(this.state);
+  };
 
   render() {
     // console.log(this.props.auth);
     if (this.props.auth.uid) return <Redirect to="/" />;
     return (
-        <div className="container center">
-          <h5 className="grey-text text-darken-3">Register</h5>
+      <div className="container center">
+        <div className="grey-text text-darken-3 card-title">Register</div>
+        <hr />
         <div className="row">
-        <div className="col-md-6">
-          <form onSubmit={this.onSubmit}>
-            <div className="form-group">
-              <label className="control-label">First Name</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.firstName}
-                type="text"
-                name="firstName"
-                className="form-control"
-              />
-            </div>
+          <div className="col-md-6">
+            <form onSubmit={this.onSubmit}>
+              <div className="form-group">
+                <label className="control-label">First Name</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.firstName}
+                  type="text"
+                  name="firstName"
+                  className="form-control"
+                />
+              </div>
 
-            <div className="form-group">
-              <label className="control-label">Last Name</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.lastName}
-                type="text"
-                name="lastName"
-                className="form-control"
-              />
-            </div>
+              <div className="form-group">
+                <label className="control-label">Last Name</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.lastName}
+                  type="text"
+                  name="lastName"
+                  className="form-control"
+                />
+              </div>
 
-            <div className="form-group">
-            <label className="control-label">University</label>
-            <input
-              onChange={this.onChange}
-              value={this.state.university}
-              type="text"
-              name="university"
-              className="form-control"
-            />
-            {/* {this.state.lastName == "" ? (
+              <div className="form-group">
+                <label className="control-label">University</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.university}
+                  type="text"
+                  name="university"
+                  className="form-control"
+                />
+                {/* {this.state.lastName == "" ? (
               <label> Require University</label>
             ) : null} */}
-          </div>
+              </div>
 
-          
-          <div className="form-group">
-            <label className="control-label">Year</label>
-            <Select
-              placeholder="Select your Year"
-              // this.setState({ [e.target.name]: e.target.value });
-              name="year"
-              onChange={this.handleSelection.bind(this, "year")}
-              options={years}
-            /> 
-            {/* {this.state.lastName == "" ? (
+              <div className="form-group">
+                <label className="control-label">Year</label>
+                <Select
+                  placeholder="Select your Year"
+                  // this.setState({ [e.target.name]: e.target.value });
+                  name="year"
+                  onChange={this.handleSelection.bind(this, "year")}
+                  options={years}
+                />
+                {/* {this.state.lastName == "" ? (
               <label> Require Year</label>
             ) : null} */}
-          </div>
+              </div>
 
-          <div className="form-group">
-            <label className="control-label">Program</label>
+              <div className="form-group">
+                <label className="control-label">Program</label>
 
-
-            <Select
-              placeholder="Select your Program"
-              value={this.state.type}
-              // this.setState({ [e.target.name]: e.target.value });
-              name="program"
-              onChange={this.handleSelection.bind(this, "program")}
-              options={programs}
-            /> 
-            {/* {this.state.lastName == "" ? (
+                <Select
+                  placeholder="Select your Program"
+                  value={this.state.type}
+                  // this.setState({ [e.target.name]: e.target.value });
+                  name="program"
+                  onChange={this.handleSelection.bind(this, "program")}
+                  options={programs}
+                />
+                {/* {this.state.lastName == "" ? (
               <label> Require Program</label>
             ) : null} */}
-          </div>
+              </div>
 
-            
-            <div className="form-group">
-              <label className="control-label">Email</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.email}
-                type="text"
-                name="email"
-                className="form-control"
-              />
-            </div>
+              <div className="form-group">
+                <label className="control-label">Email</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  type="text"
+                  name="email"
+                  className="form-control"
+                />
+              </div>
 
-            <div className="Password-Form">
-              <label className="Password-lbl">Password</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.password}
-                type="password"
-                name="password"
-                className="form-control"
-              />
-              {this.state.password.length < 6 ? (
-                <label>We require more than 6 characters</label>
-              ) : null}
+              <div className="Password-Form">
+                <label className="Password-lbl">Password</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  type="password"
+                  name="password"
+                  className="form-control"
+                />
+                {this.state.password.length < 6 ? (
+                  <label>We require more than 6 characters</label>
+                ) : null}
               </div>
 
               <div className="Confirm-Form">
-              <label className="Confirm-lbl">Confirm Password</label>
-              <input
-                onChange={this.onChange}
-                value={this.state.passwordConfirmation}
-                type="password"
-                name="passwordConfirmation"
-                className="form-control"
-              />
-              {this.state.passwordConfirmation == this.state.password &&
-              this.state.passwordConfirmation.length > 5 ? null : (
-                <label>This needs to match the given password</label>
-              )}
+                <label className="Confirm-lbl">Confirm Password</label>
+                <input
+                  onChange={this.onChange}
+                  value={this.state.passwordConfirmation}
+                  type="password"
+                  name="passwordConfirmation"
+                  className="form-control"
+                />
+                {this.state.passwordConfirmation == this.state.password &&
+                this.state.passwordConfirmation.length > 5 ? null : (
+                  <label>This needs to match the given password</label>
+                )}
+              </div>
+
+              <div className="form-group">
+                <button
+                  onClick={this.onChange}
+                  className="btn blue lighten-1 z-depth-0"
+                >
+                  Register
+                </button>
+              </div>
+            </form>
           </div>
 
-
-            <div className="form-group">
-              <button
-                onClick={this.onChange}
-                className="btn blue lighten-1 z-depth-0"
-              >
-                Register
-              </button>
-            </div>
-          </form>
+          <div className="col-md-6">
+            <Select
+              placeholder="Add a course:"
+              value={this.state.type}
+              onChange={this.handleAddCourse}
+              options={courses}
+            />
+            <table>
+              {this.state.courses.map(option => (
+                <tr>
+                  <td>
+                    <div className="btn-group">
+                      <button className="btn btn-success">{option}</button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={this.handleDelete.bind(this, option)}
+                      >
+                        <FontAwesomeIcon icon="trash" />
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </table>
+          </div>
         </div>
-
-        <div className="col-md-6">
-          <Select
-            placeholder="Add a course:"
-            value={this.state.type}
-            onChange={this.handleAddCourse}
-            options={courses}
-          /> 
-          <table>
-          {this.state.courses.map(option => (
-            <tr>
-            <td>
-            <div className="btn-group">
-            <button className="btn btn-success">
-            {option}
-            </button>
-              <button className="btn btn-danger"onClick={this.handleDelete.bind(this, option)}>
-              <FontAwesomeIcon icon="trash" />
-              </button>
-            </div>
-            </td>
-            </tr>
-          ))}
-          </table>
-            </div>
-      </div>
       </div>
     );
   }
@@ -286,5 +275,3 @@ export default connect(
   mapStateToProps,
   actions
 )(RegisterForm);
-
-

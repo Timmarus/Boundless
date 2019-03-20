@@ -12,7 +12,6 @@ class ChatForm extends React.Component {
         this.setState({
             message: e.target.value
         })
-        console.log(this.state.message);
         
     }
 
@@ -36,9 +35,6 @@ onKeyPress = (e) => {
   }
 
     render() {
-        // console.log(this.props.profile);
-        console.log(this.props,'-------');
-        
         return (
             
             <Segment className="chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
