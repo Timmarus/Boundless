@@ -3,13 +3,20 @@ import { Redirect } from "react-router-dom";
 import CourseCard from "./CourseCard";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
-import * as actions from '../../actions/settingsActions'
-
+import * as actions from "../../actions/settingsActions";
+import Messages from "../chatroomPages/Messages/Messages";
+import MetaPanel from "../chatroomPages/MetaPanel/MetaPanel";
+import ColorPanel from "../chatroomPages/ColorPanel/ColorPanel";
+import "../../index.css";
 //comment
 class HomeScreen extends Component {
+  state = {
+    courseList: null,
+    curChat: "room1"
+  };
+
   constructor(props) {
     super(props);
-
 
     // const {
     //   firstName,
@@ -23,31 +30,36 @@ class HomeScreen extends Component {
 
     // console.log("profile: " + JSON.stringify(this.props.profile));
 
-    this.state = {
-      courseList: null
-    };
-
     this.removeCourse = this.removeCourse.bind(this);
   }
 
+  setChat(roomID) {
+    this.setState({ curChat: roomID }, function() {
+      console.log("Switching to", this.state.curChat);
+    });
+  }
+  componentDidMount() {
+    document.body.style.height = "100%";
+    document.getElementById("root").style.height = "100%";
+    document.getElementsByClassName("App")[0].style.height = "100%";
+  }
   removeCourse(courseToRemove) {
-    
     // updateProfile
-    const { courses } = this.props.profile
-    var newCourses = courses
-    var cc = newCourses.filter(function (val, index,arr){
-      return val !== courseToRemove
-    })
+    const { courses } = this.props.profile;
+    var newCourses = courses;
+    var cc = newCourses.filter(function(val, index, arr) {
+      return val !== courseToRemove;
+    });
 
     console.log(cc);
-    var newDetails = this.props.profile
-    newDetails.courses = cc 
+    var newDetails = this.props.profile;
+    newDetails.courses = cc;
     console.log(newDetails);
 
-    this.props.updateProfile(newDetails)
-       
+    this.props.updateProfile(newDetails);
+
     // console.log("courseToRemove: " + courseToRemove);
-    
+
     // // if(this.state.courseList) {
     // this.setState({
     //   courseList: this.state.courseList.filter(
@@ -61,9 +73,9 @@ class HomeScreen extends Component {
   }
 
   renderCourseCards(courseList, numPerRow) {
-    console.log("courseList: " + JSON.stringify(courseList));
     // array of N elements, where N is the number of rows needed
     const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
+
     // chunk the products into the array of rows
     const courseRows = rows.map((row, i) =>
       courseList.slice(i * numPerRow, i * numPerRow + numPerRow)
@@ -72,49 +84,90 @@ class HomeScreen extends Component {
     const content = courseRows.map((row, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
-        
-        {row.map((course, index) => (
-          <Col sm="4">
-            
-
-            <CourseCard
-              key={index*i}
-              removeCourse={this.removeCourse.bind(this)}
-              course={
-                {name: course, id: index*i}
-              }
-            />
-          </Col>
-        ))}
+        <ul className="list-group">
+          {row.map((course, index) => (
+            <li
+              className="list-group-item"
+              style={{ display: "inline-block", float: "left" }}
+            >
+              <CourseCard
+                key={index * i}
+                removeCourse={this.removeCourse.bind(this)}
+                setChat={this.setChat.bind(this)}
+                course={{ name: course, id: index * i }}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     ));
 
-    return <div>{content}</div>;
-  }
-
-  render() {
-    
-    if (!this.props.auth) {
-      return <Redirect to="/" />;
-    }
-    
-    const {courses} = this.props.profile
-    
-    if (courses == undefined)
-      return <div />
-
-    console.log(courses, "--------");
-
     return (
-      // <Container fluid>
-
-      <div className="container center">
-        {this.renderCourseCards(courses, 3)}
-        
+      <div style={{ transform: "scaleX(-1)" }}>
+        <ul className="list-group">
+          <li
+            className="list-group-item"
+            style={{ display: "inline-block", float: "left" }}
+          >
+            <CourseCard
+              key="room1"
+              setChat={this.setChat.bind(this)}
+              course={{ name: "room1", id: "room1" }}
+            />
+          </li>
+        </ul>
+        {content}
       </div>
     );
   }
 
+  render() {
+    if (!this.props.auth) {
+      return <Redirect to="/" />;
+    }
+    const { courses } = this.props.profile;
+
+    if (courses == undefined) return <div />;
+
+    return (
+      // <Container fluid>
+      <div className="container-fluid" style={{ height: "90%" }}>
+        <div className="row" style={{ height: "100%" }}>
+          <div
+            className="col-md-2"
+            style={{
+              height: "100%",
+              overflowY: "scroll",
+              overflowX: "hidden",
+              paddingRight: "0px",
+              paddingLeft: "0px",
+              transform: "scaleX(-1)"
+            }}
+          >
+            {this.renderCourseCards(courses, 3)}
+          </div>
+          <div
+            className="col-md-8"
+            style={{
+              height: "100%",
+              paddingLeft: "0px",
+              scrollbarWidth: "none"
+            }}
+          >
+            <Messages
+              key={this.state.curChat}
+              user={this.props.profile}
+              roomID={this.state.curChat}
+              roomName={this.state.curChat}
+            />
+          </div>
+          <div className="card col-md-2" style={{ width: "100%" }}>
+            <MetaPanel />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {
@@ -124,4 +177,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect( mapStateToProps,actions)(HomeScreen);
+export default connect(
+  mapStateToProps,
+  actions
+)(HomeScreen);

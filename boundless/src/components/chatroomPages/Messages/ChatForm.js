@@ -12,25 +12,29 @@ class ChatForm extends React.Component {
         this.setState({
             message: e.target.value
         })
-        console.log(this.state.message);
         
     }
 
     handleOnSubmit = (e) => {
+        if (this.state.message == "") {
+            return;
+        }
         const msg = {
             message: this.state.message,
-            user: this.props.user
+            user: this.props.user.firstName
         }
-        this.props.newMessage(msg)
+        this.props.newMessage(this.props.roomName, msg)
         this.setState({
             message: ""
         })
     }
+onKeyPress = (e) => {
+    if(e.which === 13) {
+      this.handleOnSubmit();
+    }
+  }
 
     render() {
-        // console.log(this.props.profile);
-        console.log(this.props.user,'-------');
-        
         return (
             
             <Segment className="chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
@@ -44,6 +48,7 @@ class ChatForm extends React.Component {
                     labelPosition="left"
                     onChange={this.handleOnChange}
                     placeholder="Enter your message"
+                    onKeyPress={this.onKeyPress}
                 />
 
 

@@ -6,21 +6,15 @@ import moment from 'moment'
 
 
 
-const Message = (props) => {
-    console.log("+++++++",props.timeStamp, "+++++++");
-    const time = props.timeStamp.toDate()
-    console.log(moment(props.timeStamp.toDate()).fromNow());
-    
-    
+const Message = (props) => {    
     return(
         <Comment>
-            <Comment.Content>
+            <Comment.Content align="left">
                 <Comment.Author as='a'>{props.user}</Comment.Author>
                 <Comment.Metadata>
                 <div>{moment(props.timeStamp.toDate()).fromNow()}</div>
                 </Comment.Metadata>
-                <Comment.Text>{props.msg}</Comment.Text>
-                
+                <Comment.Text align="left">{props.msg}</Comment.Text>
             </Comment.Content>
         </Comment>
     )

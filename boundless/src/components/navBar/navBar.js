@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import * as actions from "../../actions/loginActions";
 import SignedInLinks from './signedInLinks';
 import SignedOutLinks from './signedOutLinks';
+import {
+  BrowserView,
+} from "react-device-detect";
 
 const NavBar = (props) => {
   // console.log(props.profile);
@@ -12,9 +15,10 @@ const NavBar = (props) => {
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
-        <Link to="/" className="brand-logo center">
+        <BrowserView><Link to="/" className="brand-logo center">
             Boundless
           </Link>
+        </BrowserView>
           {props.auth.uid ? (<SignedInLinks />) : (<SignedOutLinks/>)}
         <Link to="/home" className="left">{props.profile.firstName}</Link>
       </div>

@@ -9,11 +9,9 @@ export class Register extends Component {
   
   render() {
     return (
-      <div className="row">
-        <div className="col-md-4 col-md-offset-4">
+    	<div className="card col-md-8 offset-md-2">
           <RegisterForm />
         </div>
-      </div>
     );
   }
 }

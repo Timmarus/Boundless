@@ -8,13 +8,16 @@ import Home from "./components/homescreenPages/HomeScreen";
 import Settings from "./components/SettingsPage/Settings";
 import Chatroom from "./components/chatroomPages/Chatroom";
 
-
+const bgimage = require("./white-waves.png");
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div
+          className="App"
+          style={{ maxHeight: "inherit", backgroundImage: `url(${bgimage})` }}
+        >
           <NavBar />
           <Switch>
             <Route path="/biography" component={UpdateBio} />
