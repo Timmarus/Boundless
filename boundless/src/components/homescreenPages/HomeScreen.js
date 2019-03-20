@@ -151,6 +151,7 @@ class HomeScreen extends Component {
             style={{
               height: "100%",
               paddingLeft: "0px",
+              paddingRight: "0px",
               scrollbarWidth: "none"
             }}
           >
