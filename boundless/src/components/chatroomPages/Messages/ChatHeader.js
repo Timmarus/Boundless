@@ -10,7 +10,7 @@ class ChatHeader extends React.Component {
             <Segment clearing style={{background: "#eeee", display: "flex", flexDirection: "row", justifyContent: 'space-between', alignItems: "center"}}>
 
                 {/* Course Room Title Here */}
-                <Header fluid as="h2" style={{marginBottom: 0, }}>
+                <Header fluid="true" as="h2" style={{marginBottom: 0, }}>
                     {/* <span> */}
 
                         Course ID: {this.props.roomID}

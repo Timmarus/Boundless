@@ -12,23 +12,11 @@ import "../../index.css";
 class HomeScreen extends Component {
   state = {
     courseList: null,
-    curChat: "room1"
+    curChat: 0
   };
 
   constructor(props) {
     super(props);
-
-    // const {
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   year,
-    //   university,
-    //   program,
-    //   courses
-    // } = this.props.profile;
-
-    // console.log("profile: " + JSON.stringify(this.props.profile));
 
     this.removeCourse = this.removeCourse.bind(this);
   }
@@ -58,77 +46,52 @@ class HomeScreen extends Component {
 
     this.props.updateProfile(newDetails);
 
-    // console.log("courseToRemove: " + courseToRemove);
-
-    // // if(this.state.courseList) {
-    // this.setState({
-    //   courseList: this.state.courseList.filter(
-    //     course =>
-    //       // console.log(course);
-    //       course !== courseToRemove
-    //   )
-    // });
-
-    // }
   }
 
   renderCourseCards(courseList, numPerRow) {
-    // array of N elements, where N is the number of rows needed
-    const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
+    
 
-    // chunk the products into the array of rows
-    const courseRows = rows.map((row, i) =>
-      courseList.slice(i * numPerRow, i * numPerRow + numPerRow)
-    );
-    // map the rows as div.row
-    const content = courseRows.map((row, i) => (
+    const content2 = courseList.map((channel, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
         {/* // map courses in the row as columns */}
+        {console.log(i)}
         <ul className="list-group">
-          {row.map((course, index) => (
             <li
               className="list-group-item"
               style={{ display: "inline-block", float: "left" }}
             >
               <CourseCard
-                key={index * i}
+                key={i}
                 removeCourse={this.removeCourse.bind(this)}
                 setChat={this.setChat.bind(this)}
-                course={{ name: course, id: index * i }}
+                course={{ name: channel, id: i }}
               />
             </li>
-          ))}
+        
         </ul>
       </div>
-    ));
+      
+    ))
+
 
     return (
       <div style={{ transform: "scaleX(-1)" }}>
-        <ul className="list-group">
-          <li
-            className="list-group-item"
-            style={{ display: "inline-block", float: "left" }}
-          >
-            <CourseCard
-              key="room1"
-              setChat={this.setChat.bind(this)}
-              course={{ name: "room1", id: "room1" }}
-            />
-          </li>
-        </ul>
-        {content}
+        {content2}
       </div>
     );
   }
 
   render() {
+    
+   
     if (!this.props.auth) {
       return <Redirect to="/" />;
     }
     const { courses } = this.props.profile;
 
     if (courses == undefined) return <div />;
-
+    
+    
     return (
       // <Container fluid>
       <div className="container-fluid" style={{ height: "90%" }}>
@@ -146,6 +109,7 @@ class HomeScreen extends Component {
           >
             {this.renderCourseCards(courses, 3)}
           </div>
+
           <div
             className="col-md-8"
             style={{
@@ -156,12 +120,14 @@ class HomeScreen extends Component {
             }}
           >
             <Messages
-              key={this.state.curChat}
+              key={courses[this.state.curChat]}
               user={this.props.profile}
-              roomID={this.state.curChat}
-              roomName={this.state.curChat}
+              roomID={courses[this.state.curChat]}
+              roomName={courses[this.state.curChat]}
             />
           </div>
+
+
           <div className="card col-md-2" style={{ width: "100%" }}>
             <MetaPanel />
           </div>
@@ -174,7 +140,7 @@ class HomeScreen extends Component {
 const mapStateToProps = state => {
   return {
     auth: state.firebase.auth,
-    profile: state.firebase.profile
+    profile: state.firebase.profile,
   };
 };
 

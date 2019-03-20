@@ -51,8 +51,14 @@ class Messages extends React.Component {
     if (!msg) {
       return <div />;
     }
+    
     var msgList = null;
-    msgList = msg.find(x => x.id === this.props.roomName).messages;
+
+    if (msg.length == 0)
+      msgList = []
+    else
+      msgList = msg[0].messages
+    
     const { user } = this.props;
     return (
       <div style={{ height: "100%", background: "#eeee" }}>
@@ -102,7 +108,9 @@ const mapStateToProps = state => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([`messages`])
+  firestoreConnect((props) =>  [
+    `messages/${props.roomName}`
+  ])
 )(Messages);
 
 // export default connect(mapStateToProps, null)(Messages)
