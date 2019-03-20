@@ -46,28 +46,16 @@ class HomeScreen extends Component {
 
     this.props.updateProfile(newDetails);
 
-    // console.log("courseToRemove: " + courseToRemove);
-
-    // // if(this.state.courseList) {
-    // this.setState({
-    //   courseList: this.state.courseList.filter(
-    //     course =>
-    //       // console.log(course);
-    //       course !== courseToRemove
-    //   )
-    // });
-
-    // }
   }
 
   renderCourseCards(courseList, numPerRow) {
     // array of N elements, where N is the number of rows needed
-    const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
+    // const rows = [...Array(Math.ceil(courseList.length / numPerRow))];
 
-    // chunk the products into the array of rows
-    const courseRows = rows.map((row, i) =>
-      courseList.slice(i * numPerRow, i * numPerRow + numPerRow)
-    );
+    // // chunk the products into the array of rows
+    // const courseRows = rows.map((row, i) =>
+    //   courseList.slice(i * numPerRow, i * numPerRow + numPerRow)
+    // );
 
     const content2 = courseList.map((channel, i) => (
       <div style={{ display: "flex", flexDirection: "row" }} key={i}>
@@ -91,42 +79,9 @@ class HomeScreen extends Component {
       
     ))
 
-    // map the rows as div.row
-    // const content = courseRows.map((row, i) => (
-    //   <div style={{ display: "flex", flexDirection: "row" }} key={i}>
-    //     {/* // map courses in the row as columns */}
-    //     <ul className="list-group">
-    //       {row.map((course, index) => (
-    //         <li
-    //           className="list-group-item"
-    //           style={{ display: "inline-block", float: "left" }}
-    //         >
-    //           <CourseCard
-    //             key={(index + 1) * (i + 1)}
-    //             removeCourse={this.removeCourse.bind(this)}
-    //             setChat={this.setChat.bind(this)}
-    //             course={{ name: course, id: (index + 1) * (i + 1) }}
-    //           />
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </div>
-    // ));
 
     return (
       <div style={{ transform: "scaleX(-1)" }}>
-        {/* <ul className="list-group">
-          <li
-            className="list-group-item"
-            style={{ display: "inline-block", float: "left" }}
-          >
-            <CourseCard
-              key="room1"
-              setChat={this.setChat.bind(this)}
-              course={{ name: "room1", id: "room1" }}
-            />
-          </li>
-        </ul> */}
         {content2}
       </div>
     );
