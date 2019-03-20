@@ -22,13 +22,14 @@ class CourseCard extends Component {
   render() {
     let { id, name } = this.props.course;
     // console.log(this.props.course, '99999999');
-
-    let key = this.props.key;
-
+    console.log(id);
+    
     let imgSrc =
       "https://placeholdit.imgix.net/~text?txtsize=33&txt=" +
       id +
       "&w=318&h=180";
+
+    
     return (
       <div style={{}}>
         <Card>
@@ -43,7 +44,7 @@ class CourseCard extends Component {
                 "&w=318&h=180&bg=ffffff"
               }
               alt="Card image cap"
-              onClick={() => this.props.setChat(name)}
+              onClick={() => this.props.setChat(id)}
             />
           </Link>
           <Link
