@@ -32,11 +32,10 @@ class login extends Component {
     }
 
     return (
-      <div className="container-fluid col-md-8 offset-md-2">
+      <div className="container-fluid col-md-4 offset-md-4">
         <div className="card">
-        <form className="white" onSubmit={this.handleSubmit}>
-          <div className="grey-text text-darken-3 card-title">Sign In</div>
-          <hr />
+        <div className="grey-text text-darken-3 card-header">Sign In</div>
+        <form className="white card-body" onSubmit={this.handleSubmit}>
           <div className="input-field">
             <label htmlFor="email">Email</label>
             <input onChange={this.handleChange} type="text" id="email" />

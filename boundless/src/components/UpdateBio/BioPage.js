@@ -24,9 +24,9 @@ class BioPage extends Component {
   render() {
     //We need to load in the current values of the username or leave them blank and then change them.
     return (
-      <form onSubmit={this.onSubmit}>
-        <div className="grey-text text-darken-3 card-title">Update Bio</div>
-        <hr />
+      <div>
+      <div className="grey-text text-darken-3 card-header">Update Bio</div>
+      <form className="card-body" onSubmit={this.onSubmit}>
         <div className="form-group">
           <label className="control-label">Username</label>
           <input
@@ -70,6 +70,7 @@ class BioPage extends Component {
           <button className="btn blue lighten-1 z-depth-0">Update</button>
         </div>
       </form>
+      </div>
     );
   }
 }

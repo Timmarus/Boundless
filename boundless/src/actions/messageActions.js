@@ -29,8 +29,6 @@ export function newMessage (roomName, msg) {
               
             })
         })
-
-
       dispatch({ type: types.NEW_MESSAGE, payload: msg})
     };
   }
