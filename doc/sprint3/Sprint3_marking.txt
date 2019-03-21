@@ -145,6 +145,6 @@ System Design - (PDF or MD file or other suitable format) (Max 5 marks)
  ======= 
  
  
--Total mark: 10/40
+-Total mark: 40/40
 
   
