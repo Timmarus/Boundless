@@ -8,7 +8,7 @@
 ##### (A) Abdulwasay Mehar: meharabd
 ##### (KE) Kenneth Chyzewski: chyzewsk
 ##### (J) Jonathan Leung: leungj56
-##### (T) Timm Ilyas: ilyasens
+##### (T) Ensar (Timm) Ilyas: ilyasens
 ##### (P) Prashil Gandhi: gandhi45
 ***
 
@@ -17,85 +17,97 @@
 
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 4
-NAME     : Course Selection Viewer
-OWNER    : K, KE
-PRIORITY : 21
-ESTIMATE : 48 hours
-AS A     : Developer
-I WANT   : finish updating the UI
-SO THAT  : they can enter(by clicking) each course chatroom to chat.
-TASKS:
-	- (K) Settings UI
-	- (KE) Finished the course selection UI
-	- (KE)Configure Dashboard with Settings and Course Selection UI 
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 5
-NAME     : Course Selection Database
-OWNER    : J, K, A
-PRIORITY : 21
-ESTIMATE : 48 hours
-AS A     : Developer
-I WANT   : the chatrooms to be connected to a database
-SO THAT  : users can see messages from other users 
-TASKS:
-	- (J) Connect Course Selection with database
-	- (K) Configure dashboard with database
-	- (J) Configure each course card to enter a chatroom with its name 
-	- (A) Update Database upon leaving a Chat room on the HomeScreen 
- ```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 7
-NAME     : Chatroom Functionality
-OWNER    : A
-PRIORITY : 21
-ESTIMATE : 48 hours
-AS A     : Develpper
-I WANT   : Two different users to be able to communicate with each other through the app 
-SO THAT  : they are able to talk to one another
-TASKS:
-	- (A) Configure UI to display inputs from different users
-	- (A) Send and recieve data from both users 
-	- (A) Configure with database 
-	
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 8
-NAME     : Opt out of a chatroom
-OWNER    : K, W, P
-PRIORITY : 13
-ESTIMATE : 24 hours
+TYPE     : USER STORY 2
+NAME     : Delete Account
+OWNER    : x
+PRIORITY : 2
+ESTIMATE : 4 hour
 AS A     : Student
-I WANT   : Leave a course's chatroom
-SO THAT  : If I drop a course, I am not stuck inside the related chatroom.
+I WANT   : I want to be able to delete my account
+SO THAT  : When I graduate, I don’t need to receive notifications of future classes.
 TASKS:
-	- (KE, J) Drop a course the user's settings page
-	- (KE, J) Update the user's chatroom when settings are modified
-	- (KE) Fixed errors with course selection UI
+	- () UI to delete user account
+	- () Update Database, so the user is not able to login in again
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 23
-NAME     : Setings Database 
-OWNER    : J, K, W
-PRIORITY : 21
-ESTIMATE : 48 hours
-AS A     : Develpper
-I WANT   : configure new settings to database
-SO THAT  : once the user re-enters the app, the settings are saved  
+TYPE     : USER STORY 9
+NAME     : Report Users
+OWNER    : x
+PRIORITY : 2
+ESTIMATE : 4 hour
+AS A     : Student
+I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
+SO THAT  : Each chatroom contains important information.
 TASKS:
-	- (J, W) Configure the settings
-	- (J) Set up the database to connect to the settings 
-	- (J) Update database with new user info 
-	
+	- () 
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 15
+NAME     : Switch to Day mode
+OWNER    : x
+PRIORITY : 5
+ESTIMATE : 1 hour
+AS A     : Student
+I WANT   : To be able to turn on day mode
+SO THAT  : When I am in a well-light location, I dont need to increase my 
+      phone's brightness.
+TASKS:
+	- () Setup up app color scheme for Dark and Light Mode.
+	- () Create easily accessible UI to preform the switch.
+	- () Configure the App to change colour scheme upon switching.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 26
+NAME     : Redesign Chat
+OWNER    : T
+PRIORITY : 13
+ESTIMATE : 8 hour
+AS A     : Student
+I WANT   : the chat to have a cleaner, responsive design free of bugs.
+SO THAT  : I can increase productively and navigate the platform seamlessly.
+TASKS:
+	- (T) Join chat and chat selection into one page  
+	- (T) Design and implement a better chat flow 
+	- (T) Fix bugs related to alignment and spacing (e.g. chats randomly spreading out on incoming message). 
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 27
+NAME     : Redesign user flow
+OWNER    : T
+PRIORITY : 8
+ESTIMATE : 5 hour
+AS A     : Student
+I WANT   : to navigate between the menus in the platform easily.
+SO THAT  : I can navigate to the appropriate menus when clicked.
+TASKS:
+	- (T) Update Login and Register pages.
+	- (T) Update Settings and Bio pages.
+	- (T) Update Chat pages. 
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 28
+NAME     : Mobile Support
+OWNER    : T
+PRIORITY : 8
+ESTIMATE : 9 hour
+AS A     : Student
+I WANT   : the site to work well and look nice on my phone.
+SO THAT  : I can check my course chat on both the web app and on my phone.
+TASKS:
+	- (T) Update chat to better fit mobile screens 
+	- (T) Update site-wide design
 ```
 --------------------------------------------------------------------------
 

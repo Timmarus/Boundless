@@ -214,27 +214,26 @@ SO THAT  : once the user re-enters the app, the settings are saved
 
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 13
-NAME     : App sharing
+TYPE     : USER STORY 2
+NAME     : Delete Account
 OWNER    : x
-PRIORITY : 8
-ESTIMATE : 1 hour
+PRIORITY : 2
+ESTIMATE : 4 hour
 AS A     : Student
-I WANT   : To share the other with other students
-SO THAT  : Those students who havent registered with the app, can easily 
-      do so.
+I WANT   : I want to be able to delete my account
+SO THAT  : When I graduate, I don’t need to receive notifications of future classes.
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 14
-NAME     : Notifications
+TYPE     : USER STORY 9
+NAME     : Report Users
 OWNER    : x
-PRIORITY : 13
-ESTIMATE : 12 hours
+PRIORITY : 2
+ESTIMATE : 4 hour
 AS A     : Student
-I WANT   : To receive notifications
-SO THAT  : I can see who recently enrolled in course 'x'.
+I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
+SO THAT  : Each chatroom contains important information.
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -242,7 +241,7 @@ SO THAT  : I can see who recently enrolled in course 'x'.
 TYPE     : USER STORY 15
 NAME     : Switch to Day mode
 OWNER    : x
-PRIORITY : 1
+PRIORITY : 5
 ESTIMATE : 1 hour
 AS A     : Student
 I WANT   : To be able to turn on day mode
@@ -251,6 +250,43 @@ SO THAT  : When I am in a well-light location, I dont need to increase my
 ```
 --------------------------------------------------------------------------
 
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 26
+NAME     : Redesign Chat
+OWNER    : x
+PRIORITY : 13
+ESTIMATE : 8 hour
+AS A     : Student
+I WANT   : the chat to have a cleaner, responsive design free of bugs.
+SO THAT  : I can increase productively and navigate the platform seamlessly.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 27
+NAME     : Redesign user flow
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 5 hour
+AS A     : Student
+I WANT   : to navigate between the menus in the platform easily. 
+SO THAT  : I can navigate to the appropriate menus when clicked.
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 28
+NAME     : Mobile Support
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 9 hour
+AS A     : Student
+I WANT   : the site to work well and look nice on my phone.
+SO THAT  : I can check my course chat on both the web app and on my phone.
+```
+--------------------------------------------------------------------------
 
 # Sprint 5 April 5, 2019
 # Sprint 5 Backlog UserStories go below
