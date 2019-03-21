@@ -112,9 +112,8 @@ class RegisterForm extends Component {
     if (this.props.auth.uid) return <Redirect to="/" />;
     return (
       <div className="container center">
-        <div className="grey-text text-darken-3 card-title">Register</div>
-        <hr />
-        <div className="row">
+        <div className="grey-text text-darken-3 card-header">Register</div>
+        <div className="row card-body">
           <div className="col-md-6">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">

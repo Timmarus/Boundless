@@ -9,7 +9,7 @@ export class Bio extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div className="card col-md-8 offset-md-2">
+      <div className="card col-md-4 offset-md-4">
         <BioPage />
       </div>
     );

@@ -22,7 +22,6 @@ class CourseCard extends Component {
   render() {
     let { id, name } = this.props.course;
     // console.log(this.props.course, '99999999');
-    console.log(id);
     
     let imgSrc =
       "https://placeholdit.imgix.net/~text?txtsize=33&txt=" +

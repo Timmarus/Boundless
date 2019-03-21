@@ -10,9 +10,7 @@ export class Settings extends Component {
     }
 
     return (
-      <div className="card col-md-8 offset-md-2">
         <SettingsForm />
-      </div>
     );
   }
 }

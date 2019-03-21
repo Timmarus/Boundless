@@ -9,9 +9,9 @@ import Settings from "./components/SettingsPage/Settings";
 import Chatroom from "./components/chatroomPages/Chatroom";
 
 const bgimage = require("./white-waves.png");
-
 class App extends Component {
   render() {
+    document.getElementById('root').style.backgroundImage = `url(${bgimage})`
     return (
       <BrowserRouter>
         <div

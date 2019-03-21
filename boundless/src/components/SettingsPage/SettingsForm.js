@@ -128,10 +128,9 @@ export class SettingsForm extends Component {
     // console.log('Current Profile Auth: ' + JSON.stringify(this.props.auth))
 
     return (
-      <div className="container-fluid">
-        <div className="grey-text text-darken-3 card-title">Settings</div>
-        <hr />
-        <div class="row">
+      <div className="card col-md-8 offset-md-2">
+        <div className="grey-text text-darken-3 card-header">Settings</div>
+        <div class="row card-body">
           <div className="col-md-8">
             <form onSubmit={this.onSubmit}>
               <div className="form-group">
