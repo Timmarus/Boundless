@@ -44,6 +44,7 @@ export function signUpUser(userInfo) {
                 year: userInfo.year,
                 program: userInfo.program,
                 courses: userInfo.courses,
+                lastSeen: 0
 
             })
         }).then(() => {
