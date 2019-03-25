@@ -8,7 +8,7 @@ import { Button } from "reactstrap";
 
 import Select from "react-select";
 
-const courses = [
+const UToronto_courses = [
   { value: "CSC108", label: "CSC108" },
   { value: "CSC148", label: "CSC148" },
   { value: "CSC207", label: "CSC207" },
@@ -18,12 +18,21 @@ const courses = [
   { value: "CSC263", label: "CSC263" }
 ];
 
-const years = [
+const URyerson_courses = [
+  {value: "CPS109", label:"CPS109"}
+];
+
+  const years = [
   { value: "1", label: "1" },
   { value: "2", label: "2" },
   { value: "3", label: "3" },
   { value: "4", label: "4" },
   { value: "5+", label: "5+" }
+];
+const school = [
+  { value: "UToronto", label: "University of Toronto"},
+  { value: "URyerson", label: "Ryerson University"},
+  { value: "YorkU", label: "York University"}
 ];
 
 const programs = [
@@ -64,7 +73,6 @@ class RegisterForm extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
-
     // console.log('updated state: ' + JSON.stringify(this.state));
   }
 
@@ -82,8 +90,8 @@ class RegisterForm extends Component {
     } else if (this.state.password != this.state.passwordConfirmation) {
       alert("Confirmed password does not match.");
     } else {
-      if (!this.state.email.includes("@")) {
-        alert("Incorrect Email.");
+      if (!this.state.email.includes("@") && this.state.email.includes(".")) {
+        alert("Incorrect Email");
       } else {
         alert("Success");
         this.props.signUpUser(this.state);
@@ -91,12 +99,14 @@ class RegisterForm extends Component {
     }
   }
 
+
   handleAddCourse = option => {
     var updatedCourses = this.state.courses;
     updatedCourses.push(option.value);
     this.setState({ courses: updatedCourses });
     console.log(this.state);
   };
+
 
   handleDelete = option => {
     var updatedCourses = this.state.courses;
@@ -140,16 +150,12 @@ class RegisterForm extends Component {
 
               <div className="form-group">
                 <label className="control-label">University</label>
-                <input
-                  onChange={this.onChange}
-                  value={this.state.university}
-                  type="text"
-                  name="university"
-                  className="form-control"
+                <Select 
+                  placeholder = "Select your University"
+                  name = "university"
+                  onChange={this.handleSelection.bind(this,"university")}
+                  options={school}
                 />
-                {/* {this.state.lastName == "" ? (
-              <label> Require University</label>
-            ) : null} */}
               </div>
 
               <div className="form-group">
@@ -165,21 +171,16 @@ class RegisterForm extends Component {
               <label> Require Year</label>
             ) : null} */}
               </div>
-
               <div className="form-group">
                 <label className="control-label">Program</label>
 
                 <Select
                   placeholder="Select your Program"
                   value={this.state.type}
-                  // this.setState({ [e.target.name]: e.target.value });
                   name="program"
                   onChange={this.handleSelection.bind(this, "program")}
                   options={programs}
                 />
-                {/* {this.state.lastName == "" ? (
-              <label> Require Program</label>
-            ) : null} */}
               </div>
 
               <div className="form-group">
@@ -234,12 +235,21 @@ class RegisterForm extends Component {
           </div>
 
           <div className="col-md-6">
-            <Select
+            { this.state.university == "UToronto"  ? 
+              <Select
               placeholder="Add a course:"
               value={this.state.type}
-              onChange={this.handleAddCourse}
-              options={courses}
-            />
+              onChange={this.handleAddCourse}     
+              options={UToronto_courses}
+              />
+              : 
+              <Select
+              placeholder="Add a course:"
+              value={this.state.type}
+              onChange={this.handleAddCourse}     
+              options={URyerson_courses}
+              />
+             } 
             <table>
               {this.state.courses.map(option => (
                 <tr>
@@ -257,6 +267,7 @@ class RegisterForm extends Component {
                 </tr>
               ))}
             </table>
+            
           </div>
         </div>
       </div>
