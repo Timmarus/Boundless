@@ -19,5 +19,11 @@ export function updateLastSeen (userID) {
         	}
 	    })
     };
-  }
+}
+
+export function searchMsgs (search) {
+	return (dispatch, getState, { getFirebase, getFirestore }) => {
+		dispatch({type: types.SEARCH_MESSAGES, payload: search })
+	}
+}
 

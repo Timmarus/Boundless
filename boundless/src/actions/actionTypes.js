@@ -10,3 +10,4 @@ export const VALID_PROFILE_UPDATE = "valid_profile_update";
 export const INVALID_PROFILE_UPDATE = "invalid_profile_update";
 export const NEW_MESSAGE = 'new_message';
 export const UPDATE_LAST_SEEN = "updateLastSeen";
+export const SEARCH_MESSAGES = "search_messages";

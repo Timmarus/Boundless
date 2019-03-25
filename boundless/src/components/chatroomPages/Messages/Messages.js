@@ -10,6 +10,7 @@ import { Segment, Comment } from "semantic-ui-react";
 import ChatHeader from "./ChatHeader";
 import ChatForm from "./ChatForm";
 import Message from "./Message";
+import * as actions from '../../../actions/chatActions'
 
 //  * Scrum
 //  *  Given some senario what will happen
@@ -46,31 +47,44 @@ class Messages extends React.Component {
     }
   }
 
+  resetSearchConfig = () => {
+
+    const text = {msgs: [] ,searchEnable: 0}
+    this.props.searchMsgs(text)
+
+  }
+
   render() {
-    const { msg } = this.props;
+
+
+    const { msg, search } = this.props;
     if (!msg) {
       return <div />;
     }
-    
     var msgList = null;
-
-    if (msg.length == 0)
-      msgList = []
-    else
-      msgList = msg[0].messages
+    if (search.searchEnable == 0){
+      if (msg.length == 0)
+        msgList = []
+      else
+        msgList = msg[0].messages
     
+    }else{
+      msgList = search.searchText
+    }
+
     const { user } = this.props;
     return (
       <div style={{ height: "100%", background: "#eeee" }}>
         <React.Fragment>
-          <ChatHeader roomID={this.props.roomName} />
 
+          <ChatHeader messages={msgList}  roomID={this.props.roomName} />
+          
           <Segment
             style={{
               display: "flex",
               height: "68%",
               overflowY: "scroll",
-              overflowX: "hidden"
+              overflowX: "hidden",
             }}
           >
             <Comment.Group className="messages">
@@ -90,7 +104,18 @@ class Messages extends React.Component {
             </Comment.Group>
           </Segment>
 
-          <ChatForm roomName={this.props.roomName} user={this.props.user} />
+          {search.searchEnable == 0? 
+            <ChatForm search={search.searchEnable} roomName={this.props.roomName} user={this.props.user} />
+            :
+            <Segment className=" center chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
+              <a 
+                onClick={this.resetSearchConfig}
+                style={{ width: "100%", margin: '0.5em'}} 
+                className="waves-effect waves-light btn-large red"><i className="material-icons left">close</i>Cancel Search</a>
+
+            </Segment>
+          }
+
         </React.Fragment>
       </div>
     );
@@ -102,12 +127,13 @@ const mapStateToProps = state => {
     msg: state.firestore.ordered.messages,
     auth: state.firebase.auth,
     profile: state.firebase.profile,
-    firestore: state.firestore
+    firestore: state.firestore,
+    search: state.chatReducer
   };
 };
 
 export default compose(
-  connect(mapStateToProps),
+  connect(mapStateToProps, actions),
   firestoreConnect((props) =>  [
     `messages/${props.roomName}`
   ])
