@@ -39,6 +39,7 @@ class HomeScreen extends Component {
   removeCourse(courseToRemove) {
     // updateProfile
     const { courses } = this.props.profile;
+    console.log(courses);
     var newCourses = courses;
     var cc = newCourses.filter(function(val, index, arr) {
       return val !== courseToRemove;
@@ -50,7 +51,6 @@ class HomeScreen extends Component {
     console.log(newDetails);
 
     this.props.updateProfile(newDetails);
-
   }
 
   getOnline(users) {
@@ -167,7 +167,7 @@ const mapStateToProps = state => {
 export default compose(
 connect(
   mapStateToProps,
-  {actions, updateLastSeen},
+  {...actions, updateLastSeen},
 ),
   firestoreConnect((props) =>  [
     `users`

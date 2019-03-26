@@ -11,8 +11,6 @@ const Message = (props) => {
     let imgSrc = ''
     if (msg.includes('IMaGe')){
         imgSrc = msg.split(' ')[1]
-        console.log("Image File at hand");
-        console.log(imgSrc);   
     }
     
     return(
@@ -23,7 +21,7 @@ const Message = (props) => {
                 <div>{moment(props.timeStamp.toDate()).fromNow()}</div>
                 </Comment.Metadata>
                 {imgSrc.length >0?
-                    <a target="_blank" href={imgSrc} > <Image src={imgSrc} size='medium' /> </a>:
+                    <a target="_blank" href={imgSrc} > <Image alt="" src={imgSrc} class="messageImg" size='medium' /> </a>:
                     <Comment.Text align="left">{props.msg}</Comment.Text>
                 }
                 
