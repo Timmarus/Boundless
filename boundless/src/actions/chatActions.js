@@ -1,4 +1,5 @@
 import * as types from './actionTypes';
+import { storage } from 'firebase';
 
 
 export function updateLastSeen (userID) {
@@ -20,4 +21,52 @@ export function updateLastSeen (userID) {
 	    })
     };
   }
+
+export function uploadImage (img) {
+	return (dispatch, getState, { getFirebase, getFirestore }) => {
+	
+		// var firebase = getFirebase()
+		const fileName = img.file.name
+		const db = getFirestore()
+		const msgs = db.collection('messages').doc(img.roomName)
+		console.log(fileName);
+
+		
+		var storageRef = storage().ref(`/images/` + fileName)
+		
+		storageRef.put(img.file).then((snapshot)=> {
+			snapshot.ref.getDownloadURL().then(function(downloadURL) {
+				console.log('File available at', downloadURL)
+				
+				
+				msgs.get().then(function(doc){
+					var existing = doc.data()['messages']
+					console.log({existing});
+					
+					//msg,user, postedAt
+					var newMessage = {
+					  msg: downloadURL,
+					  user: img.user,
+					  postedAt: new Date()
+					}
+					existing.push(newMessage)
+					console.log(existing);
+					
+					const newData = {
+					  messages: existing
+					}
+					
+					msgs.set(newData).then(function(){
+					  console.log("newMessage added");
+					})
+				})
+			  	dispatch({ type: types.NEW_MESSAGE, payload: img})
+			})
+			
+		})
+
+		
+		
+	};
+}
 

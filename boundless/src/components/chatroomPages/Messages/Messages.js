@@ -91,6 +91,7 @@ class Messages extends React.Component {
           </Segment>
 
           <ChatForm roomName={this.props.roomName} user={this.props.user} />
+          
         </React.Fragment>
       </div>
     );
