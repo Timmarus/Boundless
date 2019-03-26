@@ -20,7 +20,6 @@ function compressFile(imageFile){
         console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
         console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
         return compressedFile
-        // await uploadToServer(compressedFile); // write your own logic
     } catch (error) {
         console.log(error);
     }
@@ -36,12 +35,9 @@ class ChatForm extends React.Component {
         this.state = {
             message: "",
         }
-
         this.handleFileUpload = this.handleFileUpload.bind(this)
-        
-    }
 
-   
+    }
 
     handleOnChange = (e) => {
         this.setState({
@@ -63,6 +59,7 @@ class ChatForm extends React.Component {
             message: ""
         })
     }
+
     onKeyPress = (e) => {
         if(e.which === 13) {
         this.handleOnSubmit();
@@ -117,21 +114,12 @@ class ChatForm extends React.Component {
                     icon="edit"
                     onClick={this.handleOnSubmit}
                 />
-                {/* <Button.Group icon widths="2">
-
-
-                
-                
-                </Button.Group> */}
-        
+               
             </Segment>
-
 
         )
     }
 }
 
-
 const allActions = {...actions, ...chatActions}
-
 export default connect(null, allActions)(ChatForm)
