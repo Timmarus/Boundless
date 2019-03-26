@@ -32,4 +32,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps,{actions, updateLastSeen})(NavBar);
+export default connect(mapStateToProps,{...actions, updateLastSeen})(NavBar);
