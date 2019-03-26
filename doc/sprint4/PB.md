@@ -226,32 +226,6 @@ SO THAT  : When I graduate, I don’t need to receive notifications of future cl
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 9
-NAME     : Report Users
-OWNER    : x
-PRIORITY : 2
-ESTIMATE : 4 hour
-AS A     : Student
-I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
-SO THAT  : Each chatroom contains important information.
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 15
-NAME     : Switch to Day mode
-OWNER    : x
-PRIORITY : 5
-ESTIMATE : 1 hour
-AS A     : Student
-I WANT   : To be able to turn on day mode
-SO THAT  : When I am in a well-light location, I dont need to increase my 
-      phone's brightness.
-```
---------------------------------------------------------------------------
-
---------------------------------------------------------------------------
-```
 TYPE     : USER STORY 26
 NAME     : Redesign Chat
 OWNER    : x
@@ -287,6 +261,68 @@ I WANT   : the site to work well and look nice on my phone.
 SO THAT  : I can check my course chat on both the web app and on my phone.
 ```
 --------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 13
+NAME     : App Sharing
+OWNER    : x
+PRIORITY : 2
+ESTIMATE : 3 hour
+AS A     : Student
+I WANT   : the site to work well and look nice on my phone.
+SO THAT  : I can check my course chat on both the web app and on my phone.
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 29
+NAME     : Chatrooms
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 11 hour
+AS A     : Developer
+I WANT   : to configure the UI to the correct chatroom id on screen.
+SO THAT  : I can go to the correct chatroom as specified by the id.
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 30
+NAME     : Search Functionality 
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 5 hour
+AS A     : Student
+I WANT   : to search the chat for keywords.
+SO THAT  : I can find important information in a timely manner.
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 31
+NAME     : Current Members
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 7 hour
+AS A     : Student
+I WANT   : to see all members of the current chat.
+SO THAT  : I can find peers and new classmates.
+```
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 32
+NAME     : File Upload
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 10 hour
+AS A     : Student
+I WANT   : to upload images to a chat.
+SO THAT  : members of the chat can share images of notes and questions.
+```
+--------------------------------------------------------------------------
+
 
 # Sprint 5 April 5, 2019
 # Sprint 5 Backlog UserStories go below
