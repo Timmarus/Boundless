@@ -100,8 +100,8 @@ class HomeScreen extends Component {
       return <Redirect to="/" />;
     }
     var { courses } = this.props.profile;
-    console.log("Props:", this.props);
     if (courses == undefined) return <div />;
+    
     if (!courses.includes("room1")) {
       courses.unshift("room1");
     }
