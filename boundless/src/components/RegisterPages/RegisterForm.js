@@ -8,17 +8,74 @@ import Home from "../homescreenPages/HomeScreen";
 import Select from "react-select";
 
 const UToronto_courses = [
+  { value: "CSC104", label: "CSC104" },
   { value: "CSC108", label: "CSC108" },
   { value: "CSC148", label: "CSC148" },
+  { value: "CSC199", label: "CSC199" },
   { value: "CSC207", label: "CSC207" },
   { value: "CSC236", label: "CSC236" },
   { value: "CSC209", label: "CSC209" },
   { value: "CSC258", label: "CSC258" },
-  { value: "CSC263", label: "CSC263" }
+  { value: "CSC263", label: "CSC263" },
+  { value: "CSC290", label: "CSC290" },
+  { value: "CSC299", label: "CSC299" },
+  { value: "CSC300", label: "CSC300" },
+  { value: "CSC301", label: "CSC301" },
+  { value: "CSC309", label: "CSC309" },
+  { value: "CSC310", label: "CSC310" },
+  { value: "CSC318", label: "CSC318" },
+  { value: "CSC320", label: "CSC320" },
+  { value: "CSC321", label: "CSC321" },
+  { value: "CSC322", label: "CSC322" },
+  { value: "CSC324", label: "CSC324" },
+  { value: "CSC333", label: "CSC333" },
+  { value: "CSC338", label: "CSC338" },
+  { value: "CSC343", label: "CSC343" },
+  { value: "CSC347", label: "CSC347" },
+  { value: "CSC358", label: "CSC358" },
+  { value: "CSC363", label: "CSC363" },
+  { value: "CSC369", label: "CSC369" },
+  { value: "CSC373", label: "CSC373" },
+  { value: "CSC384", label: "CSC384" },
+  { value: "CSC398", label: "CSC398" },
+  { value: "CSC399", label: "CSC399" },
+  { value: "CSC404", label: "CSC404" },
+  { value: "CSC409", label: "CSC409" },
+  { value: "CSC411", label: "CSC411" },
+  { value: "CSC420", label: "CSC420" },
+  { value: "CSC422", label: "CSC422" },
+  { value: "CSC423", label: "CSC423" },
+  { value: "CSC427", label: "CSC427" },
+  { value: "CSC428", label: "CSC428" },
+  { value: "CSC448", label: "CSC448" },
+  { value: "CSC454", label: "CSC454" },
+  { value: "CSC458", label: "CSC458" },
+  { value: "CSC469", label: "CSC469" },
+  { value: "CSC488", label: "CSC488" },
+  { value: "CSC490", label: "CSC490" },
+  { value: "CSC492", label: "CSC492" },
+  { value: "CSC493", label: "CSC493" },
+  { value: "CSC498", label: "CSC498" },
+  { value: "CSC499", label: "CSC499" }
 ];
 
 const URyerson_courses = [
-  {value: "CPS109", label:"CPS109"}
+  { value: "CPS109", label: "CPS109" },
+  { value: "CPS209", label: "CPS209" },
+  { value: "CPS213", label: "CPS213" },
+  { value: "CPS305", label: "CPS305" },
+  { value: "CPS310", label: "CPS310" },
+  { value: "CPS393", label: "CPS393" },
+  { value: "CPS406", label: "CPS406" },
+  { value: "CPS412", label: "CPS412" },
+  { value: "CPS420", label: "CPS420" },
+  { value: "CPS506", label: "CPS506" },
+  { value: "CPS510", label: "CPS510" },
+  { value: "CPS590", label: "CPS590" },
+  { value: "CPS616", label: "CPS616" },
+  { value: "CPS633", label: "CPS633" },
+  { value: "CPS706", label: "CPS706" },
+  { value: "CPS721", label: "CPS721" }
 ];
 
   const years = [
@@ -29,9 +86,9 @@ const URyerson_courses = [
   { value: "5+", label: "5+" }
 ];
 const school = [
-  { value: "UToronto", label: "University of Toronto"},
-  { value: "URyerson", label: "Ryerson University"},
-  { value: "YorkU", label: "York University"}
+  { value: "UToronto", label: "University of Toronto" },
+  { value: "URyerson", label: "Ryerson University" },
+  { value: "YorkU", label: "York University" }
 ];
 
 const programs = [
