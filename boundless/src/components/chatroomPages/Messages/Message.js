@@ -1,12 +1,20 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import {Segment, Comment} from 'semantic-ui-react';
+import {Segment, Comment, Image} from 'semantic-ui-react';
 import moment from 'moment'
 
 
 
 
-const Message = (props) => {    
+const Message = (props) => { 
+    const {msg} = props
+    let imgSrc = ''
+    if (msg.includes('IMaGe')){
+        imgSrc = msg.split(' ')[1]
+        console.log("Image File at hand");
+        console.log(imgSrc);   
+    }
+    
     return(
         <Comment>
             <Comment.Content align="left">
@@ -14,7 +22,11 @@ const Message = (props) => {
                 <Comment.Metadata>
                 <div>{moment(props.timeStamp.toDate()).fromNow()}</div>
                 </Comment.Metadata>
-                <Comment.Text align="left">{props.msg}</Comment.Text>
+                {imgSrc.length >0?
+                    <a target="_blank" href={imgSrc} > <Image src={imgSrc} size='medium' /> </a>:
+                    <Comment.Text align="left">{props.msg}</Comment.Text>
+                }
+                
             </Comment.Content>
         </Comment>
     )
