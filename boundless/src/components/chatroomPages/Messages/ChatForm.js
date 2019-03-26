@@ -28,50 +28,47 @@ class ChatForm extends React.Component {
             message: ""
         })
     }
-onKeyPress = (e) => {
-    if(e.which === 13) {
-      this.handleOnSubmit();
+    onKeyPress = (e) => {
+        if(e.which === 13) {
+        this.handleOnSubmit();
+        }
     }
-  }
+
+
 
     render() {
+        const {search} = this.props
         return (
             
-            <Segment className="chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
+                <Segment className="chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
+                    
+                        <Input
+                            fluid
+                            name="chatMessage"
+                            style={{ width: "80%", margin: '0.5em'}}
+                            label={<Button icon={'add'} /> }
+                            value={this.state.message}
+                            labelPosition="left"
+                            onChange={this.handleOnChange}
+                            placeholder="Enter your message"
+                            onKeyPress={this.onKeyPress}
+                        />
+                        
+                        <Button
+                            primary
+                            // color="grey"
+                            content="Send"
+                            labelPosition="right"
+                            icon="edit"
+                            onClick={this.handleOnSubmit}
+                        />
+                   
+                    
+                </Segment>
+                )   
+            
+            }
 
-                <Input
-                    fluid
-                    name="chatMessage"
-                    style={{ width: "80%", margin: '0.5em'}}
-                    label={<Button icon={'add'} /> }
-                    value={this.state.message}
-                    labelPosition="left"
-                    onChange={this.handleOnChange}
-                    placeholder="Enter your message"
-                    onKeyPress={this.onKeyPress}
-                />
-
-
-                <Button
-                    primary
-                    // color="grey"
-                    content="Send"
-                    labelPosition="right"
-                    icon="edit"
-                    onClick={this.handleOnSubmit}
-                />
-                {/* <Button.Group icon widths="2">
-
-
-                
-                
-                </Button.Group> */}
-        
-            </Segment>
-
-
-        )
-    }
 }
 
 
