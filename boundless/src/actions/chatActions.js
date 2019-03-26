@@ -45,8 +45,8 @@ export function uploadImage (img) {
 					
 					//msg,user, postedAt
 					var newMessage = {
-					  msg: downloadURL,
-					  user: img.user,
+					  msg: "IMaGe " + downloadURL,
+					  user: img.user.firstName,
 					  postedAt: new Date()
 					}
 					existing.push(newMessage)
