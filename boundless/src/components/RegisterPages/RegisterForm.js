@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../../actions/loginActions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Redirect, Link, BrowserRouter, Switch, Route } from "react-router-dom";
 import { Button } from "reactstrap";
-
+import Home from "../homescreenPages/HomeScreen";
 import Select from "react-select";
 
 const UToronto_courses = [
@@ -93,10 +92,20 @@ class RegisterForm extends Component {
       if (!this.state.email.includes("@") && this.state.email.includes(".")) {
         alert("Incorrect Email");
       } else {
-        alert("Success");
         this.props.signUpUser(this.state);
       }
     }
+    this.renderHome()
+  }
+
+  renderHome() {
+    return (
+      <BrowserRouter>
+          <Switch>
+            <Route path="/home" component={Home} />
+          </Switch>
+      </BrowserRouter>
+    );
   }
 
 
