@@ -87,9 +87,10 @@ class RegisterForm extends Component {
         this.props.signUpUser(this.state);
       }
     }
+    this.renderHome()
   }
 
-  render() {
+  renderHome() {
     return (
       <BrowserRouter>
           <Switch>
