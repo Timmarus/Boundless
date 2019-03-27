@@ -12,7 +12,7 @@ export function updateProfile(profileDetails) {
     console.log('userID: ' + userID)
     var docReference = firebase.firestore().collection('users').doc(userID);
 
-
+    console.log(docReference);
     // console.log('docRefernce ID: ' + docReference.id)
 
     docReference.get().then( (doc) => {

@@ -12,6 +12,14 @@ import dbConfig from './config/dbConfig';
 
 import 'semantic-ui-css/semantic.min.css'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faTrash)
+
+
 //This is where we will register the store i.e model
 
 const store = createStore(

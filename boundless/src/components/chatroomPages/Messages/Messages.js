@@ -1,17 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import { connect } from 'react-redux'
-import { firestoreConnect } from 'react-redux-firebase'
-import { compose } from 'redux'
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 // import firebase from 'firebase/app'
-import  'firebase/database'
-import {Segment, Comment} from 'semantic-ui-react';
+import "firebase/database";
+import { Segment, Comment } from "semantic-ui-react";
 
-import ChatHeader from './ChatHeader'
-import ChatForm from './ChatForm'
-import Message from './Message'
-
-
+import ChatHeader from "./ChatHeader";
+import ChatForm from "./ChatForm";
+import Message from "./Message";
+import * as actions from '../../../actions/chatActions'
 
 //  * Scrum
 //  *  Given some senario what will happen
@@ -23,87 +22,121 @@ import Message from './Message'
 //  * enterprise patterns
 //  * solid principles
 //  * design principles
-//  * 
-
+//  *
 
 class Messages extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-    makeAMessage (msg, index){
-        return(
-            <Message msg={msg} key={index} />
-        )
+  makeAMessage(msg, index) {
+    return <Message msg={msg} key={index} />;
+  }
+
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom() {
+    if (this.messagesEnd) {
+      this.messagesEnd.scrollIntoView({ behavior: "auto" });
     }
+  }
 
-    render () {
+  resetSearchConfig = () => {
 
-        const {msg} = this.props
-        console.log(this.props);
+    const text = {msgs: [] ,searchEnable: 0}
+    this.props.searchMsgs(text)
 
-        if (!msg) {
-            return <div />
-        }
-        // console.log(msg[0]);
-        console.log(msg[0].messages);
-        const msgList = msg[0].messages
-        console.log("---------",msgList, "-------");
-        
-        const {user} = this.props
+  }
+
+  render() {
+
+
+    const { msg, search } = this.props;
+    if (!msg) {
+      return <div />;
+    }
+    var msgList = null;
+    if (search.searchEnable == 0){
+      if (msg.length == 0)
+        msgList = []
+      else
+        msgList = msg[0].messages
     
-        
-        
-    //    const messages = map[0].message
-       
-        return (
-            <div style={{width: "80%", background: "#eeee",}}> 
-            
-                <React.Fragment>
-
-                    <ChatHeader roomID={this.props.roomName}/>
-  
-                     <Segment style={{display: "flex", height: "75%", margin: 5}} >
-                         <Comment.Group className="messages">
-                            
-                            {msgList.map((item, i) => (
-                                <Message 
-                                    user={item.user}
-                                    msg={item.msg}
-                                    timeStamp={item.postedAt}
-                                    key={i} />
-                                ))}
-                            
-                         </Comment.Group>
-
-                     </Segment>
-
-                    <ChatForm user={user}/>
-
-
-                </React.Fragment>
-            
-            
-            
-            </div>
-        )
+    }else{
+      msgList = search.searchText
     }
+
+    const { user } = this.props;
+    return (
+      <div style={{ height: "100%", background: "#eeee" }}>
+        <React.Fragment>
+
+          <ChatHeader messages={msgList}  roomID={this.props.roomName} />
+          
+          <Segment
+            style={{
+              display: "flex",
+              height: "68%",
+              overflowY: "scroll",
+              overflowX: "hidden",
+            }}
+          >
+            <Comment.Group className="messages">
+              {msgList.map((item, i) => (
+                <Message
+                  user={item.user}
+                  msg={item.msg}
+                  timeStamp={item.postedAt}
+                  key={i}
+                />
+              ))}
+              <div
+                ref={el => {
+                  this.messagesEnd = el;
+                }}
+              />
+            </Comment.Group>
+          </Segment>
+
+          {search.searchEnable == 0? 
+            <ChatForm search={search.searchEnable} roomName={this.props.roomName} user={this.props.user} />
+            :
+            <Segment className=" center chatForm" style={{display: "flex", flexDirection: "row", margin: 5}}>
+              <a 
+                onClick={this.resetSearchConfig}
+                style={{ width: "100%", margin: '0.5em'}} 
+                className="waves-effect waves-light btn-large red"><i className="material-icons left">close</i>Cancel Search</a>
+
+            </Segment>
+          }
+
+        </React.Fragment>
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = (state) => {
-    return {
-
-        msg: state.firestore.ordered.messages,
-        auth: state.firebase.auth,
-        profile: state.firebase.profile
-
-    }
-    
-}
+const mapStateToProps = state => {
+  return {
+    msg: state.firestore.ordered.messages,
+    auth: state.firebase.auth,
+    profile: state.firebase.profile,
+    firestore: state.firestore,
+    search: state.chatReducer
+  };
+};
 
 export default compose(
-    connect(mapStateToProps),
-    firestoreConnect([
-        `messages/room1`
-        
-    ])
-)(Messages)
+  connect(mapStateToProps, actions),
+  firestoreConnect((props) =>  [
+    `messages/${props.roomName}`
+  ])
+)(Messages);
 
 // export default connect(mapStateToProps, null)(Messages)

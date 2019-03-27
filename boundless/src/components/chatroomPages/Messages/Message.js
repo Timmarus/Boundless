@@ -1,25 +1,29 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import {Segment, Comment} from 'semantic-ui-react';
+import {Segment, Comment, Image} from 'semantic-ui-react';
 import moment from 'moment'
 
 
 
 
-const Message = (props) => {
-    console.log("+++++++",props.timeStamp, "+++++++");
-    const time = props.timeStamp.toDate()
-    console.log(moment(props.timeStamp.toDate()).fromNow());
-    
+const Message = (props) => { 
+    const {msg} = props
+    let imgSrc = ''
+    if (msg.includes('IMaGe')){
+        imgSrc = msg.split(' ')[1]
+    }
     
     return(
         <Comment>
-            <Comment.Content>
+            <Comment.Content align="left">
                 <Comment.Author as='a'>{props.user}</Comment.Author>
                 <Comment.Metadata>
                 <div>{moment(props.timeStamp.toDate()).fromNow()}</div>
                 </Comment.Metadata>
-                <Comment.Text>{props.msg}</Comment.Text>
+                {imgSrc.length >0?
+                    <a target="_blank" href={imgSrc} > <Image alt="" src={imgSrc} class="messageImg" size='medium' /> </a>:
+                    <Comment.Text align="left">{props.msg}</Comment.Text>
+                }
                 
             </Comment.Content>
         </Comment>
