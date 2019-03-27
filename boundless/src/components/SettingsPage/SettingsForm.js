@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 
 //Comment
-const courses = [
+const UToronto_courses = [
   { value: "CSC104", label: "CSC104" },
   { value: "CSC108", label: "CSC108" },
   { value: "CSC148", label: "CSC148" },
@@ -62,6 +62,25 @@ const courses = [
   { value: "CSC499", label: "CSC499" }
 ];
 
+const URyerson_courses = [
+  { value: "CPS109", label: "CPS109" },
+  { value: "CPS209", label: "CPS209" },
+  { value: "CPS213", label: "CPS213" },
+  { value: "CPS305", label: "CPS305" },
+  { value: "CPS310", label: "CPS310" },
+  { value: "CPS393", label: "CPS393" },
+  { value: "CPS406", label: "CPS406" },
+  { value: "CPS412", label: "CPS412" },
+  { value: "CPS420", label: "CPS420" },
+  { value: "CPS506", label: "CPS506" },
+  { value: "CPS510", label: "CPS510" },
+  { value: "CPS590", label: "CPS590" },
+  { value: "CPS616", label: "CPS616" },
+  { value: "CPS633", label: "CPS633" },
+  { value: "CPS706", label: "CPS706" },
+  { value: "CPS721", label: "CPS721" }
+];
+
 const years = [
   { value: "1", label: "1" },
   { value: "2", label: "2" },
@@ -69,6 +88,10 @@ const years = [
   { value: "4", label: "4" },
   { value: "5+", label: "5+" }
 ];
+const university = [
+    { value: "University of Toronto", label: "University of Toronto" },
+    { value: "Ryerson University", label: "Ryerson University" },
+]
 
 const programs = [
   { value: "Computer Science", label: "Computer Science" },
@@ -118,6 +141,13 @@ export class SettingsForm extends Component {
     console.log(this.state);
   }
 
+  handleUni(type,option){
+    const selected = option.value;
+    this.setState({[type]: selected});
+    
+    this.state.courses = [];
+    
+  }
   handleSelection(type, option) {
     const selected = option.value;
     this.setState({ [type]: selected });
@@ -202,12 +232,12 @@ export class SettingsForm extends Component {
 
               <div className="form-group">
                 <label className="control-label">University</label>
-                <input
-                  onChange={this.onChange}
+                <Select 
+                  placeholder={this.state.university || "Select your University"}
                   value={this.state.university}
-                  type="text"
                   name="university"
-                  className="form-control"
+                  onChange={this.handleUni.bind(this,"university")}
+                  options={university}
                 />
               </div>
 
@@ -259,12 +289,22 @@ export class SettingsForm extends Component {
           </div>
 
           <div className="col-md-4">
-            <Select
+          { this.state.university == "University of Toronto"  ? 
+              <Select
               placeholder="Add a course:"
               value={this.state.type}
-              onChange={this.handleAddCourse}
-              options={courses}
-            />
+              onChange={this.handleAddCourse}     
+              options={UToronto_courses}
+              
+              />
+              : 
+              <Select
+              placeholder="Add a course:"
+              value={this.state.type}
+              onChange={this.handleAddCourse}     
+              options={URyerson_courses}
+              />
+             } 
             <table>
               {this.state.courses.map(option => (
                 <tr>

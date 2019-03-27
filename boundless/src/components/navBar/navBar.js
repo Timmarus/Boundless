@@ -5,9 +5,7 @@ import * as actions from "../../actions/loginActions";
 import SignedInLinks from './signedInLinks';
 import SignedOutLinks from './signedOutLinks';
 import { updateLastSeen } from "../../actions/chatActions";
-import {
-  BrowserView,
-} from "react-device-detect";
+import {BrowserView,} from "react-device-detect";
 
 const NavBar = (props) => {
   // console.log(props.profile);
