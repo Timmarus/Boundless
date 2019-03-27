@@ -24,6 +24,7 @@ export function signOut() {
         firebase.auth().signOut().then(() => {
             dispatch({ type: types.SIGN_OUT })
         })
+        
     }
 }
 
@@ -44,6 +45,7 @@ export function signUpUser(userInfo) {
                 year: userInfo.year,
                 program: userInfo.program,
                 courses: userInfo.courses,
+                lastSeen: 0
 
             })
         }).then(() => {
