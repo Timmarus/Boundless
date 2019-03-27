@@ -214,18 +214,6 @@ SO THAT  : once the user re-enters the app, the settings are saved
 
 --------------------------------------------------------------------------
 ```
-TYPE     : USER STORY 2
-NAME     : Delete Account
-OWNER    : x
-PRIORITY : 2
-ESTIMATE : 4 hour
-AS A     : Student
-I WANT   : I want to be able to delete my account
-SO THAT  : When I graduate, I don’t need to receive notifications of future classes.
-```
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-```
 TYPE     : USER STORY 26
 NAME     : Redesign Chat
 OWNER    : x
@@ -322,6 +310,47 @@ I WANT   : to upload images to a chat.
 SO THAT  : members of the chat can share images of notes and questions.
 ```
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 9
+NAME     : Report Users 
+OWNER    : x
+PRIORITY : 5
+ESTIMATE : 7 hour
+AS A     : Student
+I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
+SO THAT  : Each chatroom contains important information.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 33
+NAME     : Course Selection Validation
+OWNER    : x
+PRIORITY : 5
+ESTIMATE : 9 hour
+AS A     : Developer
+I WANT   : user to not be able to enroll into more than 6 courses at any given time and to fix issues with course adding.
+SO THAT  : the user will not get confused.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 34
+NAME     : Bug Fixes
+OWNER    : x
+PRIORITY : 8
+ESTIMATE : 6 hour
+AS A     : Developer
+I WANT   : to fix all the bugs we created in the programs.
+SO THAT  : the bugs are gone, and the program flows better.
+```
+--------------------------------------------------------------------------
+
+
+
 
 
 # Sprint 5 April 5, 2019

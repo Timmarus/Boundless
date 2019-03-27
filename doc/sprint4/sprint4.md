@@ -15,21 +15,6 @@
 ### Sprint Backlog
 
 
---------------------------------------------------------------------------
-```
-TYPE     : USER STORY 2
-NAME     : Delete Account
-OWNER    : x
-PRIORITY : 2
-ESTIMATE : 4 hour
-AS A     : Student
-I WANT   : I want to be able to delete my account
-SO THAT  : When I graduate, I don’t need to receive notifications of future classes.
-TASKS:
-	- () UI to delete user account
-	- () Update Database, so the user is not able to login in again
-```
---------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 ```
@@ -160,4 +145,57 @@ TASKS:
 	- (A) Configure UI to display image messages.
 ```
 --------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 9
+NAME     : Report Users 
+OWNER    : A, K
+PRIORITY : 5
+ESTIMATE : 7 hour
+AS A     : Student
+I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
+SO THAT  : Each chatroom contains important information.
+TASKS:
+	- (A) Hook up report page to database.
+	- (K) Able to report a user when they misbehave in a chatroom.
+	- (K) Implement UI for reporting.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 33
+NAME     : Course Selection Validation
+OWNER    : KE
+PRIORITY : 5
+ESTIMATE : 9 hour
+AS A     : Developer
+I WANT   : user to not be able to enroll into more than 6 courses at any given time and to fix issues with course adding.
+SO THAT  : the user will not get confused.
+TASKS:
+	- (KE) Configure Register page with 6 course validation.
+	- (KE) Configure Register to work when the user has not selected any courses.
+	- (KE) Configure main Dashboard when there aren't any selected courses.
+```
+--------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 34
+NAME     : Bug Fixes
+OWNER    : W, KE
+PRIORITY : 8
+ESTIMATE : 6 hour
+AS A     : Developer
+I WANT   : to fix all the bugs we created in the programs.
+SO THAT  : the bugs are gone, and the program flows better.
+TASKS:
+	- (W) Add in Options for universities in Register.
+	- (W) Add in options for universities in Settings so we can get the courses aligned.
+	- (KE) Add in more courses for users.
+	- (W) Remove extra pages collapsed into others.
+```
+--------------------------------------------------------------------------
+
 
