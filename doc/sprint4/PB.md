@@ -361,6 +361,18 @@ I WANT   : to be able to see on the website if my registration was not successfu
 SO THAT  : I can fix up my information and register successfully.
 ```
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 36
+NAME     : Login Validation
+OWNER    : x
+PRIORITY : 1
+ESTIMATE : 5 hour
+AS A     : Student
+I WANT   : to be able to see on the website if my login was not successful
+SO THAT  : I can enter the correct credentials and login succesfully.
+```
+--------------------------------------------------------------------------
 
 
 

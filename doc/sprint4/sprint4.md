@@ -213,3 +213,18 @@ TASKS:
 	- (A) Handle UI when the user tries to add more than 6 courses. (Create and indication for the user)
 ```
 --------------------------------------------------------------------------
+
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 36
+NAME     : Login Validation
+OWNER    : J
+PRIORITY : 1
+ESTIMATE : 5 hour
+AS A     : Student
+I WANT   : to be able to see on the website if my login was not successful
+SO THAT  : I can enter the correct credentials and login succesfully.
+TASKS:
+	- (J) Update ui when firebase gives and error while attempting to register the user.
+```
+--------------------------------------------------------------------------
