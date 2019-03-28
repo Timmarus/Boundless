@@ -217,7 +217,7 @@ SO THAT  : once the user re-enters the app, the settings are saved
 TYPE     : USER STORY 26
 NAME     : Redesign Chat
 OWNER    : x
-PRIORITY : 13
+PRIORITY : 21
 ESTIMATE : 8 hour
 AS A     : Student
 I WANT   : the chat to have a cleaner, responsive design free of bugs.
@@ -230,7 +230,7 @@ SO THAT  : I can increase productively and navigate the platform seamlessly.
 TYPE     : USER STORY 27
 NAME     : Redesign user flow
 OWNER    : x
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 5 hour
 AS A     : Student
 I WANT   : to navigate between the menus in the platform easily. 
@@ -242,7 +242,7 @@ SO THAT  : I can navigate to the appropriate menus when clicked.
 TYPE     : USER STORY 28
 NAME     : Mobile Support
 OWNER    : x
-PRIORITY : 8
+PRIORITY : 13
 ESTIMATE : 9 hour
 AS A     : Student
 I WANT   : the site to work well and look nice on my phone.
@@ -255,7 +255,7 @@ SO THAT  : I can check my course chat on both the web app and on my phone.
 TYPE     : USER STORY 13
 NAME     : App Sharing
 OWNER    : x
-PRIORITY : 2
+PRIORITY : 1
 ESTIMATE : 3 hour
 AS A     : Student
 I WANT   : the site to work well and look nice on my phone.
@@ -267,7 +267,7 @@ SO THAT  : I can check my course chat on both the web app and on my phone.
 TYPE     : USER STORY 29
 NAME     : Chatrooms
 OWNER    : x
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 11 hour
 AS A     : Developer
 I WANT   : to configure the UI to the correct chatroom id on screen.
@@ -279,7 +279,7 @@ SO THAT  : I can go to the correct chatroom as specified by the id.
 TYPE     : USER STORY 30
 NAME     : Search Functionality 
 OWNER    : x
-PRIORITY : 8
+PRIORITY : 13
 ESTIMATE : 5 hour
 AS A     : Student
 I WANT   : to search the chat for keywords.
@@ -303,7 +303,7 @@ SO THAT  : I can find peers and new classmates.
 TYPE     : USER STORY 32
 NAME     : File Upload
 OWNER    : x
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 10 hour
 AS A     : Student
 I WANT   : to upload images to a chat.
@@ -315,7 +315,7 @@ SO THAT  : members of the chat can share images of notes and questions.
 TYPE     : USER STORY 9
 NAME     : Report Users 
 OWNER    : x
-PRIORITY : 5
+PRIORITY : 13
 ESTIMATE : 7 hour
 AS A     : Student
 I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
@@ -328,7 +328,7 @@ SO THAT  : Each chatroom contains important information.
 TYPE     : USER STORY 33
 NAME     : Course Selection Validation
 OWNER    : x
-PRIORITY : 5
+PRIORITY : 13
 ESTIMATE : 9 hour
 AS A     : Developer
 I WANT   : user to not be able to enroll into more than 6 courses at any given time and to fix issues with course adding.
@@ -341,7 +341,7 @@ SO THAT  : the user will not get confused.
 TYPE     : USER STORY 34
 NAME     : Multiple University Flow
 OWNER    : x
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 6 hour
 AS A     : Student
 I WANT   : to be able to enroll courses that are within my university.
@@ -354,7 +354,7 @@ SO THAT  : I don't end up talking to other people from other universities.
 TYPE     : USER STORY 35
 NAME     : Registration Validation
 OWNER    : x
-PRIORITY : 2
+PRIORITY : 1
 ESTIMATE : 3 hour
 AS A     : Student
 I WANT   : to be able to see on the website if my registration was not successful.

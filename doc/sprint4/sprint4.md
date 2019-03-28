@@ -21,7 +21,7 @@
 TYPE     : USER STORY 26
 NAME     : Redesign Chat
 OWNER    : T
-PRIORITY : 13
+PRIORITY : 21
 ESTIMATE : 8 hour
 AS A     : Student
 I WANT   : the chat to have a cleaner, responsive design free of bugs.
@@ -38,7 +38,7 @@ TASKS:
 TYPE     : USER STORY 27
 NAME     : Redesign user flow
 OWNER    : T
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 5 hour
 AS A     : Student
 I WANT   : to navigate between the menus in the platform easily.
@@ -54,7 +54,7 @@ TASKS:
 TYPE     : USER STORY 28
 NAME     : Mobile Support
 OWNER    : T
-PRIORITY : 8
+PRIORITY : 13
 ESTIMATE : 9 hour
 AS A     : Student
 I WANT   : the site to work well and look nice on my phone.
@@ -70,7 +70,7 @@ TASKS:
 TYPE     : USER STORY 13
 NAME     : App Sharing
 OWNER    : K
-PRIORITY : 2
+PRIORITY : 1
 ESTIMATE : 3 hour
 AS A     : Student
 I WANT   : the site to work well and look nice on my phone.
@@ -85,7 +85,7 @@ TASKS:
 TYPE     : USER STORY 29
 NAME     : Chatrooms
 OWNER    : T
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 11 hour
 AS A     : Developer
 I WANT   : to configure the UI to the correct chatroom id on screen.
@@ -101,7 +101,7 @@ TASKS:
 TYPE     : USER STORY 30
 NAME     : Search Functionality 
 OWNER    : A, J
-PRIORITY : 8
+PRIORITY : 13
 ESTIMATE : 5 hour
 AS A     : Student
 I WANT   : to search the chat for keywords.
@@ -132,7 +132,7 @@ TASKS:
 TYPE     : USER STORY 32
 NAME     : File Upload
 OWNER    : A
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 10 hour
 AS A     : Student
 I WANT   : to upload images to a chat.
@@ -151,7 +151,7 @@ TASKS:
 TYPE     : USER STORY 9
 NAME     : Report Users 
 OWNER    : A, K
-PRIORITY : 5
+PRIORITY : 13
 ESTIMATE : 7 hour
 AS A     : Student
 I WANT   : to report certain users if they aren't positively contributing to a specific chatroom.
@@ -168,7 +168,7 @@ TASKS:
 TYPE     : USER STORY 33
 NAME     : Course Selection Validation
 OWNER    : KE
-PRIORITY : 5
+PRIORITY : 13
 ESTIMATE : 9 hour
 AS A     : Developer
 I WANT   : user to not be able to enroll into more than 6 courses at any given time and to fix issues with course adding.
@@ -185,7 +185,7 @@ TASKS:
 TYPE     : USER STORY 34
 NAME     : Multiple University Flow
 OWNER    : W, KE
-PRIORITY : 8
+PRIORITY : 21
 ESTIMATE : 6 hour
 AS A     : Student
 I WANT   : to be able to enroll courses that are within my university.
@@ -203,7 +203,7 @@ TASKS:
 TYPE     : USER STORY 35
 NAME     : Registration Validation
 OWNER    : A
-PRIORITY : 2
+PRIORITY : 1
 ESTIMATE : 3 hour
 AS A     : Student
 I WANT   : to be able to see on the website if my registration was not successful.
