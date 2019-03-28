@@ -339,16 +339,28 @@ SO THAT  : the user will not get confused.
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 34
-NAME     : Bug Fixes
+NAME     : Multiple University Flow
 OWNER    : x
 PRIORITY : 8
 ESTIMATE : 6 hour
-AS A     : Developer
-I WANT   : to fix all the bugs we created in the programs.
-SO THAT  : the bugs are gone, and the program flows better.
+AS A     : Student
+I WANT   : to be able to enroll courses that are within my university.
+SO THAT  : I don't end up talking to other people from other universities.
 ```
 --------------------------------------------------------------------------
 
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 35
+NAME     : Registration Validation
+OWNER    : x
+PRIORITY : 2
+ESTIMATE : 3 hour
+AS A     : Student
+I WANT   : to be able to see on the website if my registration was not successful.
+SO THAT  : I can fix up my information and register successfully.
+```
+--------------------------------------------------------------------------
 
 
 

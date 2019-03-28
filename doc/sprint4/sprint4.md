@@ -183,13 +183,13 @@ TASKS:
 --------------------------------------------------------------------------
 ```
 TYPE     : USER STORY 34
-NAME     : Bug Fixes
+NAME     : Multiple University Flow
 OWNER    : W, KE
 PRIORITY : 8
 ESTIMATE : 6 hour
-AS A     : Developer
-I WANT   : to fix all the bugs we created in the programs.
-SO THAT  : the bugs are gone, and the program flows better.
+AS A     : Student
+I WANT   : to be able to enroll courses that are within my university.
+SO THAT  : I don't end up talking to other people from other universities.
 TASKS:
 	- (W) Add in Options for universities in Register.
 	- (W) Add in options for universities in Settings so we can get the courses aligned.
@@ -198,4 +198,18 @@ TASKS:
 ```
 --------------------------------------------------------------------------
 
-
+--------------------------------------------------------------------------
+```
+TYPE     : USER STORY 35
+NAME     : Registration Validation
+OWNER    : A
+PRIORITY : 2
+ESTIMATE : 3 hour
+AS A     : Student
+I WANT   : to be able to see on the website if my registration was not successful.
+SO THAT  : I can fix up my information and register successfully.
+TASKS:
+	- (A) Update ui when firebase gives and error while attempting to register the user.
+	- (A) Handle UI when the user tries to add more than 6 courses. (Create and indication for the user)
+```
+--------------------------------------------------------------------------
