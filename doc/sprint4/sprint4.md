@@ -115,16 +115,15 @@ TASKS:
 ```
 TYPE     : USER STORY 31
 NAME     : Current Members
-OWNER    : T
+OWNER    : T, J, A
 PRIORITY : 8
 ESTIMATE : 7 hour
 AS A     : Student
 I WANT   : to see all members of the current chat.
 SO THAT  : I can find peers and new classmates.
 TASKS:
-	- (T) Configure Database to keep track of the active members of the chatroom.
-	- (T) Configure Chatroom ui to display all the people who are currently part of the chat.
-	- (T) Update Database and UI when the user leaves the chatroom.
+	- (T, J, A) Configure Database to keep track of the active members of the chatroom.
+	- (T, J, A) Configure Chatroom ui to display all the people who are currently part of the chat.
 ```
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
